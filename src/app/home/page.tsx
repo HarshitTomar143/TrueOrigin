@@ -8,21 +8,21 @@ export default function HomePage() {
     const router = useRouter();
     const [userData, setUserData] = useState<{ username: string } | null>(null);
 
-    useEffect(() => {
-        const getUserData = async () => {
-            try {
-                const response = await axios.get("/api/users/me", { withCredentials: true });
-                setUserData(response.data);
-            } catch (error: unknown) {
-                if (error instanceof Error) {
-                    console.error("Error fetching user data:", error.message);
-                }
-                router.push("/login");
-            }
-        };
+    // useEffect(() => {
+    //     const getUserData = async () => {
+    //         try {
+    //             const response = await axios.get("/api/users/me", { withCredentials: true });
+    //             setUserData(response.data);
+    //         } catch (error: unknown) {
+    //             if (error instanceof Error) {
+    //                 console.error("Error fetching user data:", error.message);
+    //             }
+    //             router.push("/login");
+    //         }
+    //     };
 
-        getUserData();
-    }, [router]);
+    //     getUserData();
+    // }, [router]);
 
     const handleLogout = async () => {
         try {
