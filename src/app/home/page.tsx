@@ -12,7 +12,6 @@ export default function HomePage() {
         const getUserData = async () => {
             try {
                 const response = await axios.get("/api/users/me", { withCredentials: true });
-                console.log("User data response:", response.data);
                 setUserData(response.data);
             } catch (error: unknown) {
                 if (error instanceof Error) {

@@ -134,7 +134,7 @@ export default function LoginPage() {
             {/* Right: Image */}
             <div className="w-1/2 h-screen relative">
                 <Image
-                    src="/SignUpSideImg.jpg"
+                    src="/SignupSideImg.jpg"
                     alt="SideImg"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
