@@ -138,8 +138,9 @@ export default function LoginPage() {
                     src="/SignUpSideImg.jpg"
                     alt="SideImg"
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover rounded-tl-[5%] rounded-bl-[5%]"
-                />
+                    />
             </div>
         </div>
     );
