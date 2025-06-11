@@ -1,0 +1,25 @@
+What have we done till now ill be stored here so  anyone reading this will be able to understand how the 
+things have been working!
+
+we have created this app using next js command
+we have enabled and installed many dev dependencies such as 
+
+->typescript
+->Eslint
+->Turbopack
+->tailwind
+->we also have used the app router so that we can route using the app feature
+
+we have installed other things such as axios, instead of using the conventional method of fetch we have 
+used the axios method.
+
+we also have installed bcrypt.js so that we can do the encrypting, as we dont want to store the password
+in the db in text format.
+
+we have installed jsonwebtoken so that we can manage cookies and also manage data using jwt and we have 
+installed nodemailer so that we can shoot out email using simple gmail format or other mail applications
+later we have installed react-hot-toast so we can have small pop up messages, such that you have login in
+successfully and we also have installed mongoose by which we are able to talk to the database
+
+
+
