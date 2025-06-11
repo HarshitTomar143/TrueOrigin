@@ -17,6 +17,7 @@ export default function SignupPage() {
     const [error, setError] = useState("");
     const [passwordError, setPasswordError] = useState("");
     const [showPasswordInfo, setShowPasswordInfo] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
 
     const validatePassword = (password: string) => {
         const hasUpperCase = /[A-Z]/.test(password);
@@ -85,9 +86,9 @@ export default function SignupPage() {
     };
 
     return (
-        <div className="flex flex-row min-h-screen bg-white">
+        <div className="flex flex-col lg:flex-row min-h-screen bg-white">
             {/* Left: Form */}
-            <div className="flex flex-col items-center justify-center w-1/2">
+            <div className="w-full lg:w-1/2 flex flex-col items-center justify-center p-4 lg:p-8">
                 <div className="w-full max-w-md flex flex-col items-center gap-8 font-sans">
                     {/* Logo and Name */}
                     <div className="flex flex-row items-center gap-4 self-start">
@@ -135,7 +136,7 @@ export default function SignupPage() {
                             <label htmlFor="password" className="block text-[15px] font-semibold mb-2">Password</label>
                             <div className="relative">
                                 <input
-                                    type="password"
+                                    type={showPassword ? "text" : "password"}
                                     id="password"
                                     value={user.password}
                                     onChange={(e)=> setUser({...user, password:e.target.value})}
@@ -180,24 +181,26 @@ export default function SignupPage() {
                                 <p className="text-red-500 text-sm mt-1">{passwordError}</p>
                             )}
                         </div>
+
                         <button
                             type="submit"
                             disabled={isLoading}
                             className="w-full bg-[#3A5B22] text-white font-semibold py-2.5 rounded-lg mt-2 shadow-sm hover:bg-[#2e471a] transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
                             {isLoading ? "Can't sign up!" : "Signup"}
                         </button>
-                    </form>
 
-                    {/* Have an account */}
-                    <p className="w-full text-center mt-4 text-base">Have an account? <Link href="/login" className="text-blue-600 font-semibold hover:underline">Log In</Link></p>
+                        <p className="w-full text-center mt-4 text-base">Have an account? <Link href="/login" className="text-blue-600 font-semibold hover:underline">Log In</Link></p>
+                    </form>
                 </div>
             </div>
+
             {/* Right: Image */}
-            <div className="w-1/2 h-screen relative">
+            <div className="hidden lg:block lg:w-1/2 h-screen relative">
                 <Image
                     src="/SignupSideImg.jpg"
                     alt="SideImg"
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover rounded-tl-[5%] rounded-bl-[5%]"
                 />
             </div>

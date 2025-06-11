@@ -35,9 +35,9 @@ export default function LoginPage() {
     };
 
     return (
-        <div className="flex flex-row min-h-screen bg-white">
+        <div className="flex flex-col lg:flex-row min-h-screen bg-white">
             {/* Left: Form */}
-            <div className="flex flex-col items-center justify-center w-1/2">
+            <div className="w-full lg:w-1/2 flex flex-col items-center justify-center p-4 lg:p-8">
                 <div className="w-full max-w-md flex flex-col gap-8 font-sans">
                     {/* Logo and Name */}
                     <div className="flex flex-row items-center gap-4 self-start">
@@ -54,7 +54,6 @@ export default function LoginPage() {
                         <p className="text-base text-left text-black/80 mt-2">Enter your Credentials to access your account</p>
                     </div>
 
-                    {/* Form */}
                     <form 
                         className="w-full flex flex-col gap-6"
                         onSubmit={(e) => {
@@ -67,6 +66,7 @@ export default function LoginPage() {
                                 <p className="text-red-600 text-sm">{error}</p>
                             </div>
                         )}
+
                         <div>
                             <label htmlFor="email" className="block text-[15px] font-semibold mb-2">Email address</label>
                             <input
@@ -77,6 +77,7 @@ export default function LoginPage() {
                                 placeholder="Enter your email"
                                 className="w-full h-11 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3A5B22] placeholder-gray-400 text-[15px] font-normal" />
                         </div>
+
                         <div>
                             <div className="flex justify-between items-center mb-2">
                                 <label htmlFor="password" className="block text-[15px] font-semibold">Password</label>
@@ -108,16 +109,18 @@ export default function LoginPage() {
                                 </button>
                             </div>
                         </div>
+
                         <div className="flex items-center gap-2 mb-2">
-                            <input 
-                                type="checkbox" 
-                                id="remember" 
+                            <input
+                                type="checkbox"
+                                id="remember"
                                 checked={rememberMe}
                                 onChange={(e) => setRememberMe(e.target.checked)}
                                 className="w-4 h-4 rounded border-gray-300" 
                             />
                             <label htmlFor="remember" className="text-[15px] font-normal">Remember for 30 days</label>
                         </div>
+
                         <button
                             type="submit"
                             onClick={onLogin}
@@ -125,21 +128,21 @@ export default function LoginPage() {
                             className="w-full bg-[#3A5B22] text-white font-semibold py-2.5 rounded-lg mt-2 shadow-sm hover:bg-[#2e471a] transition-colors text-[17px] cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
                             {buttonDisabled ? "Logging in..." : "Login"}
                         </button>
-                    </form>
 
-                    {/* Sign Up Link */}
-                    <p className="w-full text-center mt-4 text-base">Don't have an account? <Link href="/signup" className="text-blue-600 font-semibold hover:underline">Sign Up</Link></p>
+                        <p className="w-full text-center mt-4 text-base">Don't have an account? <Link href="/signup" className="text-blue-600 font-semibold hover:underline">Sign Up</Link></p>
+                    </form>
                 </div>
             </div>
+
             {/* Right: Image */}
-            <div className="w-1/2 h-screen relative">
+            <div className="hidden lg:block lg:w-1/2 h-screen relative">
                 <Image
                     src="/SignupSideImg.jpg"
                     alt="SideImg"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover rounded-tl-[5%] rounded-bl-[5%]"
-                    />
+                />
             </div>
         </div>
     );
