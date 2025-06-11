@@ -195,7 +195,7 @@ export default function SignupPage() {
             {/* Right: Image */}
             <div className="w-1/2 h-screen relative">
                 <Image
-                    src="/SignUpSideImg.jpg"
+                    src="/SignupSideImg.jpg"
                     alt="SideImg"
                     fill
                     className="object-cover rounded-tl-[5%] rounded-bl-[5%]"
