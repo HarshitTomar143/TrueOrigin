@@ -22,7 +22,6 @@ export default function LoginPage() {
             setButtonDisabled(true);
             const response = await axios.post("/api/users/login", {
                 ...user,
-                rememberMe
             });
             console.log("Login success", response.data);
             router.push("/home");

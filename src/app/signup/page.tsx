@@ -1,27 +1,22 @@
 "use client";
 
 import Link from "next/link";
-import React, {useEffect} from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import Image from "next/image";
 
-
-
-export default function SignupPage(){
-    
-    const router= useRouter();
-
-    const [user,setUser] = React.useState({
+export default function SignupPage() {
+    const router = useRouter();
+    const [user, setUser] = useState({
         email: "",
-        password:"",
-        username:"",
+        password: "",
+        username: "",
     });
-
-    const [isLoading, setIsLoading] = React.useState(false);
-    const [error, setError] = React.useState("");
-    const [passwordError, setPasswordError] = React.useState("");
-    const [showPasswordInfo, setShowPasswordInfo] = React.useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState("");
+    const [passwordError, setPasswordError] = useState("");
+    const [showPasswordInfo, setShowPasswordInfo] = useState(false);
 
     const validatePassword = (password: string) => {
         const hasUpperCase = /[A-Z]/.test(password);
@@ -54,6 +49,21 @@ export default function SignupPage(){
         }
     },[user]);
 
+    useEffect(() => {
+        const checkAuth = async () => {
+            try {
+                const response = await axios.get("/api/users/me", { withCredentials: true });
+                if (response.data) {
+                    router.push("/home");
+                }
+            } catch (error) {
+                // If there's an error, it means user is not authenticated, which is fine
+                console.log("User not authenticated");
+            }
+        };
+        checkAuth();
+    }, [router]);
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!user.username || !user.email || !user.password) {
@@ -62,31 +72,19 @@ export default function SignupPage(){
         }
         try {
             setIsLoading(true);
-            setError("");
-            const passwordValidationError = validatePassword(user.password);
-            if (passwordValidationError) {
-                setError(passwordValidationError);
-                return;
-            }
             const response = await axios.post("/api/users/signup", user);
             console.log("Signup successful:", response.data);
             router.push("/login");
         } catch (error: unknown) {
             if (error instanceof Error) {
-                console.log("Signup failed", error.message);
                 setError(error.message);
-            } else if (axios.isAxiosError(error)) {
-                console.log("Signup failed", error.response?.data?.error || error.message);
-                setError(error.response?.data?.error || "Something went wrong. Please try again.");
-            } else {
-                setError("Something went wrong. Please try again.");
             }
         } finally {
             setIsLoading(false);
         }
     };
 
-    return(
+    return (
         <div className="flex flex-row min-h-screen bg-white">
             {/* Left: Form */}
             <div className="flex flex-col items-center justify-center w-1/2">

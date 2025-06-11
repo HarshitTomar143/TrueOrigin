@@ -10,7 +10,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "True Origin",
-  description: "True Origin - Where authenticity meets trust",
+  description: "Where authenticity meets trust",
   icons: {
     icon: [
       {
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body className={`${poppins.variable} font-sans antialiased`}>
