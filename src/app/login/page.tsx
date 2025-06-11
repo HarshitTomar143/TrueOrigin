@@ -26,8 +26,22 @@ export default function LoginPage() {
             console.log("Login success", response.data);
             router.push("/home");
         } catch (error: unknown) {
-            if (error instanceof Error) {
+            if (axios.isAxiosError(error)) {
+                // Handle specific error messages from the API
+                const errorMessage = error.response?.data?.error || error.response?.data?.message;
+                if (errorMessage) {
+                    setError(errorMessage);
+                } else if (error.response?.status === 401) {
+                    setError("Invalid email or password");
+                } else if (error.response?.status === 404) {
+                    setError("User not found");
+                } else {
+                    setError("An error occurred during login. Please try again.");
+                }
+            } else if (error instanceof Error) {
                 setError(error.message);
+            } else {
+                setError("An unexpected error occurred. Please try again.");
             }
         } finally {
             setButtonDisabled(false);
