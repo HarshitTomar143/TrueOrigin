@@ -1,44 +1,63 @@
-// Remove unused imports if they're not needed
-// If you need these imports later, you can add them back when implementing the email functionality
+import nodemailer from 'nodemailer';
+import User from '@/models/userModel';
+import bcryptjs from 'bcryptjs';
 
-import nodemailer from "nodemailer";
-
-export const sendEmail = async (email: string, emailType: string, userId: string) => {
+export const sendEmail= async ({email, emailType, userId}:any) => {
     try {
-        // Create a transporter
-        const transporter = nodemailer.createTransport({
-            host: process.env.EMAIL_HOST,
-            port: Number(process.env.EMAIL_PORT),
-            secure: true,
-            auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASS,
-            },
-        });
+        
+        const hashedToken = await bcryptjs.hash(userId.toString(),10)
 
-        // Email content based on type
-        const emailContent = {
-            subject: emailType === "VERIFY" ? "Verify your email" : "Reset your password",
-            html: emailType === "VERIFY" 
-                ? `<p>Click <a href="${process.env.DOMAIN}/verifyemail?token=${userId}">here</a> to verify your email</p>`
-                : `<p>Click <a href="${process.env.DOMAIN}/resetpassword?token=${userId}">here</a> to reset your password</p>`,
-        };
-
-        // Send email
-        await transporter.sendMail({
-            from: process.env.EMAIL_USER,
-            to: email,
-            subject: emailContent.subject,
-            html: emailContent.html,
-        });
-
-        return { success: true, message: "Email sent successfully" };
-    } catch (error: unknown) {
-        if (error instanceof Error) {
-            console.error("Error sending email:", error.message);
-            return { success: false, message: error.message };
+        if(emailType==="VERIFY"){
+            const updatedUser = await User.findByIdAndUpdate(
+                userId,
+                {
+                    verifyToken: hashedToken,
+                    verifyTokenExpiry: Date.now() + 3600000
+                },
+                { new: true }
+            );
+            
+            if (!updatedUser) {
+                throw new Error("Failed to update user with verification token");
+            }
         }
-        return { success: false, message: "An unknown error occurred" };
-    }
-};
 
+        else if(emailType==="RESET"){
+            const updatedUser = await User.findByIdAndUpdate(
+                userId,
+                {
+                    forgotPasswordToken: hashedToken,
+                    forgotPasswordTokenExpiry: Date.now() + 3600000
+                },
+                { new: true }
+            );
+            
+            if (!updatedUser) {
+                throw new Error("Failed to update user with reset token");
+            }
+        }
+
+        // Looking to send emails in production? Check out our Email API/SMTP product!
+        var transport = nodemailer.createTransport({
+            host: "sandbox.smtp.mailtrap.io",
+            port: 2525,
+            auth: {
+                user: "5c1298fb834f1b",
+                pass: "c2b61ae1eb9e6c"
+        }
+        });
+
+        const mailOptions= {
+            from: 'Harshit@gmail.com',
+            to: email,
+            subject: emailType==="VERIFY"? "Verify your email" : "Reset your password",
+            html: `<p>Click <a href="${process.env.DOMAIN}/verifyemail?token=${hashedToken}">here</a> to ${emailType === "VERIFY" ?"Verify your email":"Reset your password"} or copy or paste the link in the browser. <br> ${process.env.DOMAIN}/verifyemail?token=${hashedToken}</p>`
+        }
+
+        const mailResponse = await transport.sendMail(mailOptions);
+        return mailResponse;
+
+    } catch (error:any) {
+        throw new Error(error.message);
+    }
+}
