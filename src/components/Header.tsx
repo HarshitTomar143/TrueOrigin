@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
@@ -13,6 +13,7 @@ interface HeaderProps {
 export default function Header(props: HeaderProps) {
   const router = useRouter();
   const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleSignOut = async () => {
     try {
@@ -51,7 +52,9 @@ export default function Header(props: HeaderProps) {
         />
         <span className="text-3xl font-bold text-[#3A5B22]">TrueOrigin</span>
       </Link>
-      <div className="flex items-center bg-[#D1E7D1] shadow-md rounded-lg py-2 px-6 space-x-6 relative z-10">
+
+      {/* Desktop Navigation */}
+      <div className="hidden md:flex items-center bg-[#D1E7D1] shadow-md rounded-lg py-2 px-6 space-x-6 relative z-10">
         <nav className="flex space-x-6 flex-nowrap">
           <Link href="/home/products" className={`text-gray-700 hover:text-[#3A5B22] font-medium transition-transform transform ${pathname === '/home/products' ? "scale-105 text-[#2e471a] border-b-2 border-[#2e471a]" : ""}`}>
             Products📦
@@ -77,10 +80,60 @@ export default function Header(props: HeaderProps) {
           Sign Out
         </button>
       </div>
-      {/* Swiggly lines */}
-      {/* <div className="swiggly-line swiggly-line-1"></div> */}
-      {/* <div className="swiggly-line swiggly-line-2"></div> */}
-      {/* <div className="swiggly-line swiggly-line-3"></div> */}
+
+      {/* Mobile Menu Button */}
+      <div className="md:hidden flex items-center space-x-4">
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="p-2 rounded-md hover:bg-gray-100 focus:outline-none"
+        >
+          <svg
+            className="h-6 w-6 text-gray-600"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            {isMenuOpen ? (
+              <path d="M6 18L18 6M6 6l12 12" />
+            ) : (
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            )}
+          </svg>
+        </button>
+      </div>
+
+      {/* Mobile Navigation Menu */}
+      {isMenuOpen && (
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg rounded-b-lg z-50">
+          <nav className="flex flex-col p-4 space-y-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`text-gray-700 hover:text-[#3A5B22] font-medium px-4 py-2 rounded-md ${
+                  pathname === link.href ? "bg-[#D1E7D1] text-[#2e471a]" : ""
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {link.name}
+              </Link>
+            ))}
+            <button
+              onClick={() => {
+                handleSignOut();
+                setIsMenuOpen(false);
+              }}
+              className="w-full text-left px-4 py-2 text-gray-700 hover:text-[#3A5B22] font-medium"
+            >
+              Sign Out
+            </button>
+          </nav>
+        </div>
+      )}
+
       <div className="sine-wave-bottom"></div>
     </header>
   );
