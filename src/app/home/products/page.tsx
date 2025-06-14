@@ -36,7 +36,7 @@ export default function ProductsPage() {
             name: "Mysore Sanadal Soap",
             type: "Soap",
             origin: "Mysore, Karnataka",
-            image: "/mysoreSandalSoap.webp"
+            image: "/MysoreSandalSoap.webp"
         },
         {
             name: "Madhubani Paintings",
