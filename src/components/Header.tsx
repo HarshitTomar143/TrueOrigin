@@ -36,13 +36,13 @@ export default function Header(props: HeaderProps) {
   ];
 
   return (
-    <header className="flex items-center justify-between w-full p-4 relative overflow-hidden">
+    <header className="flex items-center justify-between w-full p-4 relative">
       {/* Honey drops */}
       <div className="honey-drop honey-drop-1"></div>
       <div className="honey-drop honey-drop-2"></div>
       <div className="honey-drop honey-drop-3"></div>
 
-      <Link href="/home" className="flex items-center cursor-pointer relative z-10">
+      <Link href="/home" className="flex items-center cursor-pointer relative z-20">
         <Image
           src="/Logo.jpg"
           alt="TrueOrigin Logo"
@@ -54,7 +54,7 @@ export default function Header(props: HeaderProps) {
       </Link>
 
       {/* Desktop Navigation */}
-      <div className="hidden md:flex items-center bg-[#D1E7D1] shadow-md rounded-lg py-2 px-6 space-x-6 relative z-10">
+      <div className="hidden md:flex items-center bg-[#D1E7D1] shadow-md rounded-lg py-2 px-6 space-x-6 relative z-20">
         <nav className="flex space-x-6 flex-nowrap">
           <Link href="/home/products" className={`text-gray-700 hover:text-[#3A5B22] font-medium transition-transform transform ${pathname === '/home/products' ? "scale-105 text-[#2e471a] border-b-2 border-[#2e471a]" : ""}`}>
             Products📦
@@ -82,7 +82,7 @@ export default function Header(props: HeaderProps) {
       </div>
 
       {/* Mobile Menu Button */}
-      <div className="md:hidden flex items-center space-x-4">
+      <div className="md:hidden flex items-center space-x-4 relative z-20">
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="p-2 rounded-md hover:bg-gray-100 focus:outline-none"
@@ -107,7 +107,7 @@ export default function Header(props: HeaderProps) {
 
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg rounded-b-lg z-50">
+        <div className="md:hidden fixed top-[88px] left-0 right-0 bg-white shadow-lg z-50">
           <nav className="flex flex-col p-4 space-y-4">
             {navLinks.map((link) => (
               <Link

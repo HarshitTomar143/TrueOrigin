@@ -70,22 +70,65 @@ export default function HomePage() {
                             Featured Products
                         </h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                            {[1, 2, 3, 4].map((item) => (
-                                <div key={item} className="bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105">
-                                    <div className="relative h-48">
-                                        <Image
-                                            src={`/product${item}.jpg`}
-                                            alt={`Featured Product ${item}`}
-                                            fill
-                                            className="object-cover"
-                                        />
-                                    </div>
-                                    <div className="p-4">
-                                        <h3 className="font-semibold text-lg text-[#3A5B22]">Featured Product {item}</h3>
-                                        <p className="text-gray-600 text-sm mt-1">Discover more about this authentic product</p>
-                                    </div>
+                            <Link href="/home/products" className="bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105">
+                                <div className="relative h-48">
+                                    <Image
+                                        src="/madhubaniPainting.jpg"
+                                        alt="Madhubani Pa"
+                                        fill
+                                        className="object-cover"
+                                    />
                                 </div>
-                            ))}
+                                <div className="p-4">
+                                    <h3 className="font-semibold text-lg text-[#3A5B22]">Madhubani Painting</h3>
+                                    <p className="text-gray-600 text-sm mt-1">Bihar's Traditional Art</p>
+                                </div>
+                            </Link>
+
+                            <Link href="/home/products" className="bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105">
+                                <div className="relative h-48">
+                                    <Image
+                                        src="/banglarRasagola.jpg"
+                                        alt="Banglar Rasagola"
+                                        fill
+                                        className="object-cover"
+                                    />
+                                </div>
+                                <div className="p-4">
+                                    <h3 className="font-semibold text-lg text-[#3A5B22]">Banglar Rasagola</h3>
+                                    <p className="text-gray-600 text-sm mt-1">Bengal's Sweet Heritage</p>
+                                </div>
+                            </Link>
+
+                            <Link href="/home/products" className="bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105">
+                                <div className="relative h-48">
+                                    <Image
+                                        src="/darjeelingTea.jpg"
+                                        alt="Darjeeling Tea"
+                                        fill
+                                        className="object-cover"
+                                    />
+                                </div>
+                                <div className="p-4">
+                                    <h3 className="font-semibold text-lg text-[#3A5B22]">Darjeeling Tea</h3>
+                                    <p className="text-gray-600 text-sm mt-1">The Champagne of Teas</p>
+                                </div>
+                            </Link>
+
+                            <Link href="/home/products" className="bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105">
+                                <div className="relative h-48">
+                                    <Image
+                                        src="/feni.jpg"
+                                        alt="Goan Feni"
+                                        fill
+                                        className="object-cover"
+                                    />
+                                </div>
+                                <div className="p-4">
+                                    <h3 className="font-semibold text-lg text-[#3A5B22]">Goan Feni</h3>
+                                    <p className="text-gray-600 text-sm mt-1">Traditional Cashew Spirit</p>
+                                </div>
+                            </Link>
                         </div>
                     </div>
                 </div>
