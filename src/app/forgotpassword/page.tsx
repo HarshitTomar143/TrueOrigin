@@ -43,7 +43,7 @@ export default function ForgotPasswordPage() {
                 />
             </div>
 
-            <div className="relative bg-white p-8 rounded-lg shadow-md w-full max-w-md z-10">
+            <div className="relative bg-white p-4 sm:p-8 rounded-lg shadow-md w-full max-w-md z-10">
                 <h1 className="text-2xl font-bold mb-6 text-center text-[#3A5B22]">Forgot Password</h1>
                 <form onSubmit={handleSubmit} className="space-y-4">
                     {message && (

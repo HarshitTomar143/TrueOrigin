@@ -3,27 +3,16 @@
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import Header from "@/components/Header";
+import TeaCup from "@/components/TeaCup";
 
 export default function HomePage() {
     const router = useRouter();
     const [userData, setUserData] = useState<{ username: string } | null>(null);
 
-    // useEffect(() => {
-    //     const getUserData = async () => {
-    //         try {
-    //             const response = await axios.get("/api/users/me", { withCredentials: true });
-    //             setUserData(response.data);
-    //         } catch (error: unknown) {
-    //             if (error instanceof Error) {
-    //                 console.error("Error fetching user data:", error.message);
-    //             }
-    //             router.push("/login");
-    //         }
-    //     };
-
-    //     getUserData();
-    // }, [router]);
-
+    
     const handleLogout = async () => {
         try {
             await axios.get("/api/users/logout");
@@ -37,16 +26,24 @@ export default function HomePage() {
     };
 
     return (
-        <div className="min-h-screen bg-white p-8">
-            <h1 className="text-3xl font-bold text-[#3A5B22]">
-                Welcome {userData?.username || "User"}!
-            </h1>
-            <button
-                onClick={handleLogout}
-                className="mt-4 px-4 py-2 bg-[#3A5B22] text-white rounded-md hover:bg-opacity-90"
-            >
-                Logout
-            </button>
+        <div className="min-h-screen flex flex-col bg-gray-100">
+            <Header />
+
+            {/* Main content area */}
+            <div className="flex-grow flex flex-col items-center justify-center p-4 sm:p-8">
+                <div className="w-full max-w-md text-center bg-white p-8 rounded-lg shadow-md">
+                    <TeaCup />
+                    <h1 className="text-3xl font-bold text-[#3A5B22] mb-6">
+                        Welcome {userData?.username || "User"}!
+                    </h1>
+                </div>
+            </div>
+
+            {/* Placeholder for the green waves at the bottom, if needed */}
+            <div className="relative w-full h-48 overflow-hidden">
+                <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-green-100 to-transparent transform -skew-y-3 origin-bottom-left"></div>
+                <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-green-50 to-transparent transform skew-y-6 origin-bottom-right"></div>
+            </div>
         </div>
     );
 }

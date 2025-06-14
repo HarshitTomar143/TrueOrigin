@@ -1,1 +1,191 @@
- @import "tailwindcss";
+@import "tailwindcss";
+
+@keyframes steam {
+  0% {
+    transform: translateY(0) scaleX(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-80px) scaleX(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes honey-drop {
+  0% {
+    transform: translateY(-20px) translateX(-50%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(150px) translateX(-50%);
+    opacity: 0;
+  }
+}
+
+@keyframes swiggly-move {
+  0% {
+    transform: translateX(-150%) translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateX(50%) translateY(10px) rotate(180deg);
+    opacity: 0.9;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(250%) translateY(0) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes sine-wave-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes logo-wave-impact {
+  0% {
+    transform: scale(1.02) skewX(2deg); /* Distortion when wave is at leftmost */
+  }
+  25% {
+    transform: scale(1) skewX(0deg); /* Return to normal */
+  }
+  50% {
+    transform: scale(1) skewX(0deg); /* Normal state when wave is at rightmost */
+  }
+  75% {
+    transform: scale(1) skewX(0deg); /* Return to normal */
+  }
+  100% {
+    transform: scale(1.02) skewX(2deg); /* Distortion when wave is back at leftmost */
+  }
+}
+
+.tea-bowl-container {
+  position: relative;
+  width: 100px;
+  height: 80px;
+}
+
+.tea-bowl-svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.steam {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  animation: steam 3s infinite ease-out;
+}
+
+.steam-1 {
+  width: 10px;
+  height: 10px;
+  left: 30px;
+  bottom: 50px;
+  animation-delay: 0s;
+}
+
+.steam-2 {
+  width: 12px;
+  height: 12px;
+  left: 50px;
+  bottom: 55px;
+  animation-delay: 1s;
+}
+
+.steam-3 {
+  width: 9px;
+  height: 9px;
+  left: 70px;
+  bottom: 45px;
+  animation-delay: 2s;
+}
+
+.honey-drop {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  background-color: #FFD700; /* Honey color */
+  border-radius: 50%;
+  animation: honey-drop 4s infinite ease-in-out;
+  z-index: -1; /* Ensure drops are behind content */
+}
+
+.honey-drop-1 {
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.honey-drop-2 {
+  left: 50%;
+  animation-delay: 1.5s;
+}
+
+.honey-drop-3 {
+  left: 80%;
+  animation-delay: 3s;
+}
+
+.swiggly-line {
+  position: absolute;
+  top: 90px; /* Adjusted position below the header */
+  background-color: rgba(60, 179, 113, 0.4); /* Greenish color, semi-transparent */
+  height: 30px; /* Thicker lines */
+  border-radius: 40% 60% 70% 30% / 60% 40% 30% 70%; /* Organic wavy shape */
+  animation: swiggly-move 15s infinite linear; /* Longer animation duration */
+  z-index: 0;
+  filter: blur(1px); /* Soften the edges */
+}
+
+.swiggly-line-1 {
+  width: 100px;
+  left: -5%;
+  animation-delay: 0s;
+}
+
+.swiggly-line-2 {
+  width: 150px;
+  left: -15%;
+  animation-delay: 5s;
+}
+
+.swiggly-line-3 {
+  width: 120px;
+  left: -25%;
+  animation-delay: 10s;
+}
+
+.sine-wave-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px; /* Height of the wave */
+  background: linear-gradient(to right, rgba(58, 91, 34, 0.1), rgba(58, 91, 34, 0.5), rgba(58, 91, 34, 0.1));
+  background-size: 200% 100%;
+  border-radius: 50% / 100px 100px 0 0; /* Creates the wave shape */
+  animation: sine-wave-move 4s infinite linear alternate;
+  z-index: 0;
+  filter: blur(1px);
+}
+
+.animation-logo-wave-impact {
+  animation: logo-wave-impact 4s infinite linear alternate; /* Apply the animation */
+}

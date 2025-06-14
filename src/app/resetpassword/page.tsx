@@ -64,7 +64,7 @@ export default function ResetPasswordPage() {
                 />
             </div>
 
-            <div className="relative bg-white p-8 rounded-lg shadow-md w-full max-w-md z-10">
+            <div className="relative bg-white p-4 sm:p-8 rounded-lg shadow-md w-full max-w-md z-10">
                 <h1 className="text-2xl font-bold mb-6 text-center text-[#3A5B22]">Reset Password</h1>
                 {token === "" ? (
                     <div className="text-center text-red-500">No token found. Please use the link from your email.</div>
