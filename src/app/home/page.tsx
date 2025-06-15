@@ -81,7 +81,7 @@ export default function HomePage() {
                                 </div>
                                 <div className="p-4">
                                     <h3 className="font-semibold text-lg text-[#3A5B22]">Madhubani Painting</h3>
-                                    <p className="text-gray-600 text-sm mt-1">Bihar's Traditional Art</p>
+                                    <p className="text-gray-600 text-sm mt-1">Bihar's Traditional Artform</p>
                                 </div>
                             </Link>
 
