@@ -12,385 +12,450 @@ export default function ProductsPage() {
             name: "Darjeeling's Tea",
             type: "Grocery",
             origin: "Darjeeling, West Bengal",
-            image: "/darjeelingTea.jpg"
+            image: "/darjeelingTea.jpg",
+            url: "/home/products/darjeelingtea"
         },
         {
             name: "Chanderi Saree",
             type: "Fabric",
             origin: "Chanderi, Madhya Pradesh",
-            image: "/chanderiSaree.jpg"
+            image: "/chanderiSaree.jpg",
+            url: "/home/products/chanderisaree"
         },
         {
             name: "Kancheepuram Silk",
             type: "Fabric",
             origin: "Kancheepuram, Tamil Nadu",
-            image: "/kancheepuramSilk.jpg"
+            image: "/kancheepuramSilk.jpg",
+            url: "/home/products/kancheepuramsaree"
         },
         {
             name: "Kullu Shawl",
             type: "Fabric",
             origin: "Kullu, Himachal Pradesh",
-            image: "/kulluShawl.jpg"
+            image: "/kulluShawl.jpg",
+            url: "/home/products/kullushawl"
         },
         {
             name: "Mysore Sanadal Soap",
             type: "Soap",
             origin: "Mysore, Karnataka",
-            image: "/MysoreSandalSoap.webp"
+            image: "/MysoreSandalSoap.webp",
+            url: "/home/products/mysoresandalsoap"
         },
         {
             name: "Madhubani Paintings",
             type: "Art Form",
             origin: "Bihar, India",
-            image: "/madhubaniPainting.jpg"
+            image: "/madhubaniPainting.jpg",
+            url: "/home/products/madhubanipaintings"
         },
         {
             name: "Mysore Silk",
             type: "Fabric",
             origin: "Mysore, Karnataka",
-            image: "/mysoreSilk.jpg"
+            image: "/mysoreSilk.jpg",
+            url: "/home/products/mysoresilk"
         },
         {
             name: "Salem Fabric",
             type: "Fabric",
             origin: "Salem, Tamil Nadu",
-            image: "/salemFabric.jpg"
+            image: "/salemFabric.jpg",
+             url: "/home/products/salemfabric"
         },
         {
             name: "Channapatna Toys",
             type: "Art Form",
             origin: "Karnataka, India",
-            image: "/channapatnaToys.jpg"
+            image: "/channapatnaToys.jpg",
+             url: "/home/products/channapatnatoys"
         },
         {
             name: "Shrikalasthi Kalamkari",
             type: "Art Form",
             origin: "Andra Pradesh, India",
-            image: "/shrikalasthiKalamkari.jpg"
+            image: "/shrikalasthiKalamkari.jpg",
+            url: "/home/products/kalamkari"
         },
         {
             name: "Thanjavur Paintings",
             type: "Art Form",
             origin: "Thanjavur, Tamil Nadu",
-            image: "/thanjavurPaintings.jpg"
+            image: "/thanjavurPaintings.jpg",
+            url: "/home/products/thanjavurpaintings"
         },
         {
             name: "Muga Silk",
             type: "Fabric",
             origin: "Muga, Assam",
-            image: "/mugaSilk.jpg"
+            image: "/mugaSilk.jpg",
+            url: "/home/products/mugasilk"
+            
         },
         {
             name: "Kathputlis",
             type: "Art Form",
             origin: "Rajasthan, India",
-            image: "/kathputli.jpg"
+            image: "/kathputli.jpg",
+            url: "/home/products/kathputli"
         },
         {
             name: "Blue Pottery",
             type: "Pottery",
             origin: "Jaipur, Rajasthan",
-            image: "/bluePottery.jpg"
+            image: "/bluePottery.jpg",
+            url: "/home/products/bluepottery"
         },
         {
             name: "Kutch Embroidery",
             type: "Fabric",
             origin: "Kutch, Gujrat",
-            image: "/kutchEmbroidery.jpg"
+            image: "/kutchEmbroidery.jpg",
+            url: "/home/products/kutchembroidery"
         },
         {
             name: "Chamba Rumal",
             type: "Fabric",
             origin: "Chamba, Himanchal Pradesh",
-            image: "/chambaRumal.jpg"
+            image: "/chambaRumal.jpg",
+            url: "/home/products/chambarumal"
         },
         {
             name: "Pipli Artwork",
             type: "Art Form",
             origin: "Odisha, India",
-            image: "/pipliArtwork.jpg"
+            image: "/pipliArtwork.jpg",
+            url: "/home/products/pipliartwork"
         },
         {
             name: "Thanjavur Doll",
             type: "Artwork",
             origin: "Thanjavur, Tamil Nadu",
-            image: "/thanjavurDoll.jpg"
+            image: "/thanjavurDoll.jpg",
+            url: "/home/products/thanjavurdolls"
         },
         {
             name: "Banaras Silk Saree",
             type: "Fabric",
             origin: "Varanasi, Uttar Pradesh",
-            image: "/banarasiSilkSaree.jpg"
+            image: "/banarasiSilkSaree.jpg",
+            url: "/home/products/banarassilk"
         },
         {
             name: "Surat Zari Fabric",
             type: "Fabric",
             origin: "Surat, Gujrat",
-            image: "/suratZari.jpg"
+            image: "/suratZari.jpg",
+            url: "/home/products/suratzari"
         },
         {
             name: "Phulkari",
             type: "Fabric",
-            origin: "Gujrat, India",
-            image: "/suratZari.jpg"
+            origin: "Punjab, India",
+            image: "/phulkari.jpg",
+            url: "/home/products/phulkari"
         },
         {
             name: "Firozabad Bangles",
             type: "Art Form",
             origin: "Firozabad, Uttar Pradesh",
-            image: "/firozabadGlass.jpg"
+            image: "/firozabadGlass.jpg",
+            url: "/home/products/firozabadbangles"
         },
         {
             name: "Warli Paintings",
             type: "Art Form",
             origin: "Odisha, India",
-            image: "/warliPaintings.jpg"
+            image: "/warliPaintings.jpg",
+            url: "/home/products/warli"
         },
         {
             name: "Mirzapur Dari",
             type: "Home Decor",
             origin: "Mirzapur, Uttar Pradesh",
-            image: "/mirzapurHandmadeDari.jpg"
+            image: "/mirzapurHandmadeDari.jpg",
+             url: "/home/products/mirzapurdari"
         },
         {
             name: "Lucknow Chikankari",
             type: "Fabric",
             origin: "Lucknow, Uttar Pradesh",
-            image: "/lucknowChikankari.jpg"
+            image: "/lucknowChikankari.jpg",
+             url: "/home/products/chikankari"
         },
         {
             name: "Makrana Marble",
             type: "Stone/ Stone Work",
             origin: "Rajasthan, India",
-            image: "/makranaMarble.jpg"
+            image: "/makranaMarble.jpg",
+             url: "/home/products/makranamarbles"
         },
         {
             name: "Kashmir Walnut Wood Carving",
             type: "Art Form",
             origin: "Kashmir, India",
-            image: "/kashmirWalnutWoodCarving.jpg"
+            image: "/kashmirWalnutWoodCarving.jpg",
+             url: "/home/products/kashmirwalnutwoodcarving"
         },
         {
             name: "Birdiware",
             type: "Metal Work",
             origin: "Karnataka, India",
-            image: "/bidriware.jpg"
+            image: "/bidriware.jpg",
+             url: "/home/products/bidriware"
         },
         {
             name: "Kondapalli Toys",
             type: "Art Form",
             origin: "Andra Pradesh, India",
-            image: "/kondapalliToys.jpg"
+            image: "/kondapalliToys.jpg",
+             url: "/home/products/kondapallitoys"
         },
         {
             name: "Nirmal Paintings",
             type: "Art Form",
             origin: "Telangana, India",
-            image: "/nirmalPaintings.jpg"
+            image: "/nirmalPaintings.jpg",
+             url: "/home/products/nirmalpaintings"
         },
         {
             name: "Navara Rice",
             type: "Grocery",
             origin: "Telangana, India",
-            image: "/navaraRice.jpg"
+            image: "/navaraRice.jpg",
+            url: "/home/products/navararice"
         },
         {
             name: "Malabar Pepper",
             type: "Grocery",
             origin: "Kerela, India",
-            image: "/malabarPepper.jpg"
+            image: "/malabarPepper.jpg",
+            url: "/home/products/malabarpepper"
         },
         {
             name: "Monsooned Malabar Coffee",
             type: "Grocery",
             origin: "Kerela,India",
-            image: "/monsoonedMalabarCoffee.jpg"
+            image: "/monsoonedMalabarCoffee.jpg",
+            url: "/home/products/monsoonedmalabarcoffee"
         },
         {
-            name: "Lakshanbhog Mango",
+            name: "Lakshamanbhog Mango",
             type: "Edibles",
             origin: "West Bengal, India",
-            image: "/lakshmanbhogMango.jpg"
+            image: "/lakshmanbhogMango.jpg",
+            url: "/home/products/lakshyamanbhogmango"
         },
         {
             name: "Naga Mircha",
             type: "Grocery",
             origin: "Nagaland, India",
-            image: "/nagaMircha.jpg"
+            image: "/nagaMircha.jpg",
+            url: "/home/products/nagamircha"
         },
         {
             name: "Kalampur Red Banana",
             type: "Edibles",
             origin: "Odisha, India",
-            image: "/kalampurRedBanana.jpg"
+            image: "/kalampurRedBanana.jpg",
+            url: "/home/products/kalampurredbananas"
         },
         {
             name: "Nashik Grapes",
             type: "Edibles",
             origin: "Nashik, Maharastra",
-            image: "/nashikGrapes.jpg"
+            image: "/nashikGrapes.jpg",
+            url: "/home/products/nashikgrapes"
         },
         {
             name: "Gir Kesar Mango",
             type: "Edibles",
             origin: "Gir, Gujrat",
-            image: "/girKesarMango.jpg"
+            image: "/girKesarMango.jpg",
+            url: "/home/products/girkesarmango"
         },
         {
             name: "Nagpur Orages",
             type: "Edibles",
             origin: "Nagpur, Maharastra",
-            image: "/nagpurOrange.jpg"
+            image: "/nagpurOrange.jpg",
+            url: "/home/products/nagpuroranges"
         },
         {
             name: "Tezpur Litchi",
             type: "Edibles",
             origin: "Tezpur, Assam",
-            image: "/tezpurLitchi.jpg"
+            image: "/tezpurLitchi.jpg",
+            url: "/home/products/tezpurlitchi"
         },
         {
             name: "Basmati Rice",
             type: "Grocery",
             origin: "India",
-            image: "/basmatiRice.jpg"
+            image: "/basmatiRice.jpg",
+            url: "/home/products/basmatirice"
         },
         {
             name: "Alphonso Mango",
             type: "Edibles",
             origin: "Maharastra, India",
-            image: "/alphonsoMango.jpg"
+            image: "/alphonsoMango.jpg",
+            url: "/home/products/alphonsomango"
         },
         {
             name: "Jeerakasala Rice",
             type: "Grocery",
             origin: "Waynad, Kerela",
-            image: "/waynadJeerakasala.jpeg"
+            image: "/waynadJeerakasala.jpeg",
+            url: "/home/products/jeerakasalarice"
         },
         {
             name: "Vazhakulam Pineapple",
             type: "Edibles",
             origin: "Kerela, India",
-            image: "/vazhakulamPineapple.jpg"
+            image: "/vazhakulamPineapple.jpg",
+            url: "/home/products/vazhakulampineapple"
         },
         {
             name: "Coorg Green Cardamom",
             type: "Grocery",
             origin: "Coorg, Karnataka",
-            image: "/coorgGreenCardamom.jpg"
+            image: "/coorgGreenCardamom.jpg",
+            url: "/home/products/coorggreencardamom"
         },
         {
             name: "Dharwad Pedha",
             type: "Edibles",
             origin: "Dharwad, Karnataka",
-            image: "/dharwadPedha.jpg"
+            image: "/dharwadPedha.jpg",
+            url: "/home/products/dharwadpedha"
         },
         {
             name: "Feni",
             type: "Liquor",
             origin: "Goa, India",
-            image: "/feni.jpg"
+            image: "/feni.jpg",
+            url: "/home/products/feni"
         },
         {
             name: "Tirupati Ladoo",
             type: "Edibles",
             origin: "Tirupati,Andra Pedha",
-            image: "/tirupathiLaddu.jpg"
+            image: "/tirupathiLaddu.jpg",
+            url: "/home/products/tirupatiladdu"
         },
         {
             name: "Bikaneri Bhujia",
             type: "Edibles",
             origin: "Bikaner, Rajasthan",
-            image: "/bikaneriBhujia.jpg"
+            image: "/bikaneriBhujia.jpg",
+            url: "/home/products/bikaneribhujia"
         },
         {
             name: "Ratlami Sev",
             type: "Edibles",
             origin: "Ratlam, Madhya Pradesh",
-            image: "/ratlamiSev.jpg"
+            image: "/ratlamiSev.jpg",
+            url: "/home/products/ratlamisev"
         },
         {
             name: "Agra Petha",
             type: "Edibles",
             origin: "Agra, Uttar Pradesh",
-            image: "/agraPetha.jpg"
+            image: "/agraPetha.jpg",
+            url: "/home/products/agrapetha"
         },
         {
             name: "Shrivilliputtur Palkova",
             type: "Edibles",
             origin: "Tamil Nadu, India",
-            image: "/srivilliputturPalkova.jpg"
+            image: "/srivilliputturPalkova.jpg",
+            url: "/home/products/shrivilliputturpalkova"
         },
         {
             name: "Bhiwapur Chilli",
             type: "Grocery",
             origin: "Maharastra, India",
-            image: "/bhiwapurChilli.jpg"
+            image: "/bhiwapurChilli.jpg",
+            url: "/home/products/bhiwapurchilli"
         },
         {
             name: "Khola Chilli",
             type: "Grocery",
             origin: "Goa, India",
-            image: "/kholaChilli.jpg"
+            image: "/kholaChilli.jpg",
+            url: "/home/products/kholachilli"
         },
         {
             name: "Palakkad Matta Rice",
             type: "Grocery",
             origin: "Kerela, India",
-            image: "/palakkadMattaRice.webp"
+            image: "/palakkadMattaRice.webp",
+            url: "/home/products/pallakadmattarice"
         },
         {
             name: "Assam Orthodox Tea",
             type: "Grocery",
             origin: "Assam, India",
-            image: "/assamOrthodoxTea.jpg"
+            image: "/assamOrthodoxTea.jpg",
+            url: "/home/products/assamorthodoxtea"
         },
         {
             name: "Odisha Rasagola",
             type: "Edibles",
             origin: "Odisha, India",
-            image: "/odishaRasagola.webp"
+            image: "/odishaRasagola.webp",
+            url: "/home/products/odisharasagola"
         },
         {
             name: "Banglar Rasagola",
             type: "Edibles",
             origin: "West Bengal, India",
-            image: "/banglarRasagola.jpg"
+            image: "/banglarRasagola.jpg",
+            url: "/home/products/banglarasagola"
         },
         {
             name: "Mizo Chilli",
             type: "Grocery",
             origin: "Mizoram, India",
-            image: "/mizoChilli.webp"
+            image: "/mizoChilli.webp",
+            url: "/home/products/mizochilli"
         },
         {
             name: "Kolhapuri Chappal",
             type: "Footwear",
             origin: "Kolhapur, Maharastra",
-            image: "/kolhapuriChappal.jpeg"
+            image: "/kolhapuriChappal.jpeg",
+            url: "/home/products/kolhapurichappal"
         },
         {
             name: "Pashmina Wool",
             type: "Fabric",
             origin: "Jammu & Kahmir, India",
-            image: "/pashminaWool.jpg"
+            image: "/pashminaWool.jpg",
+            url: "/home/products/pashminawool"
         },
         {
             name: "Aranmula Kanadi",
             type: "Metal Work",
             origin: "Kerela, India",
-            image: "/aranmulaKannadi.jpg"
+            image: "/aranmulaKannadi.jpg",
+            url: "/home/products/aranmulakanadi"
         },
         {
             name: "Etikoppaka Toys",
             type: "Art Form",
             origin: "Andhra Pradesh, India",
-            image: "/etikoppakaToys.webp"
+            image: "/etikoppakaToys.webp",
+            url: "/home/products/etikoppakatoys"
         },
         {
             name: "Solapur Chaddar",
             type: "Fabric",
             origin: "Solapur, Maharastra",
-            image: "/solapurChaddar.jpg"
+            image: "/solapurChaddar.jpg",
+            url: "/home/products/solapurchaddar"
         }
     ];
 
@@ -414,32 +479,32 @@ export default function ProductsPage() {
                                         fill
                                         className="object-cover hover:scale-110 transition-transform duration-300"
                                     />
-                                </div>
+                    </div>
                                 <h1 className="text-2xl font-bold text-emerald-800">{product.name}</h1>
                                 <div className="w-full space-y-2">
                                     <div className="flex items-center gap-2 text-gray-600">
                                         <span className="font-medium">Type:</span>
                                         <span>{product.type}</span>
-                                    </div>
+                    </div>
                                     <div className="flex items-center gap-2 text-gray-600">
                                         <span className="font-medium">Origin:</span>
                                         <span>{product.origin}</span>
-                                    </div>
-                                </div>
+                    </div>
+                </div>
                                 <div className="w-full mt-4 space-y-3">
-                                    <Link href="/" className="block w-full">
+                                    <Link href={product.url as string} className="block w-full">
                                         <button className="w-full py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors duration-300 cursor-pointer">
                                             View Details
                                         </button>
-                                    </Link>
+                    </Link>
                                     <Link href="/" className="block w-full">
                                         <button className="w-full py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors duration-300 cursor-pointer">
                                             View Buying Details
                                         </button>
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
+                    </Link>
+                    </div>
+                </div>
+                    </div>
                     ))}
                 </div>
             </div>

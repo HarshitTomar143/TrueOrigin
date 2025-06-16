@@ -70,11 +70,11 @@ export default function HomePage() {
                             Featured Products
                         </h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                            <Link href="/home/products" className="bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105">
+                            <Link href="/home/products/madhubanipaintings" className="bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105">
                                 <div className="relative h-48">
                                     <Image
                                         src="/madhubaniPainting.jpg"
-                                        alt="Madhubani Pa"
+                                        alt="Madhubani Paintings"
                                         fill
                                         className="object-cover"
                                     />
@@ -85,7 +85,7 @@ export default function HomePage() {
                                 </div>
                             </Link>
 
-                            <Link href="/home/products" className="bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105">
+                            <Link href="/home/products/banglarasagola" className="bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105">
                                 <div className="relative h-48">
                                     <Image
                                         src="/banglarRasagola.jpg"
@@ -100,7 +100,7 @@ export default function HomePage() {
                                 </div>
                             </Link>
 
-                            <Link href="/home/products" className="bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105">
+                            <Link href="/home/products/darjeelingtea" className="bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105">
                                 <div className="relative h-48">
                                     <Image
                                         src="/darjeelingTea.jpg"
@@ -115,7 +115,7 @@ export default function HomePage() {
                                 </div>
                             </Link>
 
-                            <Link href="/home/products" className="bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105">
+                            <Link href="/home/products/feni" className="bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105">
                                 <div className="relative h-48">
                                     <Image
                                         src="/feni.jpg"
