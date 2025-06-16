@@ -166,7 +166,7 @@ export default function ProductsPage() {
         {
             name: "Warli Paintings",
             type: "Art Form",
-            origin: "Odisha, India",
+            origin: "Maharastra, India",
             image: "/warliPaintings.jpg",
             url: "/home/products/warli"
         },
@@ -222,7 +222,7 @@ export default function ProductsPage() {
         {
             name: "Navara Rice",
             type: "Grocery",
-            origin: "Telangana, India",
+            origin: "Kerela, India",
             image: "/navaraRice.jpg",
             url: "/home/products/navararice"
         },
