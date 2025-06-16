@@ -32,12 +32,12 @@ const productData = {
         story: "Women in the Mithila region have been the primary creators of Madhubani paintings, passing down their skills through generations."
       }
     ],
-    originImage: "/places/bihar.jpg"
+    originImage: "/images/bihar.jpg"
   },
   banglarasagola: {
     name: "Banglar Rasagola",
     description: "Bengal's Sweet Heritage",
-    image: "/products/banglar-rasagola.jpg",
+    image: "/banglarRasagola.jpg",
     origin: "Kolkata, West Bengal",
     type: "Sweet",
     shortDescription: "Traditional Bengali sweet with rich cultural history",
@@ -65,7 +65,7 @@ const productData = {
   darjeelingtea: {
     name: "Darjeeling Tea",
     description: "The Champagne of Teas",
-    image: "/products/darjeeling-tea.jpg",
+    image: "/images/darjeelingTeaGarden.jpg",
     origin: "Darjeeling, West Bengal",
     type: "Beverage",
     shortDescription: "Premium tea known for its unique muscatel flavor",
@@ -88,12 +88,12 @@ const productData = {
         story: "The tea gardens of Darjeeling have created a unique multicultural society, with workers from Nepal, Tibet, and other regions contributing to the rich cultural tapestry of the hills."
       }
     ],
-    originImage: "/places/darjeeling.jpg"
+    originImage: "/teaGarden.jpg"
   },
   feni: {
     name: "Goan Feni",
     description: "Traditional Cashew Spirit",
-    image: "/products/feni.jpg",
+    image: "/feni.jpg",
     origin: "Goa",
     type: "Spirit",
     shortDescription: "Traditional cashew apple spirit",
@@ -116,12 +116,12 @@ const productData = {
         story: "The traditional three-pot distillation system used for Feni is a unique Goan innovation that has been passed down through generations of distillers, preserving the authentic taste and character of the spirit."
       }
     ],
-    originImage: "/places/goa.jpg"
+    originImage: "/images/goa.jpg"
   },
   kancheepuramsaree: {
     name: "Kancheepuram Saree",
     description: "Silk Weaving Heritage",
-    image: "/products/kancheepuram-saree.jpg",
+    image: "/images/kancheepuramSaree.jpg",
     origin: "Kancheepuram, Tamil Nadu",
     type: "Textile",
     shortDescription: "Luxurious silk sarees with intricate zari work",
@@ -144,12 +144,12 @@ const productData = {
         story: "Each weaving family in Kancheepuram has their own signature patterns and techniques, passed down through generations, creating a rich tapestry of design variations."
       }
     ],
-    originImage: "/places/kancheepuram.jpg"
+    originImage: "/images/kancheepuram.jpg"
   },
   kullushawl: {
     name: "Kullu Shawl",
     description: "Himalayan Weaving Heritage",
-    image: "/products/kullu-shawl.jpg",
+    image: "/kulluShawl.jpg",
     origin: "Kullu Valley, Himachal Pradesh",
     type: "Textile",
     shortDescription: "Handwoven woolen shawls with traditional patterns",
@@ -172,13 +172,13 @@ const productData = {
         story: "The weaving of Kullu shawls is primarily done by women in their homes, creating a strong community bond and preserving traditional knowledge."
       }
     ],
-    originImage: "/places/kullu.jpg"
+    originImage: "/images/kullu.jpg"
   },
   pashminawool: {
     name: "Kashmiri Pashmina",
     description: "The Softest Wool in the World",
-    image: "/products/kashmiri-pashmina.jpg",
-    origin: "Kashmir Valley",
+    image: "/pashminaWool.jpg",
+    origin: "Jammu Valley",
     type: "Textile",
     shortDescription: "Luxurious handwoven shawls from fine cashmere wool",
     culturalSignificance: "Kashmiri Pashmina is renowned worldwide for its exceptional softness and warmth. The art of Pashmina weaving represents the perfect blend of natural resources, traditional craftsmanship, and cultural identity. The intricate designs often feature motifs inspired by Persian and Mughal art, reflecting the region's diverse cultural influences.",
@@ -200,12 +200,12 @@ const productData = {
         story: "The Kani weaving technique, used in the most intricate Pashmina shawls, is considered a masterpiece of textile art and is recognized by UNESCO."
       }
     ],
-    originImage: "/places/kashmir.jpg"
+    originImage: "/images/jammu.jpg"
   },
   bidriware: {
     name: "Bidriware",
     description: "Metallic Inlay Art",
-    image: "/products/bidriware.jpg",
+    image: "/bidriware.jpg",
     origin: "Bidar, Karnataka",
     type: "Metal Craft",
     shortDescription: "Traditional metal craft with silver inlay work",
@@ -228,7 +228,7 @@ const productData = {
         story: "Bidriware flourished under the patronage of the Bahmani Sultans, who used these exquisite objects as diplomatic gifts to other rulers."
       }
     ],
-    originImage: "/places/bidar.jpg"
+    originImage: "/images/karnataka.jpg"
   },
   mysoresandalsoap: {
     name: "Mysore Sandal Soap",
@@ -256,7 +256,7 @@ const productData = {
         story: "Sandalwood paste is an essential part of temple rituals in South India, with the Mysore variety being particularly prized for its superior quality and fragrance."
       }
     ],
-    originImage: "/places/mysore.jpg"
+    originImage: "/images/mysore.jpg"
   },
   thanjavurpaintings: {
     name: "Thanjavur Paintings",
@@ -284,7 +284,7 @@ const productData = {
         story: "Raghurajpur is a village where every family is involved in Pattachitra, keeping the tradition alive."
       }
     ],
-    originImage: "/places/thanjavur.jpg"
+    originImage: "/images/thanjavur.jpg"
   },
   chanderisaree: {
     name: "Chanderi Saree",
@@ -312,7 +312,7 @@ const productData = {
         story: "Traditional weaving families in Chanderi have preserved their unique techniques for generations, maintaining the quality and authenticity of the craft."
       }
     ],
-    originImage: "/places/chanderi.jpg"
+    originImage: "/images/chanderi.jpg"
   },
   kalamkari: {
     name: "Kalamkari",
@@ -340,12 +340,12 @@ const productData = {
         story: "The art form was influenced by Persian court art, with many designs incorporating elements from Persian miniatures and textiles."
       }
     ],
-    originImage: "/places/srikalahasti.jpg"
+    originImage: "/images/andrapradesh.jpg"
   },
   phulkari: {
     name: "Phulkari",
     description: "Floral Embroidery of Punjab",
-    image: "/products/phulkari.jpg",
+    image: "/phulkari.jpg",
     origin: "Punjab",
     type: "Textile Art",
     shortDescription: "Vibrant hand-embroidered shawls and dupattas",
@@ -368,12 +368,12 @@ const productData = {
         story: "Women gather in groups to embroider phulkari, sharing stories and songs as they work."
       }
     ],
-    originImage: "/places/punjab.jpg"
+    originImage: "/images/punjab2.jpg"
   },
   chikankari: {
     name: "Chikankari",
     description: "Delicate Embroidery of Lucknow",
-    image: "/products/chikankari.jpg",
+    image: "/lucknowChikankari.jpg",
     origin: "Lucknow, Uttar Pradesh",
     type: "Embroidery",
     shortDescription: "Fine hand embroidery on lightweight fabrics",
@@ -396,12 +396,12 @@ const productData = {
         story: "Chikankari has empowered generations of women in Lucknow, providing them with a source of income and independence."
       }
     ],
-    originImage: "/places/lucknow.jpg"
+    originImage: "/images/lucknow.jpg"
   },
   suratzari: {
     name: "Surat Zari Fabric",
     description: "Traditional Metallic Thread Weaving of Surat",
-    image: "/products/surat_zari.jpg",
+    image: "/suratZari.jpg",
     origin: "Surat, Gujarat",
     type: "Textile / Embellishment",
     shortDescription: "Intricate zari threads woven into luxurious fabrics",
@@ -424,12 +424,12 @@ const productData = {
         story: "Artisan families in Surat have preserved the Zari weaving tradition for generations, innovating while retaining traditional values."
       }
     ],
-    originImage: "/places/surat.jpg"
+    originImage: "/images/surat.jpg"
   },
   firozabadbangles: {
     name: "Firozabad Bangles",
     description: "Handcrafted Glass Bangles from Uttar Pradesh",
-    image: "/products/firozabad_bangles.jpg",
+    image: "/firozabadGlass.jpg",
     origin: "Firozabad, Uttar Pradesh",
     type: "Glass Craft",
     shortDescription: "Colorful glass bangles crafted with traditional techniques",
@@ -452,12 +452,12 @@ const productData = {
         story: "Many families in Firozabad have been making bangles for over a century, passing on the skill from parent to child."
       }
     ],
-    originImage: "/places/firozabad.jpg"
+    originImage: "/images/firozabad.jpg"
   },
   mirzapurdari: {
     name: "Mirzapur Dari",
     description: "Traditional Handwoven Carpets of Uttar Pradesh",
-    image: "/products/mirzapur_dari.jpg",
+    image: "/mirzapurHandmadeDari.jpg",
     origin: "Mirzapur, Uttar Pradesh",
     type: "Carpet",
     shortDescription: "Handwoven carpets with intricate designs and vibrant colors.",
@@ -480,13 +480,13 @@ const productData = {
         story: "Weavers in Mirzapur have passed down their skills for generations, preserving the art of carpet making."
       }
     ],
-    originImage: "/places/mirzapur.jpg"
+    originImage: "/images/mirzapur.jpg"
   },
   makranamarbles: {
     name: "Makrana Marbles",
     description: "Luxurious Marble from Rajasthan",
-    image: "/products/makrana_marbles.jpg",
-    origin: "Makrana, Rajasthan",
+    image: "/makranaMarble.jpg",
+    origin: " Rajasthan",
     type: "Stone",
     shortDescription: "High-quality marble used in architectural marvels.",
     culturalSignificance: "Makrana Marbles are known for their high quality and have been used in iconic structures like the Taj Mahal. They symbolize luxury and architectural excellence.",
@@ -508,12 +508,12 @@ const productData = {
         story: "Artisans in Makrana take great pride in their craft, with each piece reflecting their skill and creativity."
       }
     ],
-    originImage: "/places/makrana.jpg"
+    originImage: "/images/rajasthan2.jpg"
   },
   kashmirwalnutwoodcarving: {
     name: "Kashmir Walnut Wood Carving",
     description: "Intricate Wood Carving from Kashmir",
-    image: "/products/kashmir_walnut_wood_carving.jpg",
+    image: "/kashmirWalnutWoodCarving.jpg",
     origin: "Kashmir, India",
     type: "Craft",
     shortDescription: "Hand-carved wooden artifacts with intricate designs.",
@@ -536,7 +536,7 @@ const productData = {
         story: "Carvers in Kashmir have passed down their skills for generations, preserving the art of wood carving."
       }
     ],
-    originImage: "/places/kashmir.jpg"
+    originImage: "/images/kashmir.jpg"
   },
   bluepottery: {
     name: "Blue Pottery",
@@ -564,7 +564,7 @@ const productData = {
         story: "Artisans in Jaipur take great pride in their craft, with each piece reflecting their skill and creativity."
       }
     ],
-    originImage: "/places/jaipur.jpg"
+    originImage: "/images/jaipur.jpg"
   },
   kutchembroidery: {
     name: "Kutch Embroidery",
@@ -592,7 +592,7 @@ const productData = {
         story: "Women gather in groups to embroider, sharing stories and songs as they work."
       }
     ],
-    originImage: "/places/gujarat.jpg"
+    originImage: "/images/kutch.jpg"
   },
   chambarumal: {
     name: "Chamba Rumal",
@@ -620,12 +620,12 @@ const productData = {
         story: "Artisans in Chamba have passed down their skills for generations, preserving the art of embroidery."
       }
     ],
-    originImage: "/places/himachalpradesh.jpg"
+    originImage: "/images/chamba.jpg"
   },
   warli: {
     name: "Warli Art",
     description: "Tribal Wall Painting Tradition",
-    image: "/products/warli.jpg",
+    image: "/warliPaintings.jpg",
     origin: "Maharashtra",
     type: "Folk Art",
     shortDescription: "Traditional tribal paintings with geometric patterns",
@@ -648,7 +648,7 @@ const productData = {
         story: "Warli art often depicts the tribe's close relationship with nature, showing scenes of farming, hunting, and community celebrations."
       }
     ],
-    originImage: "/places/thane.jpg"
+    originImage: "/images/maharastra.jpg"
   },
   
   mysoresilk: {
@@ -677,7 +677,7 @@ const productData = {
         story: "Weaving families in Mysore have passed down their skills for generations, preserving unique patterns and techniques."
       }
     ],
-    originImage: "/places/mysore.jpg"
+    originImage: "/images/mysore2.jpg"
   },
   salemfabric: {
     name: "Salem Fabric",
@@ -705,36 +705,9 @@ const productData = {
         story: "Salem Fabric is often worn during local festivals, symbolizing cultural pride and tradition."
       }
     ],
-    originImage: "/places/salem.jpg"
+    originImage: "/images/salem.jpg"
   },
-  channapattatoys: {
-    name: "Channapatna Toys",
-    description: "Wooden Toys of Karnataka",
-    image: "/channapatnaToys.jpg",
-    origin: "Karnataka, India",
-    type: "Art Form",
-    shortDescription: "Handcrafted wooden toys with vibrant colors.",
-    culturalSignificance: "Channapatna Toys are a traditional craft from Karnataka, known for their vibrant colors and child-safe materials. These toys are a symbol of the region's rich cultural heritage and are often gifted during festivals and special occasions.",
-    originStory: "The tradition of making Channapatna Toys dates back to the 18th century, with artisans using locally sourced wood and natural dyes. The craft has been preserved by traditional toy makers.",
-    specialFeatures: [
-      "Handcrafted wooden toys",
-      "Natural dyes",
-      "Child-safe materials",
-      "Vibrant colors",
-      "Geographical Indication status"
-    ],
-    culturalStories: [
-      {
-        title: "The Festival Gift",
-        story: "Channapatna Toys are often gifted to children during festivals, symbolizing joy and tradition."
-      },
-      {
-        title: "The Artisan's Pride",
-        story: "Artisans in Channapatna take great pride in their craft, with each toy reflecting their skill and creativity."
-      }
-    ],
-    originImage: "/places/karnataka.jpg"
-  },
+  
   shrikalasthikalamkari: {
     name: "Shrikalasthi Kalamkari",
     description: "Hand-Painted Textile Art",
@@ -789,7 +762,7 @@ const productData = {
         story: "Assam silk sarees are traditionally worn during Bihu celebrations, symbolizing prosperity and cultural pride."
       }
     ],
-    originImage: "/places/assam.jpg"
+    originImage: "/images/assam.jpg"
   },
   kathputli: {
     name: "Kathputli",
@@ -817,7 +790,7 @@ const productData = {
         story: "Puppeteers in Rajasthan have passed down their skills for generations, preserving the art of Kathputli."
       }
     ],
-    originImage: "/places/rajasthan.jpg"
+    originImage: "/images/rajasthan.jpg"
   },
   pipliartwork: {
     name: "Pipli Artwork",
@@ -845,12 +818,12 @@ const productData = {
         story: "Artisans in Pipli take great pride in their craft, with each piece reflecting their skill and creativity."
       }
     ],
-    originImage: "/places/odisha.jpg"
+    originImage: "/images/odisha.jpg"
   },
   thanjavurdolls: {
     name: "Thanjavur Dolls",
     description: "Traditional Dolls of Tamil Nadu",
-    image: "/thanjavurDolls.jpg",
+    image: "/images/thanjavurDoll.jpg",
     origin: "Thanjavur, Tamil Nadu",
     type: "Craft",
     shortDescription: "Handcrafted dolls with intricate designs and vibrant colors.",
@@ -873,12 +846,12 @@ const productData = {
         story: "Artisans in Thanjavur have passed down their skills for generations, preserving the art of doll making."
       }
     ],
-    originImage: "/places/thanjavur.jpg"
+    originImage: "/images/thanjavur.jpg"
   },
   banarasisilk: {
     name: "Banarasi Silk Saree",
     description: "Luxurious Silk Saree of Varanasi",
-    image: "/banarasiSilk.jpg",
+    image: "/banarasiSilkSaree.jpg",
     origin: "Varanasi, Uttar Pradesh",
     type: "Fabric",
     shortDescription: "Luxurious silk sarees with intricate gold and silver zari work.",
@@ -901,7 +874,7 @@ const productData = {
         story: "Weavers in Varanasi take immense pride in their craft, with skills passed down through generations."
       }
     ],
-    originImage: "/places/varanasi.jpg"
+    originImage: "/images/banaras.jpg"
   },
   birdiware: {
     name: "Birdiware",
@@ -934,7 +907,7 @@ const productData = {
   kondapallitoys: {
     name: "Kondapalli Toys",
     description: "Wooden Toys of Andhra Pradesh",
-    image: "/products/kondapalli_toys.jpg",
+    image: "/kondapalliToys.jpg",
     origin: "Kondapalli, Andhra Pradesh",
     type: "Craft",
     shortDescription: "Handcrafted wooden toys with vibrant colors and intricate designs.",
@@ -957,13 +930,13 @@ const productData = {
         story: "Artisans in Kondapalli take great pride in their craft, with each toy reflecting their skill and creativity."
       }
     ],
-    originImage: "/places/kondapalli.jpg"
+    originImage: "/images/andrapradesh.jpg"
   },
   nirmalpaintings: {
     name: "Nirmal Paintings",
     description: "Traditional Art of Telangana",
-    image: "/products/nirmal_paintings.jpg",
-    origin: "Nirmal, Telangana",
+    image: "/nirmalPaintings.jpg",
+    origin: "Telangana",
     type: "Art Form",
     shortDescription: "Hand-painted wooden artifacts with intricate designs and vibrant colors.",
     culturalSignificance: "Nirmal Paintings are a traditional art form from Telangana, known for their intricate designs and vibrant colors. These paintings are a symbol of the region's rich cultural heritage and are often used for decorative items.",
@@ -985,12 +958,12 @@ const productData = {
         story: "Painters in Nirmal have passed down their skills for generations, preserving the art of painting."
       }
     ],
-    originImage: "/places/nirmal.jpg"
+    originImage: "/images/telangana.jpg"
   },
   navararice: {
     name: "Navara Rice",
     description: "Traditional Medicinal Rice of Kerala",
-    image: "/products/navara_rice.jpg",
+    image: "/navaraRice.jpg",
     origin: "Kerala, India",
     type: "Rice",
     shortDescription: "Ancient medicinal rice variety with unique health benefits.",
@@ -1013,12 +986,12 @@ const productData = {
         story: "Farmers in Kerala have preserved the cultivation of Navara Rice for generations, ensuring its continued availability."
       }
     ],
-    originImage: "/places/kerala.jpg"
+    originImage: "/images/kerela.jpg"
   },
   malabarpepper: {
     name: "Malabar Pepper",
     description: "Premium Black Pepper from Kerala",
-    image: "/products/malabar_pepper.jpg",
+    image: "/malabarPepper.jpg",
     origin: "Malabar, Kerala",
     type: "Spice",
     shortDescription: "High-quality black pepper with a rich, aromatic flavor.",
@@ -1041,12 +1014,12 @@ const productData = {
         story: "Farmers in Malabar take great pride in their pepper cultivation, with each harvest reflecting their skill and dedication."
       }
     ],
-    originImage: "/places/malabar.jpg"
+    originImage: "/images/kerela2.jpg"
   },
   monsoonedmalabarcoffee: {
     name: "Monsooned Malabar Coffee",
     description: "Unique Coffee from Kerala",
-    image: "/products/monsooned_malabar_coffee.jpg",
+    image: "/monsoonedMalabarCoffee.jpg",
     origin: "Malabar, Kerala",
     type: "Coffee",
     shortDescription: "Coffee beans exposed to monsoon winds for a unique flavor profile.",
@@ -1069,12 +1042,12 @@ const productData = {
         story: "Coffee enthusiasts around the world highly value Monsooned Malabar Coffee for its unique flavor and aroma."
       }
     ],
-    originImage: "/places/malabar.jpg"
+    originImage: "/images/kerela2.jpg"
   },
   lakshyamanbhogmango: {
     name: "Lakshyamanbhog Mango",
     description: "Sweet Mango Variety from West Bengal",
-    image: "/products/lakshyamanbhog_mango.jpg",
+    image: "/lakshmanbhogMango.jpg",
     origin: "West Bengal, India",
     type: "Fruit",
     shortDescription: "Sweet and juicy mango variety known for its rich flavor.",
@@ -1097,12 +1070,12 @@ const productData = {
         story: "Farmers in West Bengal take great pride in their mango cultivation, with each harvest reflecting their skill and dedication."
       }
     ],
-    originImage: "/places/west_bengal.jpg"
+    originImage: "/images/wb.jpg"
   },
   nagamircha: {
     name: "Naga Mircha",
     description: "Hot Chili Pepper from Nagaland",
-    image: "/products/naga_mircha.jpg",
+    image: "/nagaMircha.jpg",
     origin: "Nagaland, India",
     type: "Spice",
     shortDescription: "One of the hottest chili peppers in the world, known for its intense heat.",
@@ -1125,12 +1098,12 @@ const productData = {
         story: "Farmers in Nagaland have preserved the cultivation of Naga Mircha for generations, ensuring its continued availability."
       }
     ],
-    originImage: "/places/nagaland.jpg"
+    originImage: "/images/nagaland.jpg"
   },
   kalampurredbananas: {
     name: "Kalampur Red Bananas",
     description: "Unique Red Banana Variety from Kerala",
-    image: "/products/kalampur_red_bananas.jpg",
+    image: "/kalampurRedBanana.jpg",
     origin: "Kerala, India",
     type: "Fruit",
     shortDescription: "Sweet and nutritious red banana variety known for its unique color and taste.",
@@ -1153,12 +1126,12 @@ const productData = {
         story: "Farmers in Kerala take great pride in their banana cultivation, with each harvest reflecting their skill and dedication."
       }
     ],
-    originImage: "/places/kerala.jpg"
+    originImage: "/images/kerela.jpg"
   },
   nashikgrapes: {
     name: "Nashik Grapes",
     description: "Premium Grape Variety from Maharashtra",
-    image: "/products/nashik_grapes.jpg",
+    image: "/nashikGrapes.jpg",
     origin: "Nashik, Maharashtra",
     type: "Fruit",
     shortDescription: "Sweet and juicy grape variety known for its rich flavor.",
@@ -1181,12 +1154,12 @@ const productData = {
         story: "Farmers in Nashik take great pride in their grape cultivation, with each harvest reflecting their skill and dedication."
       }
     ],
-    originImage: "/places/nashik.jpg"
+    originImage: "/images/nashik.jpg"
   },
   girkesarmango: {
     name: "Gir Kesar Mango",
     description: "Sweet Mango Variety from Gujarat",
-    image: "/products/gir_kesar_mango.jpg",
+    image: "/girKesarMango.jpg",
     origin: "Gir, Gujarat",
     type: "Fruit",
     shortDescription: "Sweet and juicy mango variety known for its rich flavor.",
@@ -1209,12 +1182,12 @@ const productData = {
         story: "Farmers in Gir take great pride in their mango cultivation, with each harvest reflecting their skill and dedication."
       }
     ],
-    originImage: "/places/gir.jpg"
+    originImage: "/images/gir.jpg"
   },
   nagpuroranges: {
     name: "Nagpur Oranges",
     description: "Sweet Orange Variety from Maharashtra",
-    image: "/products/nagpur_oranges.jpg",
+    image: "/nagpurOrange.jpg",
     origin: "Nagpur, Maharashtra",
     type: "Fruit",
     shortDescription: "Sweet and juicy orange variety known for its rich flavor.",
@@ -1237,12 +1210,12 @@ const productData = {
         story: "Farmers in Nagpur take great pride in their orange cultivation, with each harvest reflecting their skill and dedication."
       }
     ],
-    originImage: "/places/nagpur.jpg"
+    originImage: "/images/nagpur.jpg"
   },
   tezpurlitchi: {
     name: "Tezpur Litchi",
     description: "Sweet Litchi Variety from Assam",
-    image: "/products/tezpur_litchi.jpg",
+    image: "/tezpurLitchi.jpg",
     origin: "Tezpur, Assam",
     type: "Fruit",
     shortDescription: "Sweet and juicy litchi variety known for its rich flavor.",
@@ -1265,12 +1238,12 @@ const productData = {
         story: "Farmers in Tezpur take great pride in their litchi cultivation, with each harvest reflecting their skill and dedication."
       }
     ],
-    originImage: "/places/tezpur.jpg"
+    originImage: "/images/assam.jpg"
   },
   basmatirice: {
     name: "Basmati Rice",
     description: "Premium Aromatic Rice from India",
-    image: "/products/basmati_rice.jpg",
+    image: "/basmatiRice.jpg",
     origin: "India",
     type: "Rice",
     shortDescription: "Long-grain aromatic rice known for its unique flavor and fragrance.",
@@ -1293,12 +1266,12 @@ const productData = {
         story: "Farmers take great pride in their Basmati Rice cultivation, with each harvest reflecting their skill and dedication."
       }
     ],
-    originImage: "/places/india.jpg"
+    originImage: "/images/india.jpg"
   },
   alphonsomango: {
     name: "Alphonso Mango",
     description: "King of Mangoes from Maharashtra",
-    image: "/products/alphonso_mango.jpg",
+    image: "/alphonsoMango.jpg",
     origin: "Maharashtra, India",
     type: "Fruit",
     shortDescription: "Sweet and juicy mango variety known for its rich flavor.",
@@ -1321,12 +1294,12 @@ const productData = {
         story: "Farmers in Maharashtra take great pride in their mango cultivation, with each harvest reflecting their skill and dedication."
       }
     ],
-    originImage: "/places/maharashtra.jpg"
+    originImage: "/images/maharastra.jpg"
   },
   jeerakasalarice: {
     name: "Jeerakasala Rice",
     description: "Traditional Rice Variety from Kerala",
-    image: "/products/jeerakasala_rice.jpg",
+    image: "/jeerakasalarice.jpg",
     origin: "Kerala, India",
     type: "Rice",
     shortDescription: "Aromatic rice variety known for its unique flavor and fragrance.",
@@ -1349,12 +1322,12 @@ const productData = {
         story: "Farmers in Kerala take great pride in their Jeerakasala Rice cultivation, with each harvest reflecting their skill and dedication."
       }
     ],
-    originImage: "/places/kerala.jpg"
+    originImage: "/images/kerela2.jpg"
   },
   vazhakulampineapple: {
     name: "Vazhakulam Pineapple",
     description: "Sweet Pineapple Variety from Kerala",
-    image: "/products/vazhakulam_pineapple.jpg",
+    image: "/vazhakulamPineapple.jpg",
     origin: "Vazhakulam, Kerala",
     type: "Fruit",
     shortDescription: "Sweet and juicy pineapple variety known for its rich flavor.",
@@ -1377,12 +1350,12 @@ const productData = {
         story: "Farmers in Vazhakulam take great pride in their pineapple cultivation, with each harvest reflecting their skill and dedication."
       }
     ],
-    originImage: "/places/vazhakulam.jpg"
+    originImage: "/images/kerela2.jpg"
   },
   coorggreencardamom: {
     name: "Coorg Green Cardamom",
     description: "Premium Spice from Karnataka",
-    image: "/products/coorg_green_cardamom.jpg",
+    image: "/coorgGreenCardamom.jpg",
     origin: "Coorg, Karnataka",
     type: "Spice",
     shortDescription: "Aromatic green cardamom known for its unique flavor and fragrance.",
@@ -1405,12 +1378,12 @@ const productData = {
         story: "Farmers in Coorg take great pride in their cardamom cultivation, with each harvest reflecting their skill and dedication."
       }
     ],
-    originImage: "/places/coorg.jpg"
+    originImage: "/images/coorg.jpg"
   },
   dharwadpedha: {
     name: "Dharwad Pedha",
     description: "Sweet Confection from Karnataka",
-    image: "/products/dharwad_pedha.jpg",
+    image: "/dharwadPedha.jpg",
     origin: "Dharwad, Karnataka",
     type: "Sweet",
     shortDescription: "Sweet and creamy confection known for its rich flavor.",
@@ -1433,12 +1406,12 @@ const productData = {
         story: "Artisans in Dharwad take great pride in their pedha making, with each batch reflecting their skill and dedication."
       }
     ],
-    originImage: "/places/dharwad.jpg"
+    originImage: "/images/karnataka.jpg"
   },
   tirupatiladdu: {
     name: "Tirupati Laddu",
     description: "Sacred Sweet from Andhra Pradesh",
-    image: "/products/tirupati_laddu.jpg",
+    image: "/tirupathiLaddu.jpg",
     origin: "Tirupati, Andhra Pradesh",
     type: "Sweet",
     shortDescription: "Sweet and rich laddu known for its unique flavor.",
@@ -1461,12 +1434,12 @@ const productData = {
         story: "Artisans in Tirupati take great pride in their laddu making, with each batch reflecting their skill and dedication."
       }
     ],
-    originImage: "/places/tirupati.jpg"
+    originImage: "/images/tirupati.jpg"
   },
   bikaneribhujia: {
     name: "Bikaneri Bhujia",
     description: "Crispy Snack from Rajasthan",
-    image: "/products/bikaneri_bhujia.jpg",
+    image: "/bikaneriBhujia.jpg",
     origin: "Bikaner, Rajasthan",
     type: "Snack",
     shortDescription: "Crispy and spicy snack known for its unique flavor.",
@@ -1489,12 +1462,12 @@ const productData = {
         story: "Artisans in Bikaner take great pride in their bhujia making, with each batch reflecting their skill and dedication."
       }
     ],
-    originImage: "/places/bikaner.jpg"
+    originImage: "/images/bikaner.jpg"
   },
   ratlamisev: {
     name: "Ratlami Sev",
     description: "Crispy Snack from Madhya Pradesh",
-    image: "/products/ratlami_sev.jpg",
+    image: "/ratlamiSev.jpg",
     origin: "Ratlam, Madhya Pradesh",
     type: "Snack",
     shortDescription: "Crispy and spicy snack known for its unique flavor.",
@@ -1517,12 +1490,12 @@ const productData = {
         story: "Artisans in Ratlam take great pride in their sev making, with each batch reflecting their skill and dedication."
       }
     ],
-    originImage: "/places/ratlam.jpg"
+    originImage: "/images/ratlam.jpg"
   },
   agrapetha: {
     name: "Agra Petha",
     description: "Sweet Confection from Uttar Pradesh",
-    image: "/products/agra_petha.jpg",
+    image: "/agraPetha.jpg",
     origin: "Agra, Uttar Pradesh",
     type: "Sweet",
     shortDescription: "Sweet and translucent confection known for its unique flavor.",
@@ -1545,12 +1518,12 @@ const productData = {
         story: "Artisans in Agra take great pride in their petha making, with each batch reflecting their skill and dedication."
       }
     ],
-    originImage: "/places/agra.jpg"
+    originImage: "/images/agra.jpg"
   },
   shrivilliputturpalkova: {
     name: "Shrivilliputtur Palkova",
     description: "Sweet Confection from Tamil Nadu",
-    image: "/products/shrivilliputtur_palkova.jpg",
+    image: "/srivilliputturPalkova.jpg",
     origin: "Shrivilliputtur, Tamil Nadu",
     type: "Sweet",
     shortDescription: "Sweet and creamy confection known for its rich flavor.",
@@ -1573,12 +1546,12 @@ const productData = {
         story: "Artisans in Shrivilliputtur take great pride in their palkova making, with each batch reflecting their skill and dedication."
       }
     ],
-    originImage: "/places/shrivilliputtur.jpg"
+    originImage: "/images/tamil.jpg"
   },
   bhiwapurchilli: {
     name: "Bhiwapur Chilli",
     description: "Hot Chili Pepper from Maharashtra",
-    image: "/products/bhiwapur_chilli.jpg",
+    image: "/bhiwapurChilli.jpg",
     origin: "Bhiwapur, Maharashtra",
     type: "Spice",
     shortDescription: "One of the hottest chili peppers in the world, known for its intense heat.",
@@ -1601,12 +1574,12 @@ const productData = {
         story: "Farmers in Bhiwapur have preserved the cultivation of Bhiwapur Chilli for generations, ensuring its continued availability."
       }
     ],
-    originImage: "/places/bhiwapur.jpg"
+    originImage: "/images/maharastra.jpg"
   },
   kholachilli: {
     name: "Khola Chilli",
     description: "Hot Chili Pepper from Goa",
-    image: "/products/khola_chilli.jpg",
+    image: "/kholaChilli.jpg",
     origin: "Khola, Goa",
     type: "Spice",
     shortDescription: "One of the hottest chili peppers in the world, known for its intense heat.",
@@ -1629,12 +1602,12 @@ const productData = {
         story: "Farmers in Khola have preserved the cultivation of Khola Chilli for generations, ensuring its continued availability."
       }
     ],
-    originImage: "/places/khola.jpg"
+    originImage: "/images/goa.jpg"
   },
   pallakadmattarice: {
     name: "Pallakad Matta Rice",
     description: "Traditional Rice Variety from Kerala",
-    image: "/products/pallakad_matta_rice.jpg",
+    image: "/pallakadMattaRice.jpg",
     origin: "Pallakad, Kerala",
     type: "Rice",
     shortDescription: "Aromatic rice variety known for its unique flavor and fragrance.",
@@ -1657,12 +1630,12 @@ const productData = {
         story: "Farmers in Pallakad take great pride in their rice cultivation, with each harvest reflecting their skill and dedication."
       }
     ],
-    originImage: "/places/pallakad.jpg"
+    originImage: "/images/kerela.jpg"
   },
   assamorthodoxtea: {
     name: "Assam Orthodox Tea",
     description: "Premium Tea from Assam",
-    image: "/products/assam_orthodox_tea.jpg",
+    image: "/assamOrthodoxTea.jpg",
     origin: "Assam, India",
     type: "Tea",
     shortDescription: "High-quality tea known for its rich flavor and aroma.",
@@ -1684,12 +1657,12 @@ const productData = {
         story: "Farmers in Assam take great pride in their tea cultivation, with each harvest reflecting their skill and dedication."
       }
     ],
-    originImage: "/places/assam.jpg"
+    originImage: "/images/assam.jpg"
   },
   odisharasagola: {
     name: "Odisha Rasagola",
     description: "Sweet Confection from Odisha",
-    image: "/products/odisha_rasagola.jpg",
+    image: "/odishaRasagola.webp",
     origin: "Odisha, India",
     type: "Sweet",
     shortDescription: "Sweet and spongy confection known for its unique flavor.",
@@ -1712,12 +1685,12 @@ const productData = {
         story: "Artisans in Odisha take great pride in their rasagola making, with each batch reflecting their skill and dedication."
       }
     ],
-    originImage: "/places/odisha.jpg"
+    originImage: "/images/odisha.jpg"
   },
   mizochilli: {
     name: "Mizo Chilli",
     description: "Hot Chili Pepper from Mizoram",
-    image: "/products/mizo_chilli.jpg",
+    image: "/mizoChilli.webp",
     origin: "Mizoram, India",
     type: "Spice",
     shortDescription: "One of the hottest chili peppers in the world, known for its intense heat.",
@@ -1740,12 +1713,12 @@ const productData = {
         story: "Farmers in Mizoram have preserved the cultivation of Mizo Chilli for generations, ensuring its continued availability."
       }
     ],
-    originImage: "/places/mizoram.jpg"
+    originImage: "/images/mizoram.jpg"
   },
   kolhapurichappal: {
     name: "Kolhapuri Chappal",
     description: "Traditional Footwear from Maharashtra",
-    image: "/products/kolhapuri_chappal.jpg",
+    image: "/kolhapuriChappal.jpeg",
     origin: "Kolhapur, Maharashtra",
     type: "Footwear",
     shortDescription: "Handcrafted leather sandals known for their unique design and comfort.",
@@ -1768,12 +1741,12 @@ const productData = {
         story: "Artisans in Kolhapur take great pride in their chappal making, with each pair reflecting their skill and dedication."
       }
     ],
-    originImage: "/places/kolhapur.jpg"
+    originImage: "/images/mumbai.jpg"
   },
   aranmulakanadi: {
     name: "Aranmula Kanadi",
     description: "Traditional Mirror from Kerala",
-    image: "/products/aranmula_kanadi.jpg",
+    image: "/aranmulaKannadi.jpg",
     origin: "Aranmula, Kerala",
     type: "Craft",
     shortDescription: "Handcrafted mirror known for its unique design and craftsmanship.",
@@ -1796,12 +1769,12 @@ const productData = {
         story: "Artisans in Aranmula take great pride in their kanadi making, with each piece reflecting their skill and dedication."
       }
     ],
-    originImage: "/places/aranmula.jpg"
+    originImage: "/images/kerela2.jpg"
   },
   etikoppakatoys: {
     name: "Etikoppaka Toys",
     description: "Traditional Wooden Toys from Andhra Pradesh",
-    image: "/products/etikoppaka_toys.jpg",
+    image: "/etikoppakaToys.webp",
     origin: "Etikoppaka, Andhra Pradesh",
     type: "Craft",
     shortDescription: "Handcrafted wooden toys known for their unique design and craftsmanship.",
@@ -1824,12 +1797,12 @@ const productData = {
         story: "Artisans in Etikoppaka take great pride in their toy making, with each piece reflecting their skill and dedication."
       }
     ],
-    originImage: "/places/etikoppaka.jpg"
+    originImage: "/images/telangana.jpg"
   },
   solapurchaddar: {
     name: "Solapur Chaddar",
     description: "Traditional Bedspread from Maharashtra",
-    image: "/products/solapur_chaddar.jpg",
+    image: "/solapurChaddar.jpg",
     origin: "Solapur, Maharashtra",
     type: "Textile",
     shortDescription: "Handwoven bedspread known for its unique design and comfort.",
@@ -1852,12 +1825,12 @@ const productData = {
         story: "Artisans in Solapur take great pride in their chaddar making, with each piece reflecting their skill and dedication."
       }
     ],
-    originImage: "/places/solapur.jpg"
+    originImage: "/images/solapur.jpg"
   },
   channapatnatoys: {
     name: "Chaannapatna Toys",
     description: "Traditional Wooden Toys from Karnataka",
-    image: "/products/chaannapatna_toys.jpg",
+    image: "/channapatnaToys.jpg",
     origin: "Chaannapatna, Karnataka",
     type: "Craft",
     shortDescription: "Handcrafted wooden toys known for their unique design and craftsmanship.",
@@ -1880,7 +1853,7 @@ const productData = {
         story: "Artisans in Chaannapatna take great pride in their toy making, with each piece reflecting their skill and dedication."
       }
     ],
-    originImage: "/places/chaannapatna.jpg"
+    originImage: "/images/karnataka.jpg"
   }
 };
 
@@ -1906,10 +1879,10 @@ export default function ProductPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-200 py-12">
+    <div className="min-h-screen bg-gray-200 py-6 sm:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
-        <div className="relative h-[400px] rounded-2xl overflow-hidden mb-12">
+        <div className="relative h-[250px] sm:h-[300px] md:h-[400px] rounded-xl sm:rounded-2xl overflow-hidden mb-6 sm:mb-12">
           <Image
             src={product.image}
             alt={product.name}
@@ -1917,14 +1890,14 @@ export default function ProductPage() {
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent">
-            <div className="absolute bottom-0 left-0 p-8 text-white">
-              <h1 className="text-4xl font-bold mb-2">{product.name}</h1>
-              <p className="text-xl">{product.description}</p>
+            <div className="absolute bottom-0 left-0 p-4 sm:p-8 text-white">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2">{product.name}</h1>
+              <p className="text-base sm:text-lg md:text-xl">{product.description}</p>
             </div>
-            <div className="absolute bottom-0 right-0 p-8">
+            <div className="absolute bottom-0 right-0 p-4 sm:p-8">
               <Link 
                 href={`/home/products/${productId}/3d`}
-                className="inline-block bg-[#3A5B22] text-white border-2 border-white px-6 py-3 rounded-md hover:bg-opacity-90 transition-all duration-300 hover:scale-105 transform shadow-lg"
+                className="inline-block bg-[#3A5B22] text-white border-2 border-white px-4 sm:px-6 py-2 sm:py-3 rounded-md hover:bg-opacity-90 transition-all duration-300 hover:scale-105 transform shadow-lg text-sm sm:text-base"
               >
                 View in 3D
               </Link>
@@ -1933,25 +1906,25 @@ export default function ProductPage() {
         </div>
 
         {/* Quick Info Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <div className="bg-white p-6 rounded-xl shadow-md">
-            <h3 className="text-lg font-semibold text-[#3A5B22] mb-2">Origin</h3>
-            <p className="text-gray-600">{product.origin}</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-12">
+          <div className="bg-white p-4 sm:p-6 rounded-xl shadow-md">
+            <h3 className="text-base sm:text-lg font-semibold text-[#3A5B22] mb-1 sm:mb-2">Origin</h3>
+            <p className="text-sm sm:text-base text-gray-600">{product.origin}</p>
           </div>
-          <div className="bg-white p-6 rounded-xl shadow-md">
-            <h3 className="text-lg font-semibold text-[#3A5B22] mb-2">Type</h3>
-            <p className="text-gray-600">{product.type}</p>
+          <div className="bg-white p-4 sm:p-6 rounded-xl shadow-md">
+            <h3 className="text-base sm:text-lg font-semibold text-[#3A5B22] mb-1 sm:mb-2">Type</h3>
+            <p className="text-sm sm:text-base text-gray-600">{product.type}</p>
           </div>
-          <div className="bg-white p-6 rounded-xl shadow-md">
-            <h3 className="text-lg font-semibold text-[#3A5B22] mb-2">About</h3>
-            <p className="text-gray-600">{product.shortDescription}</p>
+          <div className="bg-white p-4 sm:p-6 rounded-xl shadow-md sm:col-span-2 md:col-span-1">
+            <h3 className="text-base sm:text-lg font-semibold text-[#3A5B22] mb-1 sm:mb-2">About</h3>
+            <p className="text-sm sm:text-base text-gray-600">{product.shortDescription}</p>
           </div>
         </div>
 
         {/* Origin Place and Cultural Significance */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8 mb-6 sm:mb-12">
           {/* Origin Place Image */}
-          <div className="relative h-[400px] rounded-xl overflow-hidden">
+          <div className="relative h-[250px] sm:h-[300px] md:h-[400px] rounded-xl overflow-hidden">
             <Image
               src={product.originImage}
               alt={`${product.origin} - Place of Origin`}
@@ -1959,35 +1932,35 @@ export default function ProductPage() {
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
-              <div className="absolute bottom-0 left-0 p-6 text-white">
-                <h3 className="text-2xl font-bold mb-2">Place of Origin</h3>
-                <p className="text-lg">{product.origin}</p>
+              <div className="absolute bottom-0 left-0 p-4 sm:p-6 text-white">
+                <h3 className="text-xl sm:text-2xl font-bold mb-1 sm:mb-2">Place of Origin</h3>
+                <p className="text-base sm:text-lg">{product.origin}</p>
               </div>
             </div>
           </div>
 
           {/* Cultural Significance */}
-          <div className="bg-white p-8 rounded-xl shadow-md">
-            <h2 className="text-2xl font-bold text-[#3A5B22] mb-4">Cultural Significance</h2>
-            <p className="text-gray-600 leading-relaxed">{product.culturalSignificance}</p>
+          <div className="bg-white p-4 sm:p-8 rounded-xl shadow-md">
+            <h2 className="text-xl sm:text-2xl font-bold text-[#3A5B22] mb-3 sm:mb-4">Cultural Significance</h2>
+            <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{product.culturalSignificance}</p>
           </div>
         </div>
 
         {/* Origin Story and Special Features */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8 mb-6 sm:mb-12">
           {/* Origin Story */}
-          <div className="bg-white p-8 rounded-xl shadow-md">
-            <h2 className="text-2xl font-bold text-[#3A5B22] mb-4">Origin Story</h2>
-            <p className="text-gray-600 leading-relaxed">{product.originStory}</p>
+          <div className="bg-white p-4 sm:p-8 rounded-xl shadow-md">
+            <h2 className="text-xl sm:text-2xl font-bold text-[#3A5B22] mb-3 sm:mb-4">Origin Story</h2>
+            <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{product.originStory}</p>
           </div>
 
           {/* Special Features */}
-          <div className="bg-white p-8 rounded-xl shadow-md">
-            <h2 className="text-2xl font-bold text-[#3A5B22] mb-6">Special Features</h2>
-            <div className="grid grid-cols-1 gap-4">
+          <div className="bg-white p-4 sm:p-8 rounded-xl shadow-md">
+            <h2 className="text-xl sm:text-2xl font-bold text-[#3A5B22] mb-4 sm:mb-6">Special Features</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               {product.specialFeatures.map((feature, index) => (
-                <div key={index} className="bg-gray-50 p-4 rounded-lg">
-                  <p className="text-gray-600">{feature}</p>
+                <div key={index} className="bg-gray-50 p-3 sm:p-4 rounded-lg">
+                  <p className="text-sm sm:text-base text-gray-600">{feature}</p>
                 </div>
               ))}
             </div>
@@ -1995,13 +1968,13 @@ export default function ProductPage() {
         </div>
 
         {/* Cultural Stories */}
-        <div className="bg-white p-8 rounded-xl shadow-md mb-12">
-          <h2 className="text-2xl font-bold text-[#3A5B22] mb-6">Cultural Stories</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="bg-white p-4 sm:p-8 rounded-xl shadow-md mb-6 sm:mb-12">
+          <h2 className="text-xl sm:text-2xl font-bold text-[#3A5B22] mb-4 sm:mb-6">Cultural Stories</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             {product.culturalStories.map((story, index) => (
-              <div key={index} className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold text-[#3A5B22] mb-3">{story.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{story.story}</p>
+              <div key={index} className="bg-gray-50 p-4 sm:p-6 rounded-lg">
+                <h3 className="text-lg sm:text-xl font-semibold text-[#3A5B22] mb-2 sm:mb-3">{story.title}</h3>
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{story.story}</p>
               </div>
             ))}
           </div>
@@ -2009,16 +1982,16 @@ export default function ProductPage() {
 
         {/* Back Button */}
         <div className="text-center">
-          <div className="flex justify-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
             <Link 
               href="/home/products" 
-              className="inline-block bg-[#3A5B22] text-white px-8 py-3 rounded-md hover:bg-opacity-90 transition-all duration-300 hover:scale-105 transform"
+              className="inline-block bg-[#3A5B22] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-md hover:bg-opacity-90 transition-all duration-300 hover:scale-105 transform text-sm sm:text-base"
             >
               Back to Products
             </Link>
             <Link 
               href={`/home/products/${productId}/buy`}
-              className="inline-block bg-white text-[#3A5B22] border-2 border-[#3A5B22] px-8 py-3 rounded-md hover:bg-gray-50 transition-all duration-300 hover:scale-105 transform"
+              className="inline-block bg-white text-[#3A5B22] border-2 border-[#3A5B22] px-6 sm:px-8 py-2 sm:py-3 rounded-md hover:bg-gray-50 transition-all duration-300 hover:scale-105 transform text-sm sm:text-base"
             >
               View Buying Details
             </Link>

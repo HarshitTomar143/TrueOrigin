@@ -140,7 +140,7 @@ export default function ProductsPage() {
             type: "Fabric",
             origin: "Varanasi, Uttar Pradesh",
             image: "/banarasiSilkSaree.jpg",
-            url: "/home/products/banarassilk"
+            url: "/home/products/banarasisilk"
         },
         {
             name: "Surat Zari Fabric",
@@ -257,7 +257,7 @@ export default function ProductsPage() {
         {
             name: "Kalampur Red Banana",
             type: "Edibles",
-            origin: "Odisha, India",
+            origin: "Kerela, India",
             image: "/kalampurRedBanana.jpg",
             url: "/home/products/kalampurredbananas"
         },
