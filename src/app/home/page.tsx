@@ -49,34 +49,34 @@ export default function HomePage() {
             <Header />
 
             {/* Main content area */}
-            <main className="flex-grow pl-25 pr-25 mt-5">
+            <main className="flex-grow px-4 sm:px-6 lg:px-8 mt-4 sm:mt-5">
                 {/* Welcome Section */}
                 <motion.div 
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="bg-gradient-to-br from-[#2C5530] to-[#1B4332]  text-white py-12 px-4 sm:px-6 lg:px-8 rounded-3xl"
+                    className="bg-gradient-to-br from-[#2C5530] to-[#1B4332] text-white py-8 sm:py-12 px-4 sm:px-6 lg:px-8 rounded-2xl sm:rounded-3xl"
                 >
                     <div className="max-w-7xl mx-auto">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
                             {/* Left Side - Welcome Message and Tea Logo */}
                             <motion.div 
                                 initial={{ opacity: 0, x: -20 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: 0.2, duration: 0.5 }}
-                                className="flex flex-col lg:flex-row items-center lg:items-start gap-6"
+                                className="flex flex-col lg:flex-row items-center lg:items-start gap-4 sm:gap-6"
                             >
                                 <motion.div 
                                     animate={floatingAnimation}
-                                    className="w-24 h-24 lg:w-32 lg:h-32"
+                                    className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32"
                                 >
                                     <TeaCup />
                                 </motion.div>
                                 <div className="text-center lg:text-left">
-                                    <h1 className="text-3xl sm:text-4xl font-bold mb-4 text-[#B7E4C7]">
+                                    <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 sm:mb-4 text-[#B7E4C7]">
                                         Welcome, {userData?.username || "User"}!
                                     </h1>
-                                    <p className="text-lg text-[#D8F3DC]">
+                                    <p className="text-base sm:text-lg text-[#D8F3DC]">
                                         Discover authentic products and their origins
                                     </p>
                                 </div>
@@ -87,31 +87,31 @@ export default function HomePage() {
                                 initial={{ opacity: 0, x: 20 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: 0.4, duration: 0.5 }}
-                                className="grid grid-cols-3 gap-4"
+                                className="grid grid-cols-3 gap-3 sm:gap-4"
                             >
                                 <motion.div 
                                     whileHover={{ scale: 1.05 }}
-                                    className="bg-[#40916C]/20 backdrop-blur-sm rounded-xl p-6 text-center transform hover:rotate-1 transition-all duration-300 border border-[#40916C]/30"
+                                    className="bg-[#40916C]/20 backdrop-blur-sm rounded-xl p-4 sm:p-6 text-center transform hover:rotate-1 transition-all duration-300 border border-[#40916C]/30"
                                 >
-                                    <div className="text-4xl mb-3">📦</div>
-                                    <h3 className="font-semibold text-[#B7E4C7]">Products</h3>
-                                    <p className="text-sm text-[#D8F3DC] mt-1">1000+ Items</p>
+                                    <div className="text-3xl sm:text-4xl mb-2 sm:mb-3">📦</div>
+                                    <h3 className="font-semibold text-sm sm:text-base text-[#B7E4C7]">Products</h3>
+                                    <p className="text-xs sm:text-sm text-[#D8F3DC] mt-1">1000+ Items</p>
                                 </motion.div>
                                 <motion.div 
                                     whileHover={{ scale: 1.05 }}
-                                    className="bg-[#2D6A4F]/20 backdrop-blur-sm rounded-xl p-6 text-center transform hover:-rotate-1 transition-all duration-300 border border-[#2D6A4F]/30"
+                                    className="bg-[#2D6A4F]/20 backdrop-blur-sm rounded-xl p-4 sm:p-6 text-center transform hover:-rotate-1 transition-all duration-300 border border-[#2D6A4F]/30"
                                 >
-                                    <div className="text-4xl mb-3">🔐</div>
-                                    <h3 className="font-semibold text-[#B7E4C7]">Verified</h3>
-                                    <p className="text-sm text-[#D8F3DC] mt-1">500+ Artisans</p>
+                                    <div className="text-3xl sm:text-4xl mb-2 sm:mb-3">🔐</div>
+                                    <h3 className="font-semibold text-sm sm:text-base text-[#B7E4C7]">Verified</h3>
+                                    <p className="text-xs sm:text-sm text-[#D8F3DC] mt-1">500+ Artisans</p>
                                 </motion.div>
                                 <motion.div 
                                     whileHover={{ scale: 1.05 }}
-                                    className="bg-[#1B4332]/20 backdrop-blur-sm rounded-xl p-6 text-center transform hover:rotate-1 transition-all duration-300 border border-[#1B4332]/30"
+                                    className="bg-[#1B4332]/20 backdrop-blur-sm rounded-xl p-4 sm:p-6 text-center transform hover:rotate-1 transition-all duration-300 border border-[#1B4332]/30"
                                 >
-                                    <div className="text-4xl mb-3">🗺️</div>
-                                    <h3 className="font-semibold text-[#B7E4C7]">Regions</h3>
-                                    <p className="text-sm text-[#D8F3DC] mt-1">50+ Areas</p>
+                                    <div className="text-3xl sm:text-4xl mb-2 sm:mb-3">🗺️</div>
+                                    <h3 className="font-semibold text-sm sm:text-base text-[#B7E4C7]">Regions</h3>
+                                    <p className="text-xs sm:text-sm text-[#D8F3DC] mt-1">50+ Areas</p>
                                 </motion.div>
                             </motion.div>
                         </div>
@@ -123,39 +123,39 @@ export default function HomePage() {
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
-                    className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-[#F0F7F4]"
+                    className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 bg-[#F0F7F4] mt-6 sm:mt-8 rounded-2xl sm:rounded-3xl"
                 >
                     {/* Hexagonal Grid Pattern */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 relative ">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 relative">
                         <motion.div variants={itemVariants} className="relative">
                             <Link href="/home/products" className="block">
-                                <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#40916C] hover:text-white group relative overflow-hidden">
+                                <div className="bg-white rounded-xl shadow-md p-4 sm:p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#40916C] hover:text-white group relative overflow-hidden">
                                     <div className="absolute inset-0 bg-gradient-to-br from-[#40916C]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                    <div className="text-2xl mb-2 transform transition-transform duration-300 group-hover:scale-110">📦</div>
-                                    <h2 className="text-xl font-semibold text-[#2D6A4F] group-hover:text-white transition-colors">Browse Products</h2>
-                                    <p className="mt-2 text-gray-600 group-hover:text-gray-200 transition-colors">Explore our collection of authentic products</p>
+                                    <div className="text-2xl sm:text-3xl mb-2 transform transition-transform duration-300 group-hover:scale-110">📦</div>
+                                    <h2 className="text-lg sm:text-xl font-semibold text-[#2D6A4F] group-hover:text-white transition-colors">Browse Products</h2>
+                                    <p className="mt-2 text-sm sm:text-base text-gray-600 group-hover:text-gray-200 transition-colors">Explore our collection of authentic products</p>
                                 </div>
                             </Link>
                         </motion.div>
 
                         <motion.div variants={itemVariants} className="relative">
                             <Link href="/home/verify" className="block">
-                                <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#2D6A4F] hover:text-white group relative overflow-hidden">
+                                <div className="bg-white rounded-xl shadow-md p-4 sm:p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#2D6A4F] hover:text-white group relative overflow-hidden">
                                     <div className="absolute inset-0 bg-gradient-to-br from-[#2D6A4F]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                    <div className="text-2xl mb-2 transform transition-transform duration-300 group-hover:scale-110">🔐</div>
-                                    <h2 className="text-xl font-semibold text-[#2D6A4F] group-hover:text-white transition-colors">Verify Products</h2>
-                                    <p className="mt-2 text-gray-600 group-hover:text-gray-200 transition-colors">Check the authenticity of your purchases</p>
+                                    <div className="text-2xl sm:text-3xl mb-2 transform transition-transform duration-300 group-hover:scale-110">🔐</div>
+                                    <h2 className="text-lg sm:text-xl font-semibold text-[#2D6A4F] group-hover:text-white transition-colors">Verify Products</h2>
+                                    <p className="mt-2 text-sm sm:text-base text-gray-600 group-hover:text-gray-200 transition-colors">Check the authenticity of your purchases</p>
                                 </div>
                             </Link>
                         </motion.div>
 
                         <motion.div variants={itemVariants} className="relative">
                             <Link href="/home/truemap" className="block">
-                                <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#1B4332] hover:text-white group relative overflow-hidden">
+                                <div className="bg-white rounded-xl shadow-md p-4 sm:p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#1B4332] hover:text-white group relative overflow-hidden">
                                     <div className="absolute inset-0 bg-gradient-to-br from-[#1B4332]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                    <div className="text-2xl mb-2 transform transition-transform duration-300 group-hover:scale-110">🗺️</div>
-                                    <h2 className="text-xl font-semibold text-[#2D6A4F] group-hover:text-white transition-colors">TrueMap</h2>
-                                    <p className="mt-2 text-gray-600 group-hover:text-gray-200 transition-colors">Track product origins and supply chains</p>
+                                    <div className="text-2xl sm:text-3xl mb-2 transform transition-transform duration-300 group-hover:scale-110">🗺️</div>
+                                    <h2 className="text-lg sm:text-xl font-semibold text-[#2D6A4F] group-hover:text-white transition-colors">TrueMap</h2>
+                                    <p className="mt-2 text-sm sm:text-base text-gray-600 group-hover:text-gray-200 transition-colors">Track product origins and supply chains</p>
                                 </div>
                             </Link>
                         </motion.div>
@@ -167,44 +167,44 @@ export default function HomePage() {
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
-                    className="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 mb-5 rounded-3xl"
+                    className="bg-gray-50 py-8 sm:py-12 px-4 sm:px-6 lg:px-8 mt-6 sm:mt-8 mb-5 rounded-2xl sm:rounded-3xl"
                 >
                     <div className="max-w-7xl mx-auto">
                         <motion.h2 
                             variants={itemVariants}
-                            className="text-2xl sm:text-3xl font-bold text-[#3A5B22] text-center mb-8"
+                            className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#3A5B22] text-center mb-6 sm:mb-8"
                         >
                             Featured Products
                         </motion.h2>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                             {[
                                 {
                                     href: "/home/products/madhubanipaintings",
                                     image: "/madhubaniPainting.jpg",
                                     title: "Madhubani Paintings",
                                     subtitle: "Bihar's Traditional Artform",
-                                    height: "h-64"
+                                    height: "h-48 sm:h-64"
                                 },
                                 {
                                     href: "/home/products/banglarasagola",
                                     image: "/banglarRasagola.jpg",
                                     title: "Banglar Rasagola",
                                     subtitle: "Bengal's Sweet Heritage",
-                                    height: "h-56"
+                                    height: "h-40 sm:h-56"
                                 },
                                 {
                                     href: "/home/products/darjeelingtea",
                                     image: "/darjeelingTea.jpg",
                                     title: "Darjeeling Tea",
                                     subtitle: "The Champagne of Teas",
-                                    height: "h-72"
+                                    height: "h-56 sm:h-72"
                                 },
                                 {
                                     href: "/home/products/feni",
                                     image: "/feni.jpg",
                                     title: "Goan Feni",
                                     subtitle: "Traditional Cashew Spirit",
-                                    height: "h-64"
+                                    height: "h-48 sm:h-64"
                                 }
                             ].map((product, index) => (
                                 <motion.div
@@ -224,9 +224,9 @@ export default function HomePage() {
                                                     className="object-cover transform transition-transform duration-500 group-hover:scale-110"
                                                 />
                                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                                <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                                                    <h3 className="text-white font-semibold text-lg">{product.title}</h3>
-                                                    <p className="text-gray-200 text-sm mt-1">{product.subtitle}</p>
+                                                <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                                                    <h3 className="text-white font-semibold text-base sm:text-lg">{product.title}</h3>
+                                                    <p className="text-gray-200 text-xs sm:text-sm mt-1">{product.subtitle}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -236,9 +236,6 @@ export default function HomePage() {
                         </div>
                     </div>
                 </motion.div>
-
-                {/* Stats Section with Diagonal Grid */}
-                
             </main>
 
             {/* Footer with Overlapping Grid */}
