@@ -77,7 +77,7 @@ export default function HomePage() {
                                         Welcome, {userData?.username || "User"}!
                                     </h1>
                                     <p className="text-base sm:text-lg text-[#D8F3DC]">
-                                        Discover authentic products and their origins
+                                        Discover authentic products and their origin
                                     </p>
                                 </div>
                             </motion.div>
