@@ -17,7 +17,7 @@ export default function VerifyPage() {
                     <h1 className="text-4xl font-bold text-[#3A5B22] mb-4">Verify Authenticity</h1>
                     <p className="text-lg text-gray-700 max-w-2xl mx-auto">
                         Easily verify the authenticity of products using our advanced verification tools.
-                        Scan codes, enter serial numbers, and get instant results to ensure your purchases are genuine.
+                        Scan codes, enter serial numbers, and get instant ryour purchases are genuine.
                     </p>
                 </div>
             </main>
