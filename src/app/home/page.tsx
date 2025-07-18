@@ -50,6 +50,53 @@ export default function HomePage() {
             <Head>
                 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
             </Head>
+            {/* Animated background shapes */}
+            <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+                {/* Example animated blobs using framer-motion */}
+                <motion.div
+                    initial={{ opacity: 0.5, scale: 0.8, x: -100, y: 0 }}
+                    animate={{ opacity: [0.5, 0.8, 0.5], scale: [0.8, 1.1, 0.8], x: [-100, 0, 100, -100], y: [0, 60, 0] }}
+                    transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
+                    className="absolute top-[-120px] left-[-120px] w-[320px] h-[320px] bg-gradient-to-br from-[#b993f4]/40 to-[#8ca6db]/40 rounded-full blur-3xl"
+                />
+                <motion.div
+                    initial={{ opacity: 0.4, scale: 1, x: 200, y: 400 }}
+                    animate={{ opacity: [0.4, 0.7, 0.4], scale: [1, 1.2, 1], x: [200, 0, -200, 200], y: [400, 300, 400] }}
+                    transition={{ duration: 22, repeat: Infinity, ease: 'linear' }}
+                    className="absolute bottom-[-160px] right-[-160px] w-[400px] h-[400px] bg-gradient-to-tr from-[#6e4ed6]/30 to-[#b993f4]/30 rounded-full blur-3xl"
+                />
+                <motion.div
+                    initial={{ opacity: 0.3, scale: 0.7, x: 0, y: 0 }}
+                    animate={{ opacity: [0.3, 0.6, 0.3], scale: [0.7, 1, 0.7], x: [0, 80, 0, -80, 0], y: [0, -60, 0, 60, 0] }}
+                    transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+                    className="absolute top-1/2 left-1/2 w-[260px] h-[260px] bg-gradient-to-tl from-[#8ca6db]/30 to-[#b993f4]/20 rounded-full blur-2xl"
+                    style={{ transform: 'translate(-50%, -50%)' }}
+                />
+            </div>
+            {/* More animated background elements: floating dots and a diagonal light sweep */}
+            <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+                {/* Animated floating dots */}
+                {[...Array(12)].map((_, i) => (
+                    <motion.div
+                        key={i}
+                        initial={{ opacity: 0.2 + Math.random() * 0.3, y: Math.random() * 800, x: Math.random() * 1600 }}
+                        animate={{
+                            y: [Math.random() * 800, Math.random() * 100, Math.random() * 800],
+                            opacity: [0.2, 0.5, 0.2],
+                        }}
+                        transition={{ duration: 18 + Math.random() * 10, repeat: Infinity, ease: 'easeInOut', delay: Math.random() * 10 }}
+                        className="absolute w-3 h-3 rounded-full bg-[#b993f4]/60 blur-[2px]"
+                        style={{ left: `${Math.random() * 95}%` }}
+                    />
+                ))}
+                {/* Diagonal light sweep */}
+                <motion.div
+                    initial={{ x: '-100vw', opacity: 0.1 }}
+                    animate={{ x: '100vw', opacity: [0.1, 0.2, 0.1] }}
+                    transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+                    className="absolute top-1/3 left-0 w-[60vw] h-32 bg-gradient-to-r from-white/10 via-white/30 to-white/0 rotate-12 blur-2xl"
+                />
+            </div>
             {/* Background image and gradient overlay */}
             <div className="absolute inset-0 z-0">
                 <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: "url('/back.png')" }} />
@@ -137,33 +184,33 @@ export default function HomePage() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 relative">
                         <motion.div variants={itemVariants} className="relative">
                             <Link href="/home/products" className="block">
-                                <div className="bg-white rounded-xl shadow-md p-4 sm:p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#40916C] hover:text-white group relative overflow-hidden">
+                                <div className="backdrop-blur-xl bg-white/20 border border-white/30 rounded-xl shadow-lg p-4 sm:p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-[#40916C]/30 hover:text-white group relative overflow-hidden">
                                     <div className="absolute inset-0 bg-gradient-to-br from-[#40916C]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                     <div className="text-2xl sm:text-3xl mb-2 transform transition-transform duration-300 group-hover:scale-110">📦</div>
-                                    <h2 className="text-lg sm:text-xl font-semibold bg-gradient-to-r from-[#2D6A4F] to-[#B7E4C7] bg-clip-text text-transparent transition-colors">Browse Products</h2>
-                                    <p className="mt-2 text-sm sm:text-base text-white group-hover:text-gray-200 transition-colors">Explore our collection of authentic products</p>
+                                    <h2 className="text-lg sm:text-xl font-semibold text-[#b993f4] transition-colors">Browse Products</h2>
+                                    <p className="mt-2 text-sm sm:text-base text-white/80 group-hover:text-white transition-colors">Explore our collection of authentic products</p>
                                 </div>
                             </Link>
                         </motion.div>
 
                         <motion.div variants={itemVariants} className="relative">
                             <Link href="/home/verify" className="block">
-                                <div className="bg-white rounded-xl shadow-md p-4 sm:p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#2D6A4F] hover:text-white group relative overflow-hidden">
+                                <div className="backdrop-blur-xl bg-white/20 border border-white/30 rounded-xl shadow-lg p-4 sm:p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-[#2D6A4F]/30 hover:text-white group relative overflow-hidden">
                                     <div className="absolute inset-0 bg-gradient-to-br from-[#2D6A4F]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                     <div className="text-2xl sm:text-3xl mb-2 transform transition-transform duration-300 group-hover:scale-110">🔐</div>
-                                    <h2 className="text-lg sm:text-xl font-semibold bg-gradient-to-r from-[#2D6A4F] to-[#B7E4C7] bg-clip-text text-transparent transition-colors">Verify Products</h2>
-                                    <p className="mt-2 text-sm sm:text-base text-white group-hover:text-gray-200 transition-colors">Check the authenticity of your purchases</p>
+                                    <h2 className="text-lg sm:text-xl font-semibold text-[#b993f4] transition-colors">Verify Products</h2>
+                                    <p className="mt-2 text-sm sm:text-base text-white/80 group-hover:text-white transition-colors">Check the authenticity of your purchases</p>
                                 </div>
                             </Link>
                         </motion.div>
 
                         <motion.div variants={itemVariants} className="relative">
                             <Link href="/home/truemap" className="block">
-                                <div className="bg-white rounded-xl shadow-md p-4 sm:p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#1B4332] hover:text-white group relative overflow-hidden">
+                                <div className="backdrop-blur-xl bg-white/20 border border-white/30 rounded-xl shadow-lg p-4 sm:p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-[#1B4332]/30 hover:text-white group relative overflow-hidden">
                                     <div className="absolute inset-0 bg-gradient-to-br from-[#1B4332]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                     <div className="text-2xl sm:text-3xl mb-2 transform transition-transform duration-300 group-hover:scale-110">🗺️</div>
-                                    <h2 className="text-lg sm:text-xl font-semibold bg-gradient-to-r from-[#2D6A4F] to-[#B7E4C7] bg-clip-text text-transparent transition-colors">TrueMap</h2>
-                                    <p className="mt-2 text-sm sm:text-base text-white group-hover:text-gray-200 transition-colors">Track product origins and supply chains</p>
+                                    <h2 className="text-lg sm:text-xl font-semibold text-[#b993f4] transition-colors">TrueMap</h2>
+                                    <p className="mt-2 text-sm sm:text-base text-white/80 group-hover:text-white transition-colors">Track product origins and supply chains</p>
                                 </div>
                             </Link>
                         </motion.div>
@@ -180,7 +227,7 @@ export default function HomePage() {
                     <div>
                         <motion.h2 
                             variants={itemVariants}
-                            className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-[#3A5B22] to-[#B7E4C7] bg-clip-text text-transparent text-center mb-6 sm:mb-8"
+                            className="text-xl sm:text-xl lg:text-5xl font-bold bg-gradient-to-r from-[#3A5B22] to-[#B7E4C7] bg-clip-text text-center mb-6 sm:mb-8 text-white"
                         >
                             Featured Products
                         </motion.h2>
