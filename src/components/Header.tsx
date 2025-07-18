@@ -36,13 +36,13 @@ export default function Header(props: HeaderProps) {
   ];
 
   return (
-    <header className="flex items-center justify-between w-full p-4 relative">
+    <header className="flex items-center justify-between mx-[10px] p-4 relative backdrop-blur-xl bg-white/10 border-b border-white/20 shadow-lg z-30 m-4 border-2 rounded-xl min-h-[72px]">
       {/* Honey drops */}
       <div className="honey-drop honey-drop-1"></div>
       <div className="honey-drop honey-drop-2"></div>
       <div className="honey-drop honey-drop-3"></div>
 
-      <Link href="/home" className="flex items-center cursor-pointer relative z-20">
+      <Link href="/home" className="flex items-center cursor-pointer relative z-20 min-w-[180px]">
         <Image
           src="/Logo.jpg"
           alt="TrueOrigin Logo"
@@ -50,32 +50,21 @@ export default function Header(props: HeaderProps) {
           height={60}
           className="mr-2 rounded-full"
         />
-        <span className="text-3xl font-bold text-[#3A5B22]">TrueOrigin</span>
+        <span className="text-3xl font-bold bg-gradient-to-r from-[#b993f4] to-[#8ca6db] bg-clip-text text-transparent">TrueOrigin</span>
       </Link>
 
       {/* Desktop Navigation */}
-      <div className="hidden md:flex items-center bg-[#D1E7D1] shadow-md rounded-lg py-2 px-6 space-x-6 relative z-20">
-        <nav className="flex space-x-6 flex-nowrap">
-          <Link href="/home/products" className={`text-gray-700 hover:text-[#3A5B22] font-medium transition-transform transform ${pathname === '/home/products' ? "scale-105 text-[#2e471a] border-b-2 border-[#2e471a]" : ""}`}>
-            Products📦
-          </Link>
-          
-          <Link href="/home/verify" className={`text-gray-700 hover:text-[#3A5B22] font-medium transition-transform transform ${pathname === '/home/verify' ? "scale-105 text-[#2e471a] border-b-2 border-[#2e471a]" : ""}`}>
-            Verify🔐
-          </Link>
-          <Link href="/home/truemap" className={`text-gray-700 hover:text-[#3A5B22] font-medium transition-transform transform ${pathname === '/home/truemap' ? "scale-105 text-[#2e471a] border-b-2 border-[#2e471a]" : ""}`}>
-            TrueMap🗺️
-          </Link>
-          <Link href="/home/team" className={`text-gray-700 hover:text-[#3A5B22] font-medium transition-transform transform ${pathname === '/home/team' ? "scale-105 text-[#2e471a] border-b-2 border-[#2e471a]" : ""}`}>
-            Team🤝
-          </Link>
-          <Link href="/home/accounts" className={`text-gray-700 hover:text-[#3A5B22] font-medium transition-transform transform ${pathname === '/home/accounts' ? "scale-105 text-[#2e471a] border-b-2 border-[#2e471a]" : ""}`}>
-            Account🏦
-          </Link>
+      <div className="hidden md:flex items-center bg-white/10 backdrop-blur-xl border border-white/20 shadow-md rounded-lg py-2 px-6 space-x-6 relative z-20 min-w-[500px] justify-center">
+        <nav className="flex space-x-6 flex-nowrap items-center">
+          <Link href="/home/products" className={`flex items-center h-10 px-4 text-white hover:text-[#b993f4] font-medium transition-transform transform ${pathname === '/home/products' ? "scale-105 text-[#b993f4] border-b-2 border-[#b993f4]" : ""}`}>Products📦</Link>
+          <Link href="/home/verify" className={`flex items-center h-10 px-4 text-white hover:text-[#b993f4] font-medium transition-transform transform ${pathname === '/home/verify' ? "scale-105 text-[#b993f4] border-b-2 border-[#b993f4]" : ""}`}>Verify🔐</Link>
+          <Link href="/home/truemap" className={`flex items-center h-10 px-4 text-white hover:text-[#b993f4] font-medium transition-transform transform ${pathname === '/home/truemap' ? "scale-105 text-[#b993f4] border-b-2 border-[#b993f4]" : ""}`}>TrueMap🗺️</Link>
+          <Link href="/home/team" className={`flex items-center h-10 px-4 text-white hover:text-[#b993f4] font-medium transition-transform transform ${pathname === '/home/team' ? "scale-105 text-[#b993f4] border-b-2 border-[#b993f4]" : ""}`}>Team🤝</Link>
+          <Link href="/home/accounts" className={`flex items-center h-10 px-4 text-white hover:text-[#b993f4] font-medium transition-transform transform ${pathname === '/home/accounts' ? "scale-105 text-[#b993f4] border-b-2 border-[#b993f4]" : ""}`}>Account🏦</Link>
         </nav>
         <button
           onClick={handleSignOut}
-          className="px-6 py-2 bg-[#3A5B22] text-white rounded-md hover:bg-opacity-90 transition-colors shadow cursor-pointer ml-6"
+          className="flex items-center h-10 px-6 bg-gradient-to-r from-[#b993f4] to-[#8ca6db] text-white rounded-md hover:from-[#8ca6db] hover:to-[#b993f4] transition-colors shadow cursor-pointer ml-6 border border-white/20"
         >
           Sign Out
         </button>
@@ -133,8 +122,6 @@ export default function Header(props: HeaderProps) {
           </nav>
         </div>
       )}
-
-      <div className="sine-wave-bottom"></div>
     </header>
   );
 } 
