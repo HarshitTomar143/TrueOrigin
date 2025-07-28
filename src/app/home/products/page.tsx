@@ -463,15 +463,20 @@ export default function ProductsPage() {
     const allProducts = [...products];
 
     return (
-        <div className="min-h-screen flex flex-col bg-gray-200">
+        <div className="min-h-screen flex flex-col relative">
+            {/* Background image */}
+            <div className="absolute inset-0 z-0">
+                <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: "url('/backHome.png')" }} />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a2e]/40 via-[#16213e]/40 to-[#0f3460]/40" />
+            </div>
             {/* Header */}
             <Header />
 
-            <div className="flex flex-col items-center justify-center mt-5 p-4">
+            <div className="flex flex-col items-center justify-center mt-5 p-4 relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full max-w-7xl">
                     {allProducts.map((product, index) => (
                         <div key={index} className="transform transition-all duration-300 hover:scale-105">
-                            <div className="flex flex-col items-center justify-center gap-4 font-medium bg-white h-full w-full rounded-2xl border border-emerald-200 shadow-lg hover:shadow-xl transition-shadow duration-300 p-6">
+                            <div className="flex flex-col items-center justify-center gap-4 font-medium backdrop-blur-xl bg-white/30 border border-white/40 h-full w-full rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6">
                                 <div className="relative w-full aspect-square overflow-hidden rounded-xl mb-2">
                                     <Image 
                                         src={product.image}
@@ -479,32 +484,32 @@ export default function ProductsPage() {
                                         fill
                                         className="object-cover hover:scale-110 transition-transform duration-300"
                                     />
-                    </div>
-                                <h1 className="text-2xl font-bold text-emerald-800">{product.name}</h1>
+                                </div>
+                                <h1 className="text-2xl font-bold text-white">{product.name}</h1>
                                 <div className="w-full space-y-2">
-                                    <div className="flex items-center gap-2 text-gray-600">
+                                    <div className="flex items-center gap-2 text-gray-200">
                                         <span className="font-medium">Type:</span>
                                         <span>{product.type}</span>
-                    </div>
-                                    <div className="flex items-center gap-2 text-gray-600">
+                                    </div>
+                                    <div className="flex items-center gap-2 text-gray-200">
                                         <span className="font-medium">Origin:</span>
                                         <span>{product.origin}</span>
-                    </div>
-                </div>
+                                    </div>
+                                </div>
                                 <div className="w-full mt-4 space-y-3">
                                     <Link href={product.url as string} className="block w-full">
-                                        <button className="w-full py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors duration-300 cursor-pointer">
+                                        <button className="w-full py-2 bg-gradient-to-r from-[#4a90e2] to-[#357abd] text-white rounded-lg hover:from-[#357abd] hover:to-[#2c5aa0] transition-colors duration-300 cursor-pointer">
                                             View Details
                                         </button>
-                    </Link>
+                                    </Link>
                                     <Link href="/" className="block w-full">
-                                        <button className="w-full py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors duration-300 cursor-pointer">
+                                        <button className="w-full py-2 bg-gradient-to-r from-[#4a90e2] to-[#357abd] text-white rounded-lg hover:from-[#357abd] hover:to-[#2c5aa0] transition-colors duration-300 cursor-pointer">
                                             View Buying Details
                                         </button>
-                    </Link>
-                    </div>
-                </div>
-                    </div>
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
                     ))}
                 </div>
             </div>

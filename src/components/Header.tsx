@@ -50,7 +50,7 @@ export default function Header(props: HeaderProps) {
           height={60}
           className="mr-2 rounded-full"
         />
-        <span className="text-3xl font-bold bg-gradient-to-r from-[#b993f4] to-[#8ca6db] bg-clip-text text-transparent">TrueOrigin</span>
+        <span className="text-4xl font-bold bg-gradient-to-r text-white bg-clip-text ">TrueOrigin</span>
       </Link>
 
       {/* Desktop Navigation */}

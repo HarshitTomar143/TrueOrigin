@@ -97,10 +97,10 @@ export default function HomePage() {
                     className="absolute top-1/3 left-0 w-[60vw] h-32 bg-gradient-to-r from-white/10 via-white/30 to-white/0 rotate-12 blur-2xl"
                 />
             </div>
-            {/* Background image and gradient overlay */}
+            {/* Plain white background with gradient overlay */}
             <div className="absolute inset-0 z-0">
-                <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: "url('/back.png')" }} />
-                <div className="absolute inset-0 bg-gradient-to-br from-[#3a2d71cc] via-[#6e4ed6cc] to-[#0f0c29cc] mix-blend-multiply" />
+                <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: "url('/backHome.png')" }} />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a2e]/40 via-[#16213e]/40 to-[#0f3460]/40" />
             </div>
             <Header />
             {/* Main content area with glassmorphism */}
@@ -109,7 +109,7 @@ export default function HomePage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="backdrop-blur-xl bg-white/10 border border-white/20 shadow-2xl rounded-3xl p-8 sm:p-12 mx-[10px]"
+                    className="backdrop-blur-xl bg-white/20 border border-white/30 shadow-2xl rounded-3xl p-8 sm:p-12 mx-[10px]"
                 >
                     {/* Welcome Section */}
                     <div className="max-w-[2000px] mx-auto">
@@ -128,10 +128,10 @@ export default function HomePage() {
                                     <TeaCup />
                                 </motion.div>
                                 <div className="text-center lg:text-left">
-                                    <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-[#b993f4] to-[#8ca6db] bg-clip-text text-transparent">
+                                    <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
                                         Welcome, {userData?.username || "User"}!
                                     </h1>
-                                    <p className="text-base sm:text-lg text-white">
+                                    <p className="text-base sm:text-lg text-gray-200">
                                         Discover authentic products and their origin
                                     </p>
                                 </div>
@@ -146,7 +146,7 @@ export default function HomePage() {
                             >
                                 <motion.div 
                                     whileHover={{ scale: 1.05 }}
-                                    className="bg-[#40916C]/20 backdrop-blur-sm rounded-xl p-4 sm:p-6 text-center transform hover:rotate-1 transition-all duration-300 border border-[#40916C]/30"
+                                    className="bg-white/25 backdrop-blur-sm rounded-xl p-4 sm:p-6 text-center transform hover:rotate-1 transition-all duration-300 border border-white/40 shadow-lg"
                                 >
                                     <div className="text-3xl sm:text-4xl mb-2 sm:mb-3">📦</div>
                                     <h3 className="font-semibold text-sm sm:text-base text-white">Products</h3>
@@ -154,7 +154,7 @@ export default function HomePage() {
                                 </motion.div>
                                 <motion.div 
                                     whileHover={{ scale: 1.05 }}
-                                    className="bg-[#2D6A4F]/20 backdrop-blur-sm rounded-xl p-4 sm:p-6 text-center transform hover:-rotate-1 transition-all duration-300 border border-[#2D6A4F]/30"
+                                    className="bg-white/25 backdrop-blur-sm rounded-xl p-4 sm:p-6 text-center transform hover:-rotate-1 transition-all duration-300 border border-white/40 shadow-lg"
                                 >
                                     <div className="text-3xl sm:text-4xl mb-2 sm:mb-3">🔐</div>
                                     <h3 className="font-semibold text-sm sm:text-base text-white">Verified</h3>
@@ -162,7 +162,7 @@ export default function HomePage() {
                                 </motion.div>
                                 <motion.div 
                                     whileHover={{ scale: 1.05 }}
-                                    className="bg-[#1B4332]/20 backdrop-blur-sm rounded-xl p-4 sm:p-6 text-center transform hover:rotate-1 transition-all duration-300 border border-[#1B4332]/30"
+                                    className="bg-white/25 backdrop-blur-sm rounded-xl p-4 sm:p-6 text-center transform hover:rotate-1 transition-all duration-300 border border-white/40 shadow-lg"
                                 >
                                     <div className="text-3xl sm:text-4xl mb-2 sm:mb-3">🗺️</div>
                                     <h3 className="font-semibold text-sm sm:text-base text-white">Regions</h3>
@@ -178,13 +178,13 @@ export default function HomePage() {
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
-                    className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 mt-6 sm:mt-8 rounded-2xl sm:rounded-3xl backdrop-blur-xl bg-white/10 border border-white/20 shadow-xl mx-[10px]"
+                    className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 mt-6 sm:mt-8 rounded-2xl sm:rounded-3xl backdrop-blur-xl bg-white/20 border border-white/30 shadow-xl mx-[10px]"
                 >
                     {/* Hexagonal Grid Pattern */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 relative">
                         <motion.div variants={itemVariants} className="relative">
                             <Link href="/home/products" className="block">
-                                <div className="backdrop-blur-xl bg-white/20 border border-white/30 rounded-xl shadow-lg p-4 sm:p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-[#40916C]/30 hover:text-white group relative overflow-hidden">
+                                <div className="backdrop-blur-xl bg-white/30 border border-white/40 rounded-xl shadow-lg p-4 sm:p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-gradient-to-br hover:from-[#4a90e2]/40 hover:to-[#357abd]/40 group relative overflow-hidden">
                                     <div className="absolute inset-0 bg-gradient-to-br from-[#40916C]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                     <div className="text-2xl sm:text-3xl mb-2 transform transition-transform duration-300 group-hover:scale-110">📦</div>
                                     <h2 className="text-lg sm:text-xl font-semibold text-[#b993f4] transition-colors">Browse Products</h2>
@@ -195,7 +195,7 @@ export default function HomePage() {
 
                         <motion.div variants={itemVariants} className="relative">
                             <Link href="/home/verify" className="block">
-                                <div className="backdrop-blur-xl bg-white/20 border border-white/30 rounded-xl shadow-lg p-4 sm:p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-[#2D6A4F]/30 hover:text-white group relative overflow-hidden">
+                                <div className="backdrop-blur-xl bg-white/30 border border-white/40 rounded-xl shadow-lg p-4 sm:p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-gradient-to-br hover:from-[#357abd]/40 hover:to-[#2c5aa0]/40 group relative overflow-hidden">
                                     <div className="absolute inset-0 bg-gradient-to-br from-[#2D6A4F]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                     <div className="text-2xl sm:text-3xl mb-2 transform transition-transform duration-300 group-hover:scale-110">🔐</div>
                                     <h2 className="text-lg sm:text-xl font-semibold text-[#b993f4] transition-colors">Verify Products</h2>
@@ -206,7 +206,7 @@ export default function HomePage() {
 
                         <motion.div variants={itemVariants} className="relative">
                             <Link href="/home/truemap" className="block">
-                                <div className="backdrop-blur-xl bg-white/20 border border-white/30 rounded-xl shadow-lg p-4 sm:p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-[#1B4332]/30 hover:text-white group relative overflow-hidden">
+                                <div className="backdrop-blur-xl bg-white/30 border border-white/40 rounded-xl shadow-lg p-4 sm:p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-gradient-to-br hover:from-[#2c5aa0]/40 hover:to-[#4a90e2]/40 group relative overflow-hidden">
                                     <div className="absolute inset-0 bg-gradient-to-br from-[#1B4332]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                     <div className="text-2xl sm:text-3xl mb-2 transform transition-transform duration-300 group-hover:scale-110">🗺️</div>
                                     <h2 className="text-lg sm:text-xl font-semibold text-[#b993f4] transition-colors">TrueMap</h2>
@@ -222,12 +222,12 @@ export default function HomePage() {
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
-                    className="bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl py-8 sm:py-12 px-4 sm:px-6 lg:px-8 mt-6 sm:mt-8 mb-5 rounded-2xl sm:rounded-3xl mx-[10px]"
+                    className="bg-white/20 backdrop-blur-xl border border-white/30 shadow-xl py-8 sm:py-12 px-4 sm:px-6 lg:px-8 mt-6 sm:mt-8 mb-5 rounded-2xl sm:rounded-3xl mx-[10px]"
                 >
                     <div>
                         <motion.h2 
                             variants={itemVariants}
-                            className="text-xl sm:text-xl lg:text-5xl font-bold bg-gradient-to-r from-[#3A5B22] to-[#B7E4C7] bg-clip-text text-center mb-6 sm:mb-8 text-white"
+                            className="text-xl sm:text-2xl lg:text-3xl font-bold text-white text-center mb-6 sm:mb-8"
                         >
                             Featured Products
                         </motion.h2>
