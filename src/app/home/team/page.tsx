@@ -13,7 +13,7 @@ const teamMembers = [
         name: "Rahul Sharma",
         role: "Project Lead",
         image: "/Logo.jpg",
-        discImage: "/darjeelingTea.jpg",
+        discImage: "/musicLogo1.png",
         description: "Experienced full-stack developer with expertise in React, Node.js, and blockchain technology. Led the development of TrueOrigin's core verification system.",
         skills: ["React", "Node.js", "Blockchain", "Team Leadership"],
         experience: "5+ years"
@@ -23,7 +23,7 @@ const teamMembers = [
         name: "Priya Patel",
         role: "UI/UX Designer",
         image: "/Logo.jpg",
-        discImage: "/mysoreSilk.jpg",
+        discImage: "/musicLogo2.png",
         description: "Creative designer passionate about user experience and visual storytelling. Designed the intuitive interface for TrueOrigin's product verification system.",
         skills: ["UI/UX Design", "Figma", "Adobe Creative Suite", "User Research"],
         experience: "4+ years"
@@ -33,7 +33,7 @@ const teamMembers = [
         name: "Amit Kumar",
         role: "Backend Developer",
         image: "/Logo.jpg",
-        discImage: "/banarasiSilkSaree.jpg",
+        discImage: "/musicLogo3.png",
         description: "Backend specialist with deep knowledge of database design and API development. Built the robust backend infrastructure for TrueOrigin.",
         skills: ["Python", "Django", "PostgreSQL", "AWS"],
         experience: "6+ years"
@@ -43,7 +43,7 @@ const teamMembers = [
         name: "Neha Singh",
         role: "Data Analyst",
         image: "/Logo.jpg",
-        discImage: "/alphonsoMango.jpg",
+        discImage: "/musicLogo4.png",
         description: "Data-driven analyst with expertise in machine learning and statistical analysis. Developed the AI-powered verification algorithms for TrueOrigin.",
         skills: ["Machine Learning", "Python", "Data Analysis", "Statistics"],
         experience: "3+ years"
