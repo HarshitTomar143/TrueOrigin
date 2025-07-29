@@ -102,12 +102,12 @@ export default function TeamPage() {
                 {/* Left Side - Music Discs */}
                 <div className="w-1/2 flex flex-col items-center justify-center space-y-8">
                     <motion.h1 
-                        className="text-4xl font-bold text-white mb-8 text-center"
+                        className="text-5xl font-bold text-white mb-8 text-center"
                         initial={{ opacity: 0, y: -50 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        Our Team
+                        Our Team Artists
                     </motion.h1>
                     
                     <div className="grid grid-cols-2 gap-8">
@@ -117,7 +117,7 @@ export default function TeamPage() {
                                 className="relative cursor-pointer group"
                                 initial={{ opacity: 0, scale: 0.5 }}
                                 animate={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.5, delay: index * 0.2 }}
+                                transition={{ duration: 0.05,  }}
                                 whileHover={{ scale: 1.05 }}
                                 onClick={() => setSelectedMember(member)}
                             >
@@ -137,17 +137,23 @@ export default function TeamPage() {
                                         
                                         {/* Member Image on Disc */}
                                         <div className="absolute inset-4 rounded-full overflow-hidden">
-                                            <Image
-                                                src={member.discImage}
-                                                alt={member.name}
-                                                width={96}
-                                                height={96}
-                                                className="w-full h-full object-cover"
-                                                onError={(e) => {
-                                                    const target = e.target as HTMLImageElement;
-                                                    target.src = "/Logo.jpg";
-                                                }}
-                                            />
+                                            <motion.div
+                                                animate={{ rotate: 360 }}
+                                                transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+                                                className="w-full h-full"
+                                            >
+                                                <Image
+                                                    src={member.discImage}
+                                                    alt={member.name}
+                                                    width={96}
+                                                    height={96}
+                                                    className="w-full h-full object-cover"
+                                                    onError={(e) => {
+                                                        const target = e.target as HTMLImageElement;
+                                                        target.src = "/Logo.jpg";
+                                                    }}
+                                                />
+                                            </motion.div>
                                         </div>
                                     </div>
                                     
