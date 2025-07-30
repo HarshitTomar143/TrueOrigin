@@ -5,56 +5,14 @@ import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
 import { motion } from "framer-motion";
-
-// Team member data
-const teamMembers = [
-    {
-        id: 1,
-        name: "Rahul Sharma",
-        role: "Project Lead",
-        image: "/Logo.jpg",
-        discImage: "/musicLogo1.png",
-        description: "Experienced full-stack developer with expertise in React, Node.js, and blockchain technology. Led the development of TrueOrigin's core verification system.",
-        skills: ["React", "Node.js", "Blockchain", "Team Leadership"],
-        experience: "5+ years"
-    },
-    {
-        id: 2,
-        name: "Priya Patel",
-        role: "UI/UX Designer",
-        image: "/Logo.jpg",
-        discImage: "/musicLogo2.png",
-        description: "Creative designer passionate about user experience and visual storytelling. Designed the intuitive interface for TrueOrigin's product verification system.",
-        skills: ["UI/UX Design", "Figma", "Adobe Creative Suite", "User Research"],
-        experience: "4+ years"
-    },
-    {
-        id: 3,
-        name: "Amit Kumar",
-        role: "Backend Developer",
-        image: "/Logo.jpg",
-        discImage: "/musicLogo3.png",
-        description: "Backend specialist with deep knowledge of database design and API development. Built the robust backend infrastructure for TrueOrigin.",
-        skills: ["Python", "Django", "PostgreSQL", "AWS"],
-        experience: "6+ years"
-    },
-    {
-        id: 4,
-        name: "Neha Singh",
-        role: "Data Analyst",
-        image: "/Logo.jpg",
-        discImage: "/musicLogo4.png",
-        description: "Data-driven analyst with expertise in machine learning and statistical analysis. Developed the AI-powered verification algorithms for TrueOrigin.",
-        skills: ["Machine Learning", "Python", "Data Analysis", "Statistics"],
-        experience: "3+ years"
-    }
-];
+import { useRouter } from "next/navigation";
+import { teamMembers } from "@/lib/teamData";
 
 // Music letters for animation
 const musicLetters = ['♪', '♫', '♬', '♩', '♭', '♮', '♯', '♪', '♫', '♬'];
 
 export default function TeamPage() {
-    const [selectedMember, setSelectedMember] = useState<typeof teamMembers[0] | null>(null);
+    const router = useRouter();
     const [isClient, setIsClient] = useState(false);
 
     useEffect(() => {
@@ -119,7 +77,7 @@ export default function TeamPage() {
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.05,  }}
                                 whileHover={{ scale: 1.05 }}
-                                onClick={() => setSelectedMember(member)}
+                                onClick={() => router.push(`/home/team/${member.memberId}`)}
                             >
                                 {/* Music Disc */}
                                 <div className="relative w-32 h-32">
@@ -171,69 +129,18 @@ export default function TeamPage() {
                     </div>
                 </div>
 
-                {/* Right Side - Popup Information */}
+                {/* Right Side - Instructions */}
                 <div className="w-1/2 flex items-center justify-center">
-                    {selectedMember ? (
-                        <motion.div
-                            className="backdrop-blur-xl bg-white/20 border border-white/30 rounded-2xl shadow-xl p-8 max-w-md"
-                            initial={{ opacity: 0, x: 50 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.5 }}
-                        >
-                            <div className="text-center">
-                                {/* Member Image */}
-                                <div className="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white/30">
-                                    <Image
-                                        src={selectedMember.image}
-                                        alt={selectedMember.name}
-                                        width={96}
-                                        height={96}
-                                        className="w-full h-full object-cover"
-                                        onError={(e) => {
-                                            const target = e.target as HTMLImageElement;
-                                            target.src = "/Logo.jpg";
-                                        }}
-                                    />
-                                </div>
-                                
-                                {/* Member Info */}
-                                <h2 className="text-2xl font-bold text-white mb-2">{selectedMember.name}</h2>
-                                <p className="text-blue-300 font-semibold mb-4">{selectedMember.role}</p>
-                                <p className="text-gray-200 mb-6 leading-relaxed">{selectedMember.description}</p>
-                                
-                                {/* Skills */}
-                                <div className="mb-6">
-                                    <h4 className="text-white font-semibold mb-3">Skills</h4>
-                                    <div className="flex flex-wrap gap-2 justify-center">
-                                        {selectedMember.skills.map((skill, index) => (
-                                            <span
-                                                key={index}
-                                                className="px-3 py-1 bg-white/20 text-white text-sm rounded-full border border-white/30"
-                                            >
-                                                {skill}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </div>
-                                
-                                {/* Experience */}
-                                <div className="text-gray-300">
-                                    <span className="font-semibold">Experience:</span> {selectedMember.experience}
-                                </div>
-                            </div>
-                        </motion.div>
-                    ) : (
-                        <motion.div
-                            className="text-center text-white/60"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ duration: 0.5 }}
-                        >
-                            <div className="text-6xl mb-4">♪</div>
-                            <h3 className="text-xl font-semibold mb-2">Click on a disc</h3>
-                            <p className="text-sm">to learn more about our team members</p>
-                        </motion.div>
-                    )}
+                    <motion.div
+                        className="text-center text-white/60"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <div className="text-6xl mb-4">♪</div>
+                        <h3 className="text-xl font-semibold mb-2">Click on a disc</h3>
+                        <p className="text-sm">to view detailed profile of our team members</p>
+                    </motion.div>
                 </div>
             </div>
         </div>
