@@ -16,7 +16,7 @@ export default function Product3DViewer({
   const [isModelLoaded, setIsModelLoaded] = useState(false)
   const [isAutoRotating, setIsAutoRotating] = useState(true)
   const [isScriptLoaded, setIsScriptLoaded] = useState(false)
-  const [loadingError, setLoadingError] = useState<string | null>(null)
+  const [loadingError, setLoadingError] = useState(null)
   const [loadingProgress, setLoadingProgress] = useState(0)
 
   useEffect(() => {
