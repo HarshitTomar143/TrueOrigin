@@ -49,255 +49,108 @@ export default function HomePage() {
     };
 
     return (
-        <div className="min-h-screen flex flex-col relative overflow-hidden font-poppins">
-            <Head>
-                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-            </Head>
-            {/* Animated background shapes */}
-            <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
-                {/* Example animated blobs using framer-motion */}
-                <motion.div
-                    initial={{ opacity: 0.5, scale: 0.8, x: -100, y: 0 }}
-                    animate={{ opacity: [0.5, 0.8, 0.5], scale: [0.8, 1.1, 0.8], x: [-100, 0, 100, -100], y: [0, 60, 0] }}
-                    transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
-                    className="absolute top-[-120px] left-[-120px] w-[320px] h-[320px] bg-gradient-to-br from-[#b993f4]/40 to-[#8ca6db]/40 rounded-full blur-3xl"
-                />
-                <motion.div
-                    initial={{ opacity: 0.4, scale: 1, x: 200, y: 400 }}
-                    animate={{ opacity: [0.4, 0.7, 0.4], scale: [1, 1.2, 1], x: [200, 0, -200, 200], y: [400, 300, 400] }}
-                    transition={{ duration: 22, repeat: Infinity, ease: 'linear' }}
-                    className="absolute bottom-[-160px] right-[-160px] w-[400px] h-[400px] bg-gradient-to-tr from-[#6e4ed6]/30 to-[#b993f4]/30 rounded-full blur-3xl"
-                />
-                <motion.div
-                    initial={{ opacity: 0.3, scale: 0.7, x: 0, y: 0 }}
-                    animate={{ opacity: [0.3, 0.6, 0.3], scale: [0.7, 1, 0.7], x: [0, 80, 0, -80, 0], y: [0, -60, 0, 60, 0] }}
-                    transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
-                    className="absolute top-1/2 left-1/2 w-[260px] h-[260px] bg-gradient-to-tl from-[#8ca6db]/30 to-[#b993f4]/20 rounded-full blur-2xl"
-                    style={{ transform: 'translate(-50%, -50%)' }}
-                />
+         <div className="min-h-screen flex flex-col font-poppins b bg-gradient-to-br from-green-800 via-beige-200 to-orange-200">
+      {/* Navbar */}
+      <Header />
+
+      {/* Hero Section */}
+      <main className="flex-grow px-6 sm:px-12 lg:px-20 py-12 relative">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-lg p-10 sm:p-14"
+        >
+          <div className="">
+            <h1 className="text-3xl sm:text-5xl  text-white">
+              Welcome back, User!
+            </h1>
+            <p className="text-lg sm:text-2xl text-white/90 mt-2">
+              Discover authentic products and their true origin
+            </p>
+            <div className="mt-6 flex flex-wrap  gap-4">
+              <Link
+                href="/home/products"
+                className="px-8 py-5 rounded-lg bg-white/10 hover:bg-green-500 text-white  shadow-md transition"
+              >
+                Browse Products
+              </Link>
+              <Link
+                href="/home/verify"
+                className="px-8 py-5 rounded-lg bg-white/10  hover:bg-orange-500 text-white font-semibold shadow-md transition"
+              >
+                Verify items
+              </Link>
             </div>
-            {/* More animated background elements: floating dots and a diagonal light sweep */}
-            <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
-                {/* Animated floating dots */}
-                {[...Array(12)].map((_, i) => (
-                    <motion.div
-                        key={i}
-                        initial={{ opacity: 0.2 + Math.random() * 0.3, y: Math.random() * 800, x: Math.random() * 1600 }}
-                        animate={{
-                            y: [Math.random() * 800, Math.random() * 100, Math.random() * 800],
-                            opacity: [0.2, 0.5, 0.2],
-                        }}
-                        transition={{ duration: 18 + Math.random() * 10, repeat: Infinity, ease: 'easeInOut', delay: Math.random() * 10 }}
-                        className="absolute w-3 h-3 rounded-full bg-[#b993f4]/60 blur-[2px]"
-                        style={{ left: `${Math.random() * 95}%` }}
-                    />
-                ))}
-                {/* Diagonal light sweep */}
-                <motion.div
-                    initial={{ x: '-100vw', opacity: 0.1 }}
-                    animate={{ x: '100vw', opacity: [0.1, 0.2, 0.1] }}
-                    transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
-                    className="absolute top-1/3 left-0 w-[60vw] h-32 bg-gradient-to-r from-white/10 via-white/30 to-white/0 rotate-12 blur-2xl"
-                />
-            </div>
-            {/* Plain white background with gradient overlay */}
-            <div className="absolute inset-0 z-0">
-                <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: "url('/backHome.png')" }} />
-                <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a2e]/40 via-[#16213e]/40 to-[#0f3460]/40" />
-            </div>
-            <Header />
-            {/* Main content area with glassmorphism */}
-            <main className="flex-grow px-4 sm:px-6 lg:px-8 mt-4 sm:mt-5 relative z-10 mx-[10px]">
-                <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="backdrop-blur-xl bg-white/20 border border-white/30 shadow-2xl rounded-3xl p-8 sm:p-12 mx-[10px]"
-                >
-                    {/* Welcome Section */}
-                    <div className="max-w-[2000px] mx-auto">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
-                            {/* Left Side - Welcome Message and Tea Logo */}
-                            <motion.div 
-                                initial={{ opacity: 0, x: -20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: 0.2, duration: 0.5 }}
-                                className="flex flex-col lg:flex-row items-center lg:items-start gap-4 sm:gap-6"
-                            >
-                                <motion.div 
-                                    animate={floatingAnimation}
-                                    className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32"
-                                >
-                                    <TeaCup />
-                                </motion.div>
-                                <div className="text-center lg:text-left">
-                                    <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
-                                        Welcome, {userData?.username || "User"}!
-                                    </h1>
-                                    <p className="text-base sm:text-lg text-gray-200">
-                                        Discover authentic products and their origin
-                                    </p>
-                                </div>
-                            </motion.div>
+          </div>
 
-                            {/* Right Side - Three Icons */}
-                            <motion.div 
-                                initial={{ opacity: 0, x: 20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: 0.4, duration: 0.5 }}
-                                className="grid grid-cols-3 gap-3 sm:gap-4"
-                            >
-                                <motion.div 
-                                    whileHover={{ scale: 1.05 }}
-                                    className="bg-white/25 backdrop-blur-sm rounded-xl p-4 sm:p-6 text-center transform hover:rotate-1 transition-all duration-300 border border-white/40 shadow-lg"
-                                >
-                                    <div className="text-3xl sm:text-4xl mb-2 sm:mb-3">📦</div>
-                                    <h3 className="font-semibold text-sm sm:text-base text-white">Products</h3>
-                                    <p className="text-xs sm:text-sm text-white mt-1">1000+ Items</p>
-                                </motion.div>
-                                <motion.div 
-                                    whileHover={{ scale: 1.05 }}
-                                    className="bg-white/25 backdrop-blur-sm rounded-xl p-4 sm:p-6 text-center transform hover:-rotate-1 transition-all duration-300 border border-white/40 shadow-lg"
-                                >
-                                    <div className="text-3xl sm:text-4xl mb-2 sm:mb-3">🔐</div>
-                                    <h3 className="font-semibold text-sm sm:text-base text-white">Verified</h3>
-                                    <p className="text-xs sm:text-sm text-white mt-1">500+ Artisans</p>
-                                </motion.div>
-                                <motion.div 
-                                    whileHover={{ scale: 1.05 }}
-                                    className="bg-white/25 backdrop-blur-sm rounded-xl p-4 sm:p-6 text-center transform hover:rotate-1 transition-all duration-300 border border-white/40 shadow-lg"
-                                >
-                                    <div className="text-3xl sm:text-4xl mb-2 sm:mb-3">🗺️</div>
-                                    <h3 className="font-semibold text-sm sm:text-base text-white">Regions</h3>
-                                    <p className="text-xs sm:text-sm text-white mt-1">50+ Areas</p>
-                                </motion.div>
-                            </motion.div>
-                        </div>
-                    </div>
-                </motion.div>
+          {/* Stats Section */}
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {[
+              { icon: "📦", title: "Products", desc: "1000+ Items" },
+              { icon: "🔐", title: "Verified", desc: "500+ Artisans" },
+              { icon: "🗺️", title: "Regions", desc: "50+ Areas" },
+            ].map((card, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ scale: 1.05 }}
+                className="bg-[#f5e6d37a] rounded-xl cursor-pointer  backdrop-blur-md border border-white/30 p-6 text-center shadow-md"
+              >
+                <div className="text-4xl mb-2">{card.icon}</div>
+                <h3 className="text-black font-semibold text-lg">
+                  {card.title}
+                </h3>
+                <p className="text-black text-sm mt-1">{card.desc}</p>
+              </motion.div>
+            ))},
+            
+          </div>
+        </motion.div>
 
-                {/* Quick Actions Section */}
-                <motion.div 
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate="visible"
-                    className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 mt-6 sm:mt-8 rounded-2xl sm:rounded-3xl backdrop-blur-xl bg-white/20 border border-white/30 shadow-xl mx-[10px]"
-                >
-                    {/* Hexagonal Grid Pattern */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 relative">
-                        <motion.div variants={itemVariants} className="relative">
-                            <Link href="/home/products" className="block">
-                                <div className="backdrop-blur-xl bg-white/30 border border-white/40 rounded-xl shadow-lg p-4 sm:p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-gradient-to-br hover:from-[#4a90e2]/40 hover:to-[#357abd]/40 group relative overflow-hidden">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-[#40916C]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                    <div className="text-2xl sm:text-3xl mb-2 transform transition-transform duration-300 group-hover:scale-110">📦</div>
-                                    <h2 className="text-lg sm:text-xl font-semibold text-[#381769]  transition-colors">Browse Products</h2>
-                                    <p className="mt-2 text-sm sm:text-base text-white/80 group-hover:text-white transition-colors">Explore our collection of authentic products</p>
-                                </div>
-                            </Link>
-                        </motion.div>
+        {/* Feature Cards */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6"
+        >
+          {[
+            {
+              href: "/home/products",
+              icon: "📦",
+              title: "Browse Products",
+              desc: "Explore our collection of authentic products",
+            },
+            {
+              href: "/home/verify",
+              icon: "🔐",
+              title: "Verify Products",
+              desc: "Check the authenticity of your purchases",
+            },
+            {
+              href: "/home/truemap",
+              icon: "🗺️",
+              title: "TrueMap",
+              desc: "Track product origins and supply chains",
+            },
+          ].map((feature, i) => (
+            <Link
+              key={i}
+              href={feature.href}
+              className="bg-[#f5e6d3c2] backdrop-blur-xl border border-white/30 rounded-xl p-6 shadow-lg hover:scale-105 transform transition"
+            >
+              <div className="text-3xl mb-2">{feature.icon}</div>
+              <h2 className="font-semibold text-lg text-black">
+                {feature.title}
+              </h2>
+              <p className="text-sm text-black mt-1">{feature.desc}</p>
+            </Link>
+          ))}
+        </motion.div>
+      </main>
 
-                        <motion.div variants={itemVariants} className="relative">
-                            <Link href="/home/verify" className="block">
-                                <div className="backdrop-blur-xl bg-white/30 border border-white/40 rounded-xl shadow-lg p-4 sm:p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-gradient-to-br hover:from-[#357abd]/40 hover:to-[#2c5aa0]/40 group relative overflow-hidden">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-[#2D6A4F]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                    <div className="text-2xl sm:text-3xl mb-2 transform transition-transform duration-300 group-hover:scale-110">🔐</div>
-                                    <h2 className="text-lg sm:text-xl font-semibold text-[#381769] transition-colors">Verify Products</h2>
-                                    <p className="mt-2 text-sm sm:text-base text-white/80 group-hover:text-white transition-colors">Check the authenticity of your purchases</p>
-                                </div>
-                            </Link>
-                        </motion.div>
-
-                        <motion.div variants={itemVariants} className="relative">
-                            <Link href="/home/truemap" className="block">
-                                <div className="backdrop-blur-xl bg-white/30 border border-white/40 rounded-xl shadow-lg p-4 sm:p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-gradient-to-br hover:from-[#2c5aa0]/40 hover:to-[#4a90e2]/40 group relative overflow-hidden">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-[#1B4332]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                    <div className="text-2xl sm:text-3xl mb-2 transform transition-transform duration-300 group-hover:scale-110">🗺️</div>
-                                    <h2 className="text-lg sm:text-xl font-semibold text-[#381769] transition-colors">TrueMap</h2>
-                                    <p className="mt-2 text-sm sm:text-base text-white/80 group-hover:text-white transition-colors">Track product origins and supply chains</p>
-                                </div>
-                            </Link>
-                        </motion.div>
-                    </div>
-                </motion.div>
-
-                {/* Featured Products Section with Masonry-like Grid */}
-                <motion.div 
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate="visible"
-                    className="bg-white/20 backdrop-blur-xl border border-white/30 shadow-xl py-8 sm:py-12 px-4 sm:px-6 lg:px-8 mt-6 sm:mt-8 mb-5 rounded-2xl sm:rounded-3xl mx-[10px]"
-                >
-                    <div>
-                        <motion.h2 
-                            variants={itemVariants}
-                            className="text-xl sm:text-2xl lg:text-3xl font-bold text-white text-center mb-6 sm:mb-8"
-                        >
-                            Featured Products
-                        </motion.h2>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-                            {[
-                                {
-                                    href: "/home/products/madhubanipaintings",
-                                    image: "/madhubaniPainting.jpg",
-                                    title: "Madhubani Paintings",
-                                    subtitle: "Bihar's Traditional Artform",
-                                    height: "h-48 sm:h-64"
-                                },
-                                {
-                                    href: "/home/products/banglarasagola",
-                                    image: "/banglarRasagola.jpg",
-                                    title: "Banglar Rasagola",
-                                    subtitle: "Bengal's Sweet Heritage",
-                                    height: "h-40 sm:h-56"
-                                },
-                                {
-                                    href: "/home/products/darjeelingtea",
-                                    image: "/darjeelingTea.jpg",
-                                    title: "Darjeeling Tea",
-                                    subtitle: "The Champagne of Teas",
-                                    height: "h-56 sm:h-72"
-                                },
-                                {
-                                    href: "/home/products/feni",
-                                    image: "/feni.jpg",
-                                    title: "Goan Feni",
-                                    subtitle: "Traditional Cashew Spirit",
-                                    height: "h-48 sm:h-64"
-                                }
-                            ].map((product, index) => (
-                                <motion.div
-                                    key={product.href}
-                                    variants={itemVariants}
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
-                                    className={`relative ${index % 2 === 0 ? 'lg:mt-8' : ''}`}
-                                >
-                                    <Link href={product.href} className="block">
-                                        <div className="bg-white rounded-xl shadow-md overflow-hidden group">
-                                            <div className={`relative ${product.height} overflow-hidden`}>
-                                                <Image
-                                                    src={product.image}
-                                                    alt={product.title}
-                                                    fill
-                                                    className="object-cover transform transition-transform duration-500 group-hover:scale-110"
-                                                />
-                                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                                <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                                                    <h3 className="text-white font-semibold text-base sm:text-lg">{product.title}</h3>
-                                                    <p className="text-white text-xs sm:text-sm mt-1">{product.subtitle}</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </Link>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </motion.div>
-            </main>
-
-            {/* Footer with Overlapping Grid */}
-            <motion.footer 
+      {/* Footer */}
+        <motion.footer 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.5 }}
@@ -392,6 +245,8 @@ export default function HomePage() {
                 isOpen={isChatbotOpen} 
                 onClose={() => setIsChatbotOpen(false)} 
             />
-        </div>
+
+
+    </div>
     );
 }
