@@ -3,8 +3,9 @@
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { has3DModel } from "@/lib/glbMapping";
 
-// Product data mapping with cultural and historical information
+
 const productData = {
   madhubanipaintings: {
     name: "Madhubani Paintings",
@@ -1894,14 +1895,16 @@ export default function ProductPage() {
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2">{product.name}</h1>
               <p className="text-base sm:text-lg md:text-xl">{product.description}</p>
             </div>
-            <div className="absolute bottom-0 right-0 p-4 sm:p-8">
-              <Link 
-                href={`/home/products/${productId}/3d`}
-                className="inline-block bg-[#3A5B22] text-white border-2 border-white px-4 sm:px-6 py-2 sm:py-3 rounded-md hover:bg-opacity-90 transition-all duration-300 hover:scale-105 transform shadow-lg text-sm sm:text-base"
-              >
-                View in 3D
-              </Link>
-            </div>
+            {has3DModel(productId) && (
+              <div className="absolute bottom-0 right-0 p-4 sm:p-8">
+                <Link 
+                  href={`/home/products/${productId}/3d`}
+                  className="inline-block bg-[#3A5B22] text-white border-2 border-white px-4 sm:px-6 py-2 sm:py-3 rounded-md hover:bg-opacity-90 transition-all duration-300 hover:scale-105 transform shadow-lg text-sm sm:text-base"
+                >
+                  View in 3D
+                </Link>
+              </div>
+            )}
           </div>
         </div>
 
@@ -1918,6 +1921,14 @@ export default function ProductPage() {
           <div className="bg-white p-4 sm:p-6 rounded-xl shadow-md sm:col-span-2 md:col-span-1">
             <h3 className="text-base sm:text-lg font-semibold text-[#3A5B22] mb-1 sm:mb-2">About</h3>
             <p className="text-sm sm:text-base text-gray-600">{product.shortDescription}</p>
+            {has3DModel(productId) && (
+              <div className="mt-3 flex items-center">
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                  <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+                  3D Model Available
+                </span>
+              </div>
+            )}
           </div>
         </div>
 
