@@ -42,7 +42,30 @@ export const glbFileMapping: Record<string, string> = {
   bhiwapurchilli: "/3D/biwapurChilli.glb",
   firozabadbangles: "/3D/firozabadGlass.glb",
   nagpurgrapes: "/3D/nagpurGrapes.glb",
-  redbanana: "/3D/redBanana.glb"
+  redbanana: "/3D/redBanana.glb",
+  
+  // Existing products with GLB files
+  darjeelingtea: "/3D/tea.glb",
+  bluepottery: "/3D/jaipurBluePottery.glb",
+
+  // New GLB files added
+  aranmulakannadi: "/3D/aranmulaKannadi.glb",
+  assamorthodoxtea: "/3D/assamOrthodoxTea.glb",
+  banglarasagola: "/3D/banglarRasogolla.glb",
+  channapatnatoys: "/3D/channapatnaToys.glb",
+  kolhapurichappal: "/3D/kolhapuriChappal.glb",
+  kullushawl: "/3D/kulluShawl.glb",
+  mizochilli: "/3D/mizoChilli.glb",
+  mysoresilk: "/3D/mysoreSilk.glb",
+  mysoresandalsoap: "/3D/mysoreSoap.glb",
+  palakkadmattarice: "/3D/palakkadMattaRice.glb",
+  pashminawool: "/3D/pashminaWool.glb",
+  saree: "/3D/saree_1.glb",
+  silk: "/3D/silk.glb",
+  solapurichaddar: "/3D/solapuri chaddar.glb",
+  sweetdelights: "/3D/Sweet_Delights_on_a_P_0813203153_texture.glb",
+  tanjorepaneer: "/3D/Tanjore Paneer.glb",
+  woodenfigurines: "/3D/Wooden_Figurines_Trio_0813202017_texture.glb"
 };
 
 export const has3DModel = (productId: string): boolean => {

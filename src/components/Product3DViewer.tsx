@@ -23,8 +23,12 @@ export default function Product3DViewer({
   const [isModelLoaded, setIsModelLoaded] = useState(false)
   const [isAutoRotating, setIsAutoRotating] = useState(true)
   const [isScriptLoaded, setIsScriptLoaded] = useState(false)
+  const [loadingError, setLoadingError] = useState<string | null>(null)
+  const [loadingProgress, setLoadingProgress] = useState(0)
 
   useEffect(() => {
+    console.log('Starting to load 3D viewer...')
+    
     // Load model-viewer script
     const script = document.createElement('script')
     script.type = 'module'
@@ -32,26 +36,118 @@ export default function Product3DViewer({
     script.async = true
     
     script.onload = () => {
+      console.log('3D viewer script loaded successfully')
       setIsScriptLoaded(true)
+      
+      // Wait a bit for the custom element to be defined
+      setTimeout(() => {
+        if (customElements.get('model-viewer')) {
+          console.log('Model-viewer custom element is now defined')
+        }
+      }, 100)
+    }
+    
+    script.onerror = () => {
+      console.error('Failed to load 3D viewer script')
+      setLoadingError('Failed to load 3D viewer. Please check your internet connection.')
     }
     
     document.head.appendChild(script)
+
+    // Set a timeout to prevent infinite loading
+    const timeoutId = setTimeout(() => {
+      if (!isModelLoaded) {
+        console.warn('Model loading timeout reached')
+        setLoadingError('Model is taking too long to load. Please try refreshing the page.')
+        setIsModelLoaded(true)
+      }
+    }, 15000) // 15 seconds timeout - reduced for better UX
 
     return () => {
       // Cleanup script if component unmounts
       if (document.head.contains(script)) {
         document.head.removeChild(script)
       }
+      clearTimeout(timeoutId)
     }
-  }, [])
+  }, [isModelLoaded])
 
   const handleModelLoad = () => {
+    console.log('3D Model loaded successfully')
     setIsModelLoaded(true)
+    setLoadingError(null)
+    
+    // Check if the model-viewer element is working
+    const modelViewer = document.querySelector('model-viewer') as any
+    if (modelViewer) {
+      console.log('Model viewer element found:', modelViewer)
+      console.log('Model src:', modelViewer.src)
+      console.log('Model ready state:', modelViewer.readyState)
+    }
   }
+
+  // Alternative loading detection using readyState
+  useEffect(() => {
+    if (!isScriptLoaded) return
+
+    const checkModelReady = () => {
+      const modelViewer = document.querySelector('model-viewer') as any
+      if (modelViewer) {
+        // Check multiple conditions for model readiness
+        if (modelViewer.readyState === 4) { // 4 = COMPLETE
+          console.log('Model ready state detected as complete')
+          setIsModelLoaded(true)
+          setLoadingError(null)
+          return
+        }
+        
+        // Check if model has loaded and is visible
+        if (modelViewer.model && modelViewer.model.modelUri) {
+          console.log('Model object detected, considering loaded')
+          setIsModelLoaded(true)
+          setLoadingError(null)
+          return
+        }
+        
+        // Check if the model-viewer has any content
+        const canvas = modelViewer.shadowRoot?.querySelector('canvas')
+        if (canvas && canvas.width > 0 && canvas.height > 0) {
+          console.log('Canvas detected with dimensions, considering loaded')
+          setIsModelLoaded(true)
+          setLoadingError(null)
+          return
+        }
+      }
+    }
+
+    // Check immediately
+    checkModelReady()
+
+    // Set up interval to check periodically
+    const intervalId = setInterval(checkModelReady, 500) // Check more frequently
+
+    // Also check when the model-viewer element changes
+    const observer = new MutationObserver(checkModelReady)
+    observer.observe(document.body, { childList: true, subtree: true })
+
+    return () => {
+      clearInterval(intervalId)
+      observer.disconnect()
+    }
+  }, [isScriptLoaded])
 
   const handleModelError = (error: any) => {
     console.error('Error loading 3D model:', error)
+    setLoadingError('Failed to load 3D model. Please try refreshing the page.')
     setIsModelLoaded(true) // Remove loading overlay even on error
+  }
+
+  const handleModelProgress = (event: any) => {
+    if (event.detail.totalProgress !== undefined) {
+      const progress = Math.round(event.detail.totalProgress * 100)
+      setLoadingProgress(progress)
+      console.log(`Loading progress: ${progress}%`)
+    }
   }
 
   const toggleAutoRotate = () => {
@@ -96,6 +192,26 @@ export default function Product3DViewer({
         <div className="text-center text-white">
           <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-white mx-auto mb-4"></div>
           <p className="text-lg">Loading 3D Viewer...</p>
+          <p className="text-sm text-yellow-300 mt-2">This may take a few seconds</p>
+        </div>
+      </div>
+    )
+  }
+
+  // Check if model-viewer custom element is defined
+  if (typeof window !== 'undefined' && !customElements.get('model-viewer')) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-[#24243e] via-[#302b63] to-[#0f0c29] flex items-center justify-center">
+        <div className="text-center text-white">
+          <div className="text-4xl mb-4">⚠️</div>
+          <h3 className="text-xl font-semibold mb-4">3D Viewer Not Available</h3>
+          <p className="text-sm mb-4">The 3D viewer component failed to load properly.</p>
+          <button 
+            onClick={() => window.location.reload()}
+            className="bg-yellow-500 text-black px-4 py-2 rounded-lg hover:bg-yellow-400 transition-colors"
+          >
+            Refresh Page
+          </button>
         </div>
       </div>
     )
@@ -160,8 +276,15 @@ export default function Product3DViewer({
                exposure="1"
                environment-image="neutral"
                loading="eager"
+               reveal="auto"
                onLoad={handleModelLoad}
                onError={handleModelError}
+               onProgress={handleModelProgress}
+               onModelVisibility={() => {
+                 console.log('Model visibility changed')
+                 // If the model becomes visible, consider it loaded
+                 setTimeout(() => setIsModelLoaded(true), 1000)
+               }}
                style={{
                  width: '100%',
                  height: '500px',
@@ -171,19 +294,108 @@ export default function Product3DViewer({
                }}
              />
             
-            {/* Loading Overlay */}
-            {!isModelLoaded && (
-              <div className="absolute inset-0 bg-black/50 rounded-20px flex items-center justify-center">
-                <div className="text-center text-white">
-                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
-                  <p>Loading 3D Model...</p>
-                </div>
-              </div>
-            )}
+                         {/* Loading Overlay */}
+             {!isModelLoaded && (
+               <div className="absolute inset-0 bg-black/50 rounded-20px flex items-center justify-center">
+                 <div className="text-center text-white">
+                   <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
+                   <p className="mb-2">Loading 3D Model...</p>
+                   <div className="w-48 bg-white/20 rounded-full h-2 mb-2">
+                     <div 
+                       className="bg-yellow-400 h-2 rounded-full transition-all duration-300"
+                       style={{ width: `${loadingProgress}%` }}
+                     ></div>
+                   </div>
+                   <p className="text-sm text-yellow-300">{loadingProgress}%</p>
+                   
+                                       {/* Loading Tips */}
+                    {loadingProgress === 0 && (
+                      <div className="mt-4 text-xs text-yellow-200 max-w-xs">
+                        <p>💡 Tip: Large models may take a few minutes to load on slower connections</p>
+                        <p className="mt-1">⏱️ Loading timeout: 15 seconds</p>
+                      </div>
+                    )}
+                    
+                    {/* Timeout Warning */}
+                    {loadingProgress > 0 && loadingProgress < 50 && (
+                      <div className="mt-2 text-xs text-orange-300">
+                        <p>Loading in progress... Please wait</p>
+                      </div>
+                    )}
+
+                    {/* Manual Skip Button */}
+                    <div className="mt-4">
+                      <button 
+                        onClick={() => {
+                          console.log('Manual skip loading clicked')
+                          setIsModelLoaded(true)
+                          setLoadingError(null)
+                        }}
+                        className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-400 transition-colors text-sm"
+                      >
+                        Skip Loading (if model is visible)
+                      </button>
+                      
+                      {/* Model Detection Status */}
+                      <div className="mt-2 text-xs text-blue-300">
+                        <p>🔍 Detecting model automatically...</p>
+                        <p>If you can see the model moving, click "Skip Loading" above</p>
+                      </div>
+                    </div>
+                 </div>
+               </div>
+             )}
+
+             {/* Error Display */}
+             {loadingError && (
+               <div className="absolute inset-0 bg-black/50 rounded-20px flex items-center justify-center">
+                 <div className="text-center text-white bg-red-900/80 p-6 rounded-xl max-w-md mx-4">
+                   <div className="text-4xl mb-4">⚠️</div>
+                   <h3 className="text-lg font-semibold mb-2">Loading Error</h3>
+                   <p className="text-sm mb-4">{loadingError}</p>
+                   <div className="space-y-2">
+                     <button 
+                       onClick={() => window.location.reload()}
+                       className="bg-yellow-500 text-black px-4 py-2 rounded-lg hover:bg-yellow-400 transition-colors mr-2"
+                     >
+                       Refresh Page
+                     </button>
+                     <button 
+                       onClick={() => {
+                         setLoadingError(null)
+                         setIsModelLoaded(true)
+                       }}
+                       className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-400 transition-colors"
+                     >
+                       Continue Without 3D
+                     </button>
+                   </div>
+                 </div>
+               </div>
+             )}
+
+             {/* Fallback Image when 3D fails */}
+             {loadingError && (
+               <div className="mt-4 text-center">
+                 <p className="text-white/60 text-sm mb-2">Showing product image instead:</p>
+                 <img 
+                   src={productImage} 
+                   alt={productName}
+                   className="w-32 h-32 object-cover rounded-lg mx-auto"
+                 />
+               </div>
+             )}
           </div>
 
-          {/* Controls */}
-          <div className="mt-6 flex justify-center space-x-4">
+                     {/* Model Status */}
+           {isModelLoaded && !loadingError && (
+             <div className="text-center mb-4">
+               <p className="text-green-400 text-sm">✓ 3D Model Loaded Successfully</p>
+             </div>
+           )}
+
+           {/* Controls */}
+           <div className="mt-6 flex justify-center space-x-4">
             <motion.button
               onClick={toggleAutoRotate}
               className={`p-3 rounded-full ${
@@ -248,28 +460,40 @@ export default function Product3DViewer({
               <p className="text-white/80 leading-relaxed">{productDescription}</p>
             </div>
             
-            <div className="space-y-4">
-              <div className="bg-white/10 rounded-lg p-4">
-                <h4 className="font-semibold mb-2 text-yellow-300">3D Model Features</h4>
-                <ul className="text-sm text-white/80 space-y-1">
-                  <li>• Interactive 3D viewing</li>
-                  <li>• Camera controls (drag to rotate)</li>
-                  <li>• Zoom in/out functionality</li>
-                  <li>• Auto-rotation toggle</li>
-                  <li>• AR viewing support</li>
-                </ul>
-              </div>
-              
-              <div className="bg-white/10 rounded-lg p-4">
-                <h4 className="font-semibold mb-2 text-yellow-300">How to Use</h4>
-                <ul className="text-sm text-white/80 space-y-1">
-                  <li>• Drag to rotate the model</li>
-                  <li>• Scroll to zoom in/out</li>
-                  <li>• Use controls below the model</li>
-                  <li>• Click AR button for augmented reality</li>
-                </ul>
-              </div>
-            </div>
+                         <div className="space-y-4">
+               <div className="bg-white/10 rounded-lg p-4">
+                 <h4 className="font-semibold mb-2 text-yellow-300">3D Model Features</h4>
+                 <ul className="text-sm text-white/80 space-y-1">
+                   <li>• Interactive 3D viewing</li>
+                   <li>• Camera controls (drag to rotate)</li>
+                   <li>• Zoom in/out functionality</li>
+                   <li>• Auto-rotation toggle</li>
+                   <li>• AR viewing support</li>
+                 </ul>
+               </div>
+               
+               <div className="bg-white/10 rounded-lg p-4">
+                 <h4 className="font-semibold mb-2 text-yellow-300">How to Use</h4>
+                 <ul className="text-sm text-white/80 space-y-1">
+                   <li>• Drag to rotate the model</li>
+                   <li>• Scroll to zoom in/out</li>
+                   <li>• Use controls below the model</li>
+                   <li>• Click AR button for augmented reality</li>
+                 </ul>
+               </div>
+
+               {/* Debug Info */}
+               <div className="bg-white/10 rounded-lg p-4">
+                 <h4 className="font-semibold mb-2 text-yellow-300">Debug Info</h4>
+                 <div className="text-xs text-white/60 space-y-1">
+                   <p>Model Path: {glbPath}</p>
+                   <p>Script Loaded: {isScriptLoaded ? 'Yes' : 'No'}</p>
+                   <p>Model Loaded: {isModelLoaded ? 'Yes' : 'No'}</p>
+                   <p>Loading Progress: {loadingProgress}%</p>
+                   {loadingError && <p className="text-red-400">Error: {loadingError}</p>}
+                 </div>
+               </div>
+             </div>
           </div>
         </motion.div>
       </div>

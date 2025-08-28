@@ -9,10 +9,13 @@ import Header from "@/components/Header";
 import TeaCup from "@/components/TeaCup";
 import { motion } from "framer-motion";
 import Head from "next/head";
+import Chatbot from "@/components/Chatbot";
+import ChatbotToggle from "@/components/ChatbotToggle";
 
 export default function HomePage() {
     const router = useRouter();
     const [userData, setUserData] = useState<{ username: string } | null>(null);
+    const [isChatbotOpen, setIsChatbotOpen] = useState(false);
 
     // Animation variants
     const containerVariants = {
@@ -187,7 +190,7 @@ export default function HomePage() {
                                 <div className="backdrop-blur-xl bg-white/30 border border-white/40 rounded-xl shadow-lg p-4 sm:p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-gradient-to-br hover:from-[#4a90e2]/40 hover:to-[#357abd]/40 group relative overflow-hidden">
                                     <div className="absolute inset-0 bg-gradient-to-br from-[#40916C]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                     <div className="text-2xl sm:text-3xl mb-2 transform transition-transform duration-300 group-hover:scale-110">📦</div>
-                                    <h2 className="text-lg sm:text-xl font-semibold text-[#b993f4] transition-colors">Browse Products</h2>
+                                    <h2 className="text-lg sm:text-xl font-semibold text-[#381769]  transition-colors">Browse Products</h2>
                                     <p className="mt-2 text-sm sm:text-base text-white/80 group-hover:text-white transition-colors">Explore our collection of authentic products</p>
                                 </div>
                             </Link>
@@ -198,7 +201,7 @@ export default function HomePage() {
                                 <div className="backdrop-blur-xl bg-white/30 border border-white/40 rounded-xl shadow-lg p-4 sm:p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-gradient-to-br hover:from-[#357abd]/40 hover:to-[#2c5aa0]/40 group relative overflow-hidden">
                                     <div className="absolute inset-0 bg-gradient-to-br from-[#2D6A4F]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                     <div className="text-2xl sm:text-3xl mb-2 transform transition-transform duration-300 group-hover:scale-110">🔐</div>
-                                    <h2 className="text-lg sm:text-xl font-semibold text-[#b993f4] transition-colors">Verify Products</h2>
+                                    <h2 className="text-lg sm:text-xl font-semibold text-[#381769] transition-colors">Verify Products</h2>
                                     <p className="mt-2 text-sm sm:text-base text-white/80 group-hover:text-white transition-colors">Check the authenticity of your purchases</p>
                                 </div>
                             </Link>
@@ -209,7 +212,7 @@ export default function HomePage() {
                                 <div className="backdrop-blur-xl bg-white/30 border border-white/40 rounded-xl shadow-lg p-4 sm:p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-gradient-to-br hover:from-[#2c5aa0]/40 hover:to-[#4a90e2]/40 group relative overflow-hidden">
                                     <div className="absolute inset-0 bg-gradient-to-br from-[#1B4332]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                     <div className="text-2xl sm:text-3xl mb-2 transform transition-transform duration-300 group-hover:scale-110">🗺️</div>
-                                    <h2 className="text-lg sm:text-xl font-semibold text-[#b993f4] transition-colors">TrueMap</h2>
+                                    <h2 className="text-lg sm:text-xl font-semibold text-[#381769] transition-colors">TrueMap</h2>
                                     <p className="mt-2 text-sm sm:text-base text-white/80 group-hover:text-white transition-colors">Track product origins and supply chains</p>
                                 </div>
                             </Link>
@@ -382,6 +385,13 @@ export default function HomePage() {
                     </motion.div>
                 </div>
             </motion.footer>
+
+            {/* Chatbot Components */}
+            <ChatbotToggle onClick={() => setIsChatbotOpen(true)} />
+            <Chatbot 
+                isOpen={isChatbotOpen} 
+                onClose={() => setIsChatbotOpen(false)} 
+            />
         </div>
     );
 }

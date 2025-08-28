@@ -1,12 +1,16 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
 import TeaCup from "@/components/TeaCup";
+import Chatbot from "@/components/Chatbot";
+import ChatbotToggle from "@/components/ChatbotToggle";
 
 export default function ProductsPage() {
+    const [isChatbotOpen, setIsChatbotOpen] = useState(false);
+    
     const products = [
         {
             name: "Darjeeling's Tea",
@@ -456,6 +460,48 @@ export default function ProductsPage() {
             origin: "Solapur, Maharastra",
             image: "/solapurChaddar.jpg",
             url: "/home/products/solapurchaddar"
+        },
+        {
+            name: "Mysore Sandal Soap",
+            type: "Soap",
+            origin: "Mysore, Karnataka",
+            image: "/MysoreSandalSoap.webp",
+            url: "/home/products/mysoresandalsoap"
+        },
+        {
+            name: "Traditional Saree",
+            type: "Textile",
+            origin: "India",
+            image: "/chanderiSaree.jpg",
+            url: "/home/products/saree"
+        },
+        {
+            name: "Pure Silk",
+            type: "Fabric",
+            origin: "India",
+            image: "/mysoreSilk.jpg",
+            url: "/home/products/silk"
+        },
+        {
+            name: "Sweet Delights",
+            type: "Sweet",
+            origin: "India",
+            image: "/tirupathiLaddu.jpg",
+            url: "/home/products/sweetdelights"
+        },
+        {
+            name: "Tanjore Paneer",
+            type: "Sweet",
+            origin: "Tanjore, Tamil Nadu",
+            image: "/tirupathiLaddu.jpg",
+            url: "/home/products/tanjorepaneer"
+        },
+        {
+            name: "Wooden Figurines",
+            type: "Craft",
+            origin: "India",
+            image: "/thanjavurDoll.jpg",
+            url: "/home/products/woodenfigurines"
         }
     ];
 
@@ -513,6 +559,13 @@ export default function ProductsPage() {
                     ))}
                 </div>
             </div>
+
+            {/* Chatbot Components */}
+            <ChatbotToggle onClick={() => setIsChatbotOpen(true)} />
+            <Chatbot 
+                isOpen={isChatbotOpen} 
+                onClose={() => setIsChatbotOpen(false)} 
+            />
         </div>
     );
 }

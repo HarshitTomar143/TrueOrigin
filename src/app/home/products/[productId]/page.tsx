@@ -1,9 +1,12 @@
 "use client";
 
 import { useParams } from "next/navigation";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { has3DModel } from "@/lib/glbMapping";
+import Chatbot from "@/components/Chatbot";
+import ChatbotToggle from "@/components/ChatbotToggle";
 
 
 const productData = {
@@ -1862,6 +1865,7 @@ export default function ProductPage() {
   const params = useParams();
   const productId = params.productId as string;
   const product = productData[productId as keyof typeof productData];
+  const [isChatbotOpen, setIsChatbotOpen] = useState(false);
 
   if (!product) {
     return (
@@ -1923,12 +1927,25 @@ export default function ProductPage() {
             <p className="text-sm sm:text-base text-gray-600">{product.shortDescription}</p>
             {has3DModel(productId) && (
               <div className="mt-3 flex items-center">
-                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                <span className="inline-flex items-center px-2 py-2 rounded-full text-xs font-medium bg-green-100 text-green-800">
                   <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
                   3D Model Available
                 </span>
               </div>
             )}
+          </div>
+          
+          {/* Chatbot Info Card */}
+          <div className="bg-gradient-to-r from-[#3A5B22]/10 to-[#4A7C59]/10 p-4 sm:p-6 rounded-xl border border-[#3A5B22]/20 col-span-1 sm:col-span-2 md:col-span-3">
+            <h3 className="text-base sm:text-lg font-semibold text-[#3A5B22] mb-2">Need Help?</h3>
+            <p className="text-sm text-gray-600 mb-3">Ask our AI guide about this product! Get detailed information about origin, cultural significance, and more.</p>
+            <button 
+              onClick={() => setIsChatbotOpen(true)}
+              className="bg-[#3A5B22] text-white px-4 py-2 rounded-lg hover:bg-[#2A4A12] transition-colors text-sm flex items-center gap-2"
+            >
+              <span>💬</span>
+              Chat with Guide
+            </button>
           </div>
         </div>
 
@@ -2009,6 +2026,13 @@ export default function ProductPage() {
           </div>
         </div>
       </div>
+
+      {/* Chatbot Components */}
+      <ChatbotToggle onClick={() => setIsChatbotOpen(true)} />
+      <Chatbot 
+        isOpen={isChatbotOpen} 
+        onClose={() => setIsChatbotOpen(false)} 
+      />
     </div>
   );
 } 

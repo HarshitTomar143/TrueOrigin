@@ -362,5 +362,160 @@ export const productData: Record<string, {
     type: "Fruit",
     shortDescription: "Sweet and nutritious red banana variety known for its unique color and taste.",
     originImage: "/images/kerela.jpg"
+  },
+
+  // New products with GLB files
+  aranmulakannadi: {
+    name: "Aranmula Kannadi",
+    description: "Traditional Mirror from Kerala",
+    image: "/aranmulaKannadi.jpg",
+    origin: "Aranmula, Kerala",
+    type: "Craft",
+    shortDescription: "Handcrafted mirror known for its unique design and craftsmanship.",
+    originImage: "/images/kerela.jpg"
+  },
+  assamorthodoxtea: {
+    name: "Assam Orthodox Tea",
+    description: "Premium Tea from Assam",
+    image: "/assamOrthodoxTea.jpg",
+    origin: "Assam, India",
+    type: "Tea",
+    shortDescription: "High-quality tea known for its rich flavor and aroma.",
+    originImage: "/images/assam.jpg"
+  },
+  banglarasagola: {
+    name: "Banglar Rasagola",
+    description: "Sweet Confection from West Bengal",
+    image: "/banglarRasagola.jpg",
+    origin: "West Bengal, India",
+    type: "Sweet",
+    shortDescription: "Traditional sweet confection with cultural significance.",
+    originImage: "/images/wb.jpg"
+  },
+  channapatnatoys: {
+    name: "Channapatna Toys",
+    description: "Traditional Wooden Toys from Karnataka",
+    image: "/channapatnaToys.jpg",
+    origin: "Channapatna, Karnataka",
+    type: "Craft",
+    shortDescription: "Handcrafted wooden toys with vibrant colors and intricate designs.",
+    originImage: "/images/karnataka.jpg"
+  },
+  kolhapurichappal: {
+    name: "Kolhapuri Chappal",
+    description: "Traditional Footwear from Maharashtra",
+    image: "/kolhapuriChappal.jpeg",
+    origin: "Kolhapur, Maharashtra",
+    type: "Footwear",
+    shortDescription: "Handcrafted leather sandals known for their unique design and comfort.",
+    originImage: "/images/maharastra.jpg"
+  },
+  kullushawl: {
+    name: "Kullu Shawl",
+    description: "Traditional Shawl from Himachal Pradesh",
+    image: "/kulluShawl.jpg",
+    origin: "Kullu, Himachal Pradesh",
+    type: "Textile",
+    shortDescription: "Warm and colorful shawls with traditional patterns.",
+    originImage: "/images/kullu.jpg"
+  },
+  mizochilli: {
+    name: "Mizo Chilli",
+    description: "Hot Chili Pepper from Mizoram",
+    image: "/mizoChilli.webp",
+    origin: "Mizoram, India",
+    type: "Spice",
+    shortDescription: "One of the hottest chili peppers in the world, known for its intense heat.",
+    originImage: "/images/mizoram.jpg"
+  },
+  mysoresilk: {
+    name: "Mysore Silk",
+    description: "Luxury Silk of Karnataka",
+    image: "/mysoreSilk.jpg",
+    origin: "Mysore, Karnataka",
+    type: "Fabric",
+    shortDescription: "Rich silk sarees with vibrant colors and gold zari.",
+    originImage: "/images/mysore.jpg"
+  },
+  mysoresandalsoap: {
+    name: "Mysore Sandal Soap",
+    description: "Fragrant Heritage of Karnataka",
+    image: "/MysoreSandalSoap.webp",
+    origin: "Mysore, Karnataka",
+    type: "Soap",
+    shortDescription: "Premium sandalwood soap with distinctive aroma.",
+    originImage: "/images/mysore.jpg"
+  },
+  palakkadmattarice: {
+    name: "Palakkad Matta Rice",
+    description: "Traditional Rice Variety from Kerala",
+    image: "/palakkadMattaRice.webp",
+    origin: "Palakkad, Kerala",
+    type: "Rice",
+    shortDescription: "Aromatic rice variety known for its unique flavor and fragrance.",
+    originImage: "/images/kerela.jpg"
+  },
+  pashminawool: {
+    name: "Pashmina Wool",
+    description: "Luxury Wool from Kashmir",
+    image: "/pashminaWool.jpg",
+    origin: "Kashmir, India",
+    type: "Textile",
+    shortDescription: "Fine wool known for its softness and warmth.",
+    originImage: "/images/kashmir.jpg"
+  },
+  saree: {
+    name: "Traditional Saree",
+    description: "Classic Indian Garment",
+    image: "/chanderiSaree.jpg",
+    origin: "India",
+    type: "Textile",
+    shortDescription: "Traditional six-yard garment with cultural significance.",
+    originImage: "/images/india.jpg"
+  },
+  silk: {
+    name: "Pure Silk",
+    description: "Luxury Silk Fabric",
+    image: "/mysoreSilk.jpg",
+    origin: "India",
+    type: "Fabric",
+    shortDescription: "Premium silk fabric known for its luster and feel.",
+    originImage: "/images/india.jpg"
+  },
+  solapurichaddar: {
+    name: "Solapuri Chaddar",
+    description: "Traditional Bedspread from Maharashtra",
+    image: "/solapurChaddar.jpg",
+    origin: "Solapur, Maharashtra",
+    type: "Textile",
+    shortDescription: "Handwoven bedspread known for its unique design and comfort.",
+    originImage: "/images/maharastra.jpg"
+  },
+  sweetdelights: {
+    name: "Sweet Delights",
+    description: "Traditional Indian Sweets",
+    image: "/tirupathiLaddu.jpg",
+    origin: "India",
+    type: "Sweet",
+    shortDescription: "Collection of traditional Indian sweet confections.",
+    originImage: "/images/india.jpg"
+  },
+  tanjorepaneer: {
+    name: "Tanjore Paneer",
+    description: "Traditional Sweet from Tamil Nadu",
+    image: "/tirupathiLaddu.jpg",
+    origin: "Tanjore, Tamil Nadu",
+    type: "Sweet",
+    shortDescription: "Traditional sweet made with milk and sugar.",
+    originImage: "/images/tamil.jpg"
+  },
+  woodenfigurines: {
+    name: "Wooden Figurines",
+    description: "Traditional Wooden Crafts",
+    image: "/thanjavurDoll.jpg",
+    origin: "India",
+    type: "Craft",
+    shortDescription: "Handcrafted wooden figurines with traditional designs.",
+    originImage: "/images/india.jpg"
   }
 };

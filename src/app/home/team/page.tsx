@@ -7,6 +7,8 @@ import Header from "@/components/Header";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { teamMembers } from "@/lib/teamData";
+import Chatbot from "@/components/Chatbot";
+import ChatbotToggle from "@/components/ChatbotToggle";
 
 // Music letters for animation
 const musicLetters = ['♪', '♫', '♬', '♩', '♭', '♮', '♯', '♪', '♫', '♬'];
@@ -14,6 +16,7 @@ const musicLetters = ['♪', '♫', '♬', '♩', '♭', '♮', '♯', '♪', '�
 export default function TeamPage() {
     const router = useRouter();
     const [isClient, setIsClient] = useState(false);
+    const [isChatbotOpen, setIsChatbotOpen] = useState(false);
 
     useEffect(() => {
         setIsClient(true);
@@ -143,6 +146,13 @@ export default function TeamPage() {
                     </motion.div>
                 </div>
             </div>
+
+            {/* Chatbot Components */}
+            <ChatbotToggle onClick={() => setIsChatbotOpen(true)} />
+            <Chatbot 
+                isOpen={isChatbotOpen} 
+                onClose={() => setIsChatbotOpen(false)} 
+            />
         </div>
     );
 }
