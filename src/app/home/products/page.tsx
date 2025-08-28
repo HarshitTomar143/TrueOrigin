@@ -548,11 +548,7 @@ export default function ProductsPage() {
                                             View Details
                                         </button>
                                     </Link>
-                                    <Link href="/" className="block w-full">
-                                        <button className="w-full py-2 bg-gradient-to-r from-[#4a90e2] to-[#357abd] text-white rounded-lg hover:from-[#357abd] hover:to-[#2c5aa0] transition-colors duration-300 cursor-pointer">
-                                            View Buying Details
-                                        </button>
-                                    </Link>
+                                    
                                 </div>
                             </div>
                         </div>

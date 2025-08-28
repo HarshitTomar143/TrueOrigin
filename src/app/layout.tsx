@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import 'leaflet/dist/leaflet.css';
-
+import "leaflet/dist/leaflet.css";
+import { CartProvider } from "@/context/CartContext";
 
 const poppins = Poppins({
-  weight: ['400', '500', '600', '700'],
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
   variable: "--font-poppins",
 });
@@ -16,12 +16,12 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/Logo.jpg',
-        type: 'image/jpeg',
-      }
+        url: "/Logo.jpg",
+        type: "image/jpeg",
+      },
     ],
-    shortcut: '/Logo.jpg',
-    apple: '/Logo.jpg',
+    shortcut: "/Logo.jpg",
+    apple: "/Logo.jpg",
   },
 };
 
@@ -33,7 +33,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable} font-sans antialiased`}>
-        {children}
+        <CartProvider>
+          {children}
+        </CartProvider>
       </body>
     </html>
   );
