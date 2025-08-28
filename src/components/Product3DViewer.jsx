@@ -5,13 +5,6 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowLeft, RotateCcw, ZoomIn, ZoomOut, Play, Pause } from 'lucide-react'
 
-interface Product3DViewerProps {
-  productId: string
-  productName: string
-  glbPath: string
-  productImage: string
-  productDescription: string
-}
 
 export default function Product3DViewer({ 
   productId, 
@@ -19,7 +12,7 @@ export default function Product3DViewer({
   glbPath, 
   productImage, 
   productDescription 
-}: Product3DViewerProps) {
+} ) {
   const [isModelLoaded, setIsModelLoaded] = useState(false)
   const [isAutoRotating, setIsAutoRotating] = useState(true)
   const [isScriptLoaded, setIsScriptLoaded] = useState(false)
@@ -78,7 +71,7 @@ export default function Product3DViewer({
     setLoadingError(null)
     
     // Check if the model-viewer element is working
-    const modelViewer = document.querySelector('model-viewer') as any
+    const modelViewer = document.querySelector('model-viewer')
     if (modelViewer) {
       console.log('Model viewer element found:', modelViewer)
       console.log('Model src:', modelViewer.src)
@@ -91,7 +84,7 @@ export default function Product3DViewer({
     if (!isScriptLoaded) return
 
     const checkModelReady = () => {
-      const modelViewer = document.querySelector('model-viewer') as any
+      const modelViewer = document.querySelector('model-viewer')
       if (modelViewer) {
         // Check multiple conditions for model readiness
         if (modelViewer.readyState === 4) { // 4 = COMPLETE
@@ -136,13 +129,13 @@ export default function Product3DViewer({
     }
   }, [isScriptLoaded])
 
-  const handleModelError = (error: any) => {
+  const handleModelError = (error) => {
     console.error('Error loading 3D model:', error)
     setLoadingError('Failed to load 3D model. Please try refreshing the page.')
     setIsModelLoaded(true) // Remove loading overlay even on error
   }
 
-  const handleModelProgress = (event: any) => {
+  const handleModelProgress = (event) => {
     if (event.detail.totalProgress !== undefined) {
       const progress = Math.round(event.detail.totalProgress * 100)
       setLoadingProgress(progress)
@@ -152,14 +145,14 @@ export default function Product3DViewer({
 
   const toggleAutoRotate = () => {
     setIsAutoRotating(!isAutoRotating)
-    const modelViewer = document.querySelector('model-viewer') as any
+    const modelViewer = document.querySelector('model-viewer') 
     if (modelViewer) {
       modelViewer.autoRotate = !isAutoRotating
     }
   }
 
   const resetCamera = () => {
-    const modelViewer = document.querySelector('model-viewer') as any
+    const modelViewer = document.querySelector('model-viewer')
     if (modelViewer) {
       modelViewer.cameraOrbit = '0deg 75deg 105%'
       modelViewer.cameraTarget = '0m 0m 0m'
@@ -167,7 +160,7 @@ export default function Product3DViewer({
   }
 
   const zoomIn = () => {
-    const modelViewer = document.querySelector('model-viewer') as any
+    const modelViewer = document.querySelector('model-viewer') 
     if (modelViewer) {
       const currentOrbit = modelViewer.cameraOrbit
       const distance = currentOrbit.split(' ')[2]
@@ -177,7 +170,7 @@ export default function Product3DViewer({
   }
 
   const zoomOut = () => {
-    const modelViewer = document.querySelector('model-viewer') as any
+    const modelViewer = document.querySelector('model-viewer') 
     if (modelViewer) {
       const currentOrbit = modelViewer.cameraOrbit
       const distance = currentOrbit.split(' ')[2]
