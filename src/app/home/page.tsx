@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
@@ -12,13 +12,63 @@ import Head from "next/head";
 import Chatbot from "@/components/Chatbot";
 import ChatbotToggle from "@/components/ChatbotToggle";
 import { productData } from "@/lib/productData";
-import { has3DModel } from "@/lib/glbMapping";
+import { has3DModel, getGlbPath } from "@/lib/glbMapping";
 
 export default function HomePage() {
     const router = useRouter();
     const [userData, setUserData] = useState<{ username: string } | null>(null);
     const [isChatbotOpen, setIsChatbotOpen] = useState(false);
     const [featuredProducts, setFeaturedProducts] = useState<any[]>([]);
+    const [specific3DProducts, setSpecific3DProducts] = useState<any[]>([]);
+    const modelContainerRef = useRef<(HTMLDivElement | null)[]>([]);
+    const isModelViewerLoaded = useRef(false);
+
+    // Function to initialize a single model
+    const initializeModel = useCallback((container: HTMLDivElement, src: string, alt: string) => {
+        if (!container || !src) return;
+        
+        container.innerHTML = `
+            <model-viewer
+                src="${src}"
+                alt="${alt}"
+                auto-rotate
+                camera-controls
+                ar
+                shadow-intensity="1"
+                exposure="1"
+                environment-image="neutral"
+                style="width: 100%; height: 100%;"
+            ></model-viewer>
+        `;
+    }, []);
+
+    // Function to load model-viewer script
+    const loadModelViewerScript = useCallback(() => {
+        if (typeof window !== 'undefined' && !customElements.get('model-viewer') && !isModelViewerLoaded.current) {
+            const script = document.createElement('script');
+            script.type = 'module';
+            script.src = 'https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js';
+            script.async = true;
+            script.onload = () => {
+                isModelViewerLoaded.current = true;
+                // Initialize all models after script loads
+                specific3DProducts.forEach((product, index) => {
+                    if (modelContainerRef.current[index]) {
+                        initializeModel(modelContainerRef.current[index]!, product.glbPath, product.name);
+                    }
+                });
+            };
+            document.head.appendChild(script);
+        } else if (typeof window !== 'undefined' && customElements.get('model-viewer')) {
+            // If script is already loaded, initialize models
+            isModelViewerLoaded.current = true;
+            specific3DProducts.forEach((product, index) => {
+                if (modelContainerRef.current[index]) {
+                    initializeModel(modelContainerRef.current[index]!, product.glbPath, product.name);
+                }
+            });
+        }
+    }, [specific3DProducts, initializeModel]);
 
     useEffect(() => {
         // Select featured products that have 3D models
@@ -31,7 +81,27 @@ export default function HomePage() {
             }));
         
         setFeaturedProducts(productsWith3D);
+        
+        // Specific products to showcase with 3D models
+        const specificProducts = [
+            { id: 'channapatnatoys', name: 'Channapatna Toys', glbPath: getGlbPath('channapatnatoys') },
+            { id: 'bidriware', name: 'Bidriware', glbPath: getGlbPath('bidriware') }
+        ].filter(product => product.glbPath); // Only include products that have GLB paths
+        
+        setSpecific3DProducts(specificProducts);
     }, []);
+
+    // Effect to load model viewer script after products are set
+    useEffect(() => {
+        if (specific3DProducts.length > 0) {
+            // Small delay to ensure DOM is ready
+            const timer = setTimeout(() => {
+                loadModelViewerScript();
+            }, 100);
+            
+            return () => clearTimeout(timer);
+        }
+    }, [specific3DProducts, loadModelViewerScript]);
 
     // Animation variants
     const containerVariants = {
@@ -124,6 +194,78 @@ export default function HomePage() {
         </motion.div>
 
         {/* Featured 3D Products Section */}
+        {specific3DProducts.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="mt-16"
+          >
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white">Featured 3D Models</h2>
+              <Link 
+                href="/home/products" 
+                className="text-white/80 hover:text-white transition-colors flex items-center gap-2"
+              >
+                View All
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </Link>
+            </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {specific3DProducts.map((product, index) => (
+                <motion.div
+                  key={product.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="bg-white/10 backdrop-blur-xl border border-white/30 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-white mb-4 text-center">{product.name}</h3>
+                    
+                    {/* 3D Model Container */}
+                    <div className="relative h-64 rounded-xl overflow-hidden bg-black/20 mb-4 flex items-center justify-center">
+                      <div 
+                        ref={(el) => {
+                          modelContainerRef.current[index] = el;
+                        }}
+                        style={{ width: '100%', height: '100%' }}
+                      >
+                        {/* Loading placeholder */}
+                        <div className="w-full h-full flex items-center justify-center">
+                          <div className="text-center text-white">
+                            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white mx-auto mb-2"></div>
+                            <p>Loading 3D Model...</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="flex gap-3">
+                      <Link
+                        href={`/home/products/${product.id}`}
+                        className="flex-1 py-2 text-center bg-white/20 text-white rounded-lg hover:bg-white/30 transition-colors text-sm"
+                      >
+                        View Details
+                      </Link>
+                      <Link
+                        href={`/home/products/${product.id}/3d`}
+                        className="flex-1 py-2 text-center bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors text-sm font-medium"
+                      >
+                        Full 3D View
+                      </Link>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+
+        {/* More 3D Products Section */}
         {featuredProducts.length > 0 && (
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -132,7 +274,7 @@ export default function HomePage() {
             className="mt-16"
           >
             <div className="flex items-center justify-between mb-8">
-              <h2 className="text-2xl sm:text-3xl font-bold text-white">Featured 3D Products</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white">More 3D Products</h2>
               <Link 
                 href="/home/products" 
                 className="text-white/80 hover:text-white transition-colors flex items-center gap-2"
