@@ -11,11 +11,27 @@ import { motion } from "framer-motion";
 import Head from "next/head";
 import Chatbot from "@/components/Chatbot";
 import ChatbotToggle from "@/components/ChatbotToggle";
+import { productData } from "@/lib/productData";
+import { has3DModel } from "@/lib/glbMapping";
 
 export default function HomePage() {
     const router = useRouter();
     const [userData, setUserData] = useState<{ username: string } | null>(null);
     const [isChatbotOpen, setIsChatbotOpen] = useState(false);
+    const [featuredProducts, setFeaturedProducts] = useState<any[]>([]);
+
+    useEffect(() => {
+        // Select featured products that have 3D models
+        const productsWith3D = Object.keys(productData)
+            .filter(productId => has3DModel(productId))
+            .slice(0, 6) // Take first 6 products with 3D models
+            .map(productId => ({
+                id: productId,
+                ...productData[productId as keyof typeof productData]
+            }));
+        
+        setFeaturedProducts(productsWith3D);
+    }, []);
 
     // Animation variants
     const containerVariants = {
@@ -107,12 +123,83 @@ export default function HomePage() {
           </div>
         </motion.div>
 
+        {/* Featured 3D Products Section */}
+        {featuredProducts.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="mt-16"
+          >
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white">Featured 3D Products</h2>
+              <Link 
+                href="/home/products" 
+                className="text-white/80 hover:text-white transition-colors flex items-center gap-2"
+              >
+                View All
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </Link>
+            </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {featuredProducts.map((product, index) => (
+                <motion.div
+                  key={product.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="bg-white/10 backdrop-blur-xl border border-white/30 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group"
+                >
+                  <div className="relative h-48 overflow-hidden">
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div className="absolute top-3 right-3 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1">
+                      <span className="w-2 h-2 bg-white rounded-full"></span>
+                      3D Available
+                    </div>
+                    <div className="absolute bottom-3 left-3">
+                      <h3 className="text-white font-bold text-lg">{product.name}</h3>
+                      <p className="text-white/80 text-sm">{product.origin}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="p-5">
+                    <p className="text-white/90 text-sm mb-4 line-clamp-2">{product.shortDescription}</p>
+                    <div className="flex gap-3">
+                      <Link
+                        href={`/home/products/${product.id}`}
+                        className="flex-1 py-2 text-center bg-white/20 text-white rounded-lg hover:bg-white/30 transition-colors text-sm"
+                      >
+                        View Details
+                      </Link>
+                      <Link
+                        href={`/home/products/${product.id}/3d`}
+                        className="flex-1 py-2 text-center bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors text-sm font-medium"
+                      >
+                        View 3D
+                      </Link>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+
         {/* Feature Cards */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6"
+          className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6"
         >
           {[
             {
