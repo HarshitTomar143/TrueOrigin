@@ -188,8 +188,25 @@ export default function WorkshopPage() {
                         <div className="bg-white/20 backdrop-blur-xl border border-white/30 rounded-2xl p-6 mb-8">
                             <div className="flex flex-col md:flex-row items-center gap-6">
                                 <div className="md:w-1/4">
-                                    <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gradient-to-br from-pink-400 to-purple-500 flex items-center justify-center">
-                                        <span className="text-white text-4xl font-bold">लाख</span>
+                                    <div className="relative w-full aspect-square rounded-xl overflow-hidden">
+                                        {/* Video container for Laakh Bangles */}
+                                        <video 
+                                            src="/laakh.mp4" 
+                                            className="w-full h-full object-cover"
+                                            autoPlay
+                                            loop
+                                            muted
+                                            playsInline
+                                            onError={(e) => {
+                                                // Fallback to image if video fails to load
+                                                const target = e.target as HTMLVideoElement;
+                                                target.style.display = 'none';
+                                                const fallback = document.createElement('div');
+                                                fallback.className = 'w-full h-full bg-gradient-to-br from-pink-400 to-purple-500 flex items-center justify-center';
+                                                fallback.innerHTML = '<span class="text-white text-4xl font-bold">लाख</span>';
+                                                target.parentElement?.appendChild(fallback);
+                                            }}
+                                        />
                                     </div>
                                 </div>
                                 <div className="md:w-1/2">
