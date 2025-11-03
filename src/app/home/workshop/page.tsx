@@ -24,7 +24,7 @@ export default function WorkshopPage() {
             name: "Madhubani Painting",
             type: "Art Form",
             origin: "Bihar, India",
-            image: "/images/products/madhubani.jpg",
+            image: "/madhubaniPainting.jpg",
             description: "Traditional Madhubani painting from Bihar, known for its vibrant colors and intricate patterns.",
             modificationTypes: ["Design Pattern", "Color Scheme", "Size"]
         },
@@ -33,7 +33,7 @@ export default function WorkshopPage() {
             name: "Kancheepuram Saree",
             type: "Fabric",
             origin: "Kanchipuram, Tamil Nadu",
-            image: "/images/products/kancheepuram-saree.jpg",
+            image: "/kancheepuramSilk.jpg",
             description: "Handwoven silk saree from Tamil Nadu, known for its rich fabric and zari borders.",
             modificationTypes: ["Border Design", "Color Combination", "Blouse Piece"]
         },
@@ -42,7 +42,7 @@ export default function WorkshopPage() {
             name: "Kullu Shawl",
             type: "Fabric",
             origin: "Kullu, Himachal Pradesh",
-            image: "/images/products/kullu-shawl.jpg",
+            image: "/kulluShawl.jpg",
             description: "Handwoven woolen shawl from Himachal Pradesh, known for its bright geometric patterns.",
             modificationTypes: ["Pattern Design", "Color Variations", "Size"]
         },
@@ -51,7 +51,7 @@ export default function WorkshopPage() {
             name: "Chanderi Saree",
             type: "Fabric",
             origin: "Chanderi, Madhya Pradesh",
-            image: "/images/chanderi.jpg",
+            image: "/chanderiSaree.jpg",
             description: "Lightweight saree with glossy texture and luxurious feel.",
             modificationTypes: ["Weave Pattern", "Border Design", "Blouse Piece"]
         },
@@ -60,7 +60,7 @@ export default function WorkshopPage() {
             name: "Kullu Shawl",
             type: "Fabric",
             origin: "Kullu, Himachal Pradesh",
-            image: "/images/kullu.jpg",
+            image: "/kulluShawl.jpg",
             description: "Handwoven woolen shawl with geometric patterns.",
             modificationTypes: ["Pattern Design", "Color Variations", "Size"]
         },
@@ -69,7 +69,7 @@ export default function WorkshopPage() {
             name: "Kutch Embroidery",
             type: "Fabric",
             origin: "Kutch, Gujarat",
-            image: "/images/kutch.jpg",
+            image: "/kutchEmbroidery.jpg",
             description: "Vibrant embroidery with mirror work and intricate patterns.",
             modificationTypes: ["Embroidery Pattern", "Mirror Work Design", "Color Scheme"]
         },
@@ -78,7 +78,7 @@ export default function WorkshopPage() {
             name: "Blue Pottery",
             type: "Handicraft",
             origin: "Jaipur, Rajasthan",
-            image: "/images/bluepottery.jpg",
+            image: "/bluePottery.jpg",
             description: "Blue Pottery from Jaipur is known for its distinctive cobalt-blue dye and floral motifs.",
             modificationTypes: ["Design Pattern", "Color Variations", "Shape"]
         },
@@ -87,7 +87,7 @@ export default function WorkshopPage() {
             name: "Muga Silk",
             type: "Fabric",
             origin: "Assam, India",
-            image: "/images/muga.jpg",
+            image: "/mugaSilk.jpg",
             description: "Muga Silk from Assam is a rare silk known for its natural golden luster and durability.",
             modificationTypes: ["Weave Pattern", "Border Design", "Blouse Piece"]
         },
@@ -96,7 +96,7 @@ export default function WorkshopPage() {
             name: "Mysore Silk",
             type: "Fabric",
             origin: "Mysuru, Karnataka",
-            image: "/images/mysore_silk.jpg",
+            image: "/mysoreSilk.jpg",
             description: "Mysore Silk sarees, woven from pure mulberry silk, are among the finest in India.",
             modificationTypes: ["Weave Pattern", "Border Design", "Blouse Piece"]
         },
@@ -105,7 +105,7 @@ export default function WorkshopPage() {
             name: "Chamba Rumal",
             type: "Handicraft Textile",
             origin: "Chamba, Himachal Pradesh",
-            image: "/images/chamba.jpg",
+            image: "/chambaRumal.jpg",
             description: "The Chamba Rumal is an embroidered handkerchief from Himachal Pradesh.",
             modificationTypes: ["Embroidery Pattern", "Color Scheme", "Size"]
         },
@@ -114,7 +114,7 @@ export default function WorkshopPage() {
             name: "Salem Fabric",
             type: "Fabric",
             origin: "Salem, Tamil Nadu",
-            image: "/images/salem.jpg",
+            image: "/salemFabric.jpg",
             description: "Salem Fabric from Tamil Nadu is renowned for its fine cotton and traditional weaving methods.",
             modificationTypes: ["Weave Pattern", "Design", "Color"]
         },
@@ -123,7 +123,7 @@ export default function WorkshopPage() {
             name: "Pashmina Wool",
             type: "Fabric",
             origin: "Kashmir, India",
-            image: "/images/products/pashmina.jpg",
+            image: "/pashminaWool.jpg",
             description: "Luxurious fine wool from Kashmir, used to make world-renowned shawls and garments.",
             modificationTypes: ["Pattern Design", "Color Variations", "Size"]
         }
