@@ -32,7 +32,6 @@ export default function Header(props: HeaderProps) {
     { name: "Marketplace", href: "/home/marketplace" },
     { name: "Verify", href: "/home/verify" },
     { name: "TrueMap", href: "/home/truemap" },
-    { name: "Team", href: "/home/team" },
   ];
 
   return (
@@ -59,7 +58,6 @@ export default function Header(props: HeaderProps) {
           <Link href="/home/products" className={`flex items-center h-10 px-4 text-white hover:text-black font-medium transition-transform transform ${pathname === '/home/products' ? "scale-105 text-[#b993f4] border-b-2 border-[#4c3372]" : ""}`}>Products📦</Link>
           <Link href="/home/verify" className={`flex items-center h-10 px-4 text-white hover:text-black font-medium transition-transform transform ${pathname === '/home/verify' ? "scale-105 text-[#b993f4] border-b-2 border-[#4e3278]" : ""}`}>Verify🔐</Link>
           <Link href="/home/truemap" className={`flex items-center h-10 px-4 text-white hover:text-black font-medium transition-transform transform ${pathname === '/home/truemap' ? "scale-105 text-[#b993f4] border-b-2 border-[#3d2266]" : ""}`}>TrueMap🗺️</Link>
-          <Link href="/home/team" className={`flex items-center h-10 px-4 text-white hover:text-black font-medium transition-transform transform ${pathname === '/home/team' ? "scale-105 text-[#b993f4] border-b-2 border-[#422968]" : ""}`}>Team🤝</Link>
           <Link href="/home/accounts" className={`flex items-center h-10 px-4 text-white hover:text-black font-medium transition-transform transform ${pathname === '/home/accounts' ? "scale-105 text-[#b993f4] border-b-2 border-[#311954]" : ""}`}>Account🏦</Link>
         </nav>
         <button
@@ -124,4 +122,4 @@ export default function Header(props: HeaderProps) {
       )}
     </header>
   );
-} 
+}
