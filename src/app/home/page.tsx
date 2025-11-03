@@ -351,6 +351,12 @@ export default function HomePage() {
               desc: "Explore our collection of authentic products",
             },
             {
+              href: "/home/workshop",
+              icon: "🛠️",
+              title: "Custom Workshop",
+              desc: "Customize products with your own designs",
+            },
+            {
               href: "/home/verify",
               icon: "🔐",
               title: "Verify Products",
@@ -408,6 +414,7 @@ export default function HomePage() {
                             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
                             <ul className="space-y-2 text-sm text-white">
                                 <li><Link href="/home/products" className="hover:text-white transition-colors">Products</Link></li>
+                                <li><Link href="/home/workshop" className="hover:text-white transition-colors">Custom Workshop</Link></li>
                                 <li><Link href="/home/verify" className="hover:text-white transition-colors">Verify</Link></li>
                                 <li><Link href="/home/truemap" className="hover:text-white transition-colors">TrueMap</Link></li>
                             </ul>

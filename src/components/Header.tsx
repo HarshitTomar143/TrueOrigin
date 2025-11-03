@@ -29,6 +29,7 @@ export default function Header(props: HeaderProps) {
 
   const navLinks = [
     { name: "Products", href: "/home/products" },
+    { name: "Workshop", href: "/home/workshop" },
     { name: "Marketplace", href: "/home/marketplace" },
     { name: "Verify", href: "/home/verify" },
     { name: "TrueMap", href: "/home/truemap" },
@@ -56,6 +57,7 @@ export default function Header(props: HeaderProps) {
       <div className="hidden md:flex items-center bg-white/10 backdrop-blur-xl border border-white/20 shadow-md rounded-lg py-2 px-6 space-x-6 relative z-20 min-w-[500px] justify-center">
         <nav className="flex space-x-6 flex-nowrap items-center">
           <Link href="/home/products" className={`flex items-center h-10 px-4 text-white hover:text-black font-medium transition-transform transform ${pathname === '/home/products' ? "scale-105 text-[#b993f4] border-b-2 border-[#4c3372]" : ""}`}>Products📦</Link>
+          <Link href="/home/workshop" className={`flex items-center h-10 px-4 text-white hover:text-black font-medium transition-transform transform ${pathname === '/home/workshop' ? "scale-105 text-[#b993f4] border-b-2 border-[#4e3278]" : ""}`}>Workshop🛠️</Link>
           <Link href="/home/verify" className={`flex items-center h-10 px-4 text-white hover:text-black font-medium transition-transform transform ${pathname === '/home/verify' ? "scale-105 text-[#b993f4] border-b-2 border-[#4e3278]" : ""}`}>Verify🔐</Link>
           <Link href="/home/truemap" className={`flex items-center h-10 px-4 text-white hover:text-black font-medium transition-transform transform ${pathname === '/home/truemap' ? "scale-105 text-[#b993f4] border-b-2 border-[#3d2266]" : ""}`}>TrueMap🗺️</Link>
           <Link href="/home/accounts" className={`flex items-center h-10 px-4 text-white hover:text-black font-medium transition-transform transform ${pathname === '/home/accounts' ? "scale-105 text-[#b993f4] border-b-2 border-[#311954]" : ""}`}>Account🏦</Link>
