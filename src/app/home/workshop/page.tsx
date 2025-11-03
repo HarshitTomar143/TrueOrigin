@@ -155,6 +155,16 @@ export default function WorkshopPage() {
         console.log("Modification details:", { selectedProduct, modificationDetails });
     };
 
+    // Featured product - Laakh Bangles
+    const featuredProduct = {
+        name: "Laakh Bangles",
+        origin: "Jaipur, Rajasthan",
+        description: "Elegant bangles crafted with traditional techniques, adorned with laakh and natural stones and colors.",
+        price: "₹250-₹2000 per pair",
+        material: "Laakh",
+        estimatedTime: "7-10 days"
+    };
+
     return (
         <div className="min-h-screen flex flex-col relative">
             {/* Background */}
@@ -172,6 +182,56 @@ export default function WorkshopPage() {
                     <p className="text-gray-200 text-center mb-8 max-w-3xl mx-auto">
                         Select a product and customize it according to your preferences. Our skilled artisans will create a unique piece just for you.
                     </p>
+
+                    {/* Featured Product Section - Laakh Bangles */}
+                    {!selectedProduct && (
+                        <div className="bg-white/20 backdrop-blur-xl border border-white/30 rounded-2xl p-6 mb-8">
+                            <div className="flex flex-col md:flex-row items-center gap-6">
+                                <div className="md:w-1/4">
+                                    <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gradient-to-br from-pink-400 to-purple-500 flex items-center justify-center">
+                                        <span className="text-white text-4xl font-bold">लाख</span>
+                                    </div>
+                                </div>
+                                <div className="md:w-1/2">
+                                    <h2 className="text-2xl font-bold text-white mb-2">{featuredProduct.name}</h2>
+                                    <p className="text-gray-200 mb-3">{featuredProduct.description}</p>
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+                                        <div className="flex items-center gap-2 text-gray-200">
+                                            <span className="font-medium">Origin:</span>
+                                            <span>{featuredProduct.origin}</span>
+                                        </div>
+                                        <div className="flex items-center gap-2 text-gray-200">
+                                            <span className="font-medium">Material:</span>
+                                            <span>{featuredProduct.material}</span>
+                                        </div>
+                                        <div className="flex items-center gap-2 text-gray-200">
+                                            <span className="font-medium">Price Range:</span>
+                                            <span>{featuredProduct.price}</span>
+                                        </div>
+                                        <div className="flex items-center gap-2 text-gray-200">
+                                            <span className="font-medium">Delivery:</span>
+                                            <span>{featuredProduct.estimatedTime}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="md:w-1/4 flex flex-col gap-3">
+                                    <button className="py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg hover:from-green-600 hover:to-emerald-700 transition-colors font-medium">
+                                        Buy Now
+                                    </button>
+                                    <button 
+                                        className="py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-lg hover:from-blue-600 hover:to-indigo-700 transition-colors font-medium"
+                                        onClick={() => {
+                                            // For demo purposes, we'll select a similar product
+                                            const bangleProduct = modifiableProducts.find(p => p.type.includes("Handicraft")) || modifiableProducts[0];
+                                            handleProductSelect(bangleProduct);
+                                        }}
+                                    >
+                                        Make Modification
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    )}
 
                     {!selectedProduct ? (
                         // Product Selection View
