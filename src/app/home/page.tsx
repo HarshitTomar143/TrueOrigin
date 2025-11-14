@@ -173,9 +173,9 @@ export default function HomePage() {
           {/* Stats Section */}
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
-              { icon: "📦", title: "Products", desc: "1000+ Items" },
-              { icon: "🔐", title: "Verified", desc: "500+ Artisans" },
-              { icon: "🗺️", title: "Regions", desc: "50+ Areas" },
+              { icon: "", title: "Products", desc: "1000+ Items" },
+              { icon: "", title: "Verified", desc: "500+ Artisans" },
+              { icon: "", title: "Regions", desc: "50+ Areas" },
             ].map((card, i) => (
               <motion.div
                 key={i}
@@ -346,25 +346,25 @@ export default function HomePage() {
           {[
             {
               href: "/home/products",
-              icon: "📦",
+              icon: "",
               title: "Browse Products",
               desc: "Explore our collection of authentic products",
             },
             {
               href: "/home/workshop",
-              icon: "🛠️",
+              icon: "",
               title: "Custom Workshop",
               desc: "Customize products with your own designs",
             },
             {
               href: "/home/verify",
-              icon: "🔐",
+              icon: "",
               title: "Verify Products",
               desc: "Check the authenticity of your purchases",
             },
             {
               href: "/home/truemap",
-              icon: "🗺️",
+              icon: "",
               title: "TrueMap",
               desc: "Track product origins and supply chains",
             },
