@@ -6,6 +6,8 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
+// hello
+
 export default function ResetPasswordPage() {
     const router = useRouter();
     const [token, setToken] = useState("");
